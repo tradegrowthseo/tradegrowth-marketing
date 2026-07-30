@@ -15,9 +15,9 @@ const inter = Inter({
   display: "swap",
 });
 
-// TODO: add the GA4 measurement id when the property is created. Empty means
-// the script isn't injected at all, rather than firing at a bad id.
-const GA_MEASUREMENT_ID = "";
+// GA4 measurement id. Empty means the script isn't injected at all, rather
+// than firing at a bad id.
+const GA_MEASUREMENT_ID = "G-YJGZ12PSEN";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tradegrowthseo.com"),
