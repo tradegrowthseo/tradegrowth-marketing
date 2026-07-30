@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  /* ─── Brand palette ────────────────────────────────────────────────
+     Sampled from the TradeGrowth Marketing logo. The accent is a
+     blue → violet gradient rather than a single flat colour, so the two
+     endpoints are tokenised separately and composed by the utilities
+     below. The *-dark / *-light / *-tint shades are derived to stay
+     coherent (hover darker on light backgrounds, lighter on dark). */
+  --color-brand: #3d4cf5;          /* gradient start — primary blue */
+  --color-brand-end: #5b1cf0;      /* gradient end — violet */
+  --color-brand-dark: #2f3bd4;     /* hover state on light backgrounds */
+  --color-brand-light: #8b93ff;    /* accent on dark backgrounds */
+  --color-brand-tint: #eef0ff;     /* icon wells, pills, soft fills */
+
+  --color-ink: #171a26;            /* headings */
+  --color-body: #565c6b;           /* body copy */
+  --color-muted: #8a90a0;          /* secondary / caption copy */
+  --color-tint: #f6f7fc;           /* light section background */
+  --color-line: #e6e8f2;           /* borders & dividers */
+  --color-dark: #0f1220;           /* dark sections & footer */
+  --color-dark-soft: #171b2e;      /* raised panels on dark */
+  --color-white: #ffffff;
+
+  --font-heading: var(--font-inter);
+  --font-body: var(--font-inter);
+
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+
+  --radius-card: 0.75rem;
+
+  --shadow-card: 0 4px 24px rgba(23, 26, 38, 0.06);
+  --shadow-card-hover: 0 8px 40px rgba(61, 76, 245, 0.14);
+}
+
+/* The single canonical definition of the brand gradient. Everything that
+   shows blue→violet composes this, so angle and stops change in one place. */
+:root {
+  --gradient-brand: linear-gradient(100deg, #3d4cf5 0%, #5b1cf0 100%);
+  --gradient-brand-hover: linear-gradient(100deg, #2f3bd4 0%, #4a13cc 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-body);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Brand gradient utilities ─────────────────────────────────────
+   Declared in the utilities layer so utilities applied alongside them
+   compose predictably, and so a later `bg-*` utility can still win. */
+@layer utilities {
+  .bg-gradient-brand {
+    background-image: var(--gradient-brand);
+  }
+
+  .bg-gradient-brand:hover {
+    background-image: var(--gradient-brand-hover);
+  }
+
+  /* Non-interactive gradient fill — for bands and panels that should not
+     shift on hover (the :hover rule above would otherwise apply). */
+  .bg-gradient-brand-static,
+  .bg-gradient-brand-static:hover {
+    background-image: var(--gradient-brand);
+  }
+
+  .text-gradient {
+    background-image: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Descenders (g, y, p) clip against a tight line-box once the background
+       is painted onto the glyphs, so give the text a little vertical room. */
+    padding-bottom: 0.08em;
+  }
+
+  /* 1px gradient hairline for card top-edges and the "most popular" pricing
+     card: the padding forms the border, the child repaints the middle. */
+  .border-gradient-brand {
+    background-image: var(--gradient-brand);
+    padding: 1px;
+  }
+}
+
+/* ─── AI answer caret ──────────────────────────────────────────────
+   Used by the AEO before/after panels so the mocked assistant answers
+   read as live output rather than flat screenshots. */
+@keyframes ai-caret {
+  0%, 45%   { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+.ai-caret {
+  display: inline-block;
+  width: 0.5ch;
+  animation: ai-caret 1.1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-caret {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Wrapped in @layer base so Tailwind text-* utilities (which live in the
+   utilities layer) can override the default heading colour. Without the layer,
+   this unlayered rule beats every `text-white` / `text-[...]` on a heading. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    color: var(--color-ink);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+}
