@@ -79,6 +79,10 @@ export default function ContactForm() {
       });
 
       setForm({ name: "", business: "", email: "", phone: "", trade: "", message: "" });
+
+      // GA4 conversion — only fires on a confirmed successful send.
+      window.gtag?.("event", "generate_lead", { form_name: "contact" });
+
       setSubmitted(true);
     } catch {
       setError(

@@ -77,6 +77,10 @@ export default function AuditForm() {
         website: "",
         competitor: "",
       });
+
+      // GA4 conversion — only fires on a confirmed successful send.
+      window.gtag?.("event", "generate_lead", { form_name: "audit" });
+
       setSubmitted(true);
     } catch {
       setError(
