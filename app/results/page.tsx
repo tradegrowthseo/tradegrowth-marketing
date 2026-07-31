@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -10,8 +11,35 @@ import CTABand from "@/components/ui/CTABand";
 export const metadata: Metadata = {
   title: "Results",
   description:
-    "A case study showing what the AI Trades Engine does for a working electrician: before, what we built, the result, and the client's own words.",
+    "EV Design ranks #1 on Google in Burnley and gets named by ChatGPT — plus a case study showing what the AI Trades Engine does for a working electrician.",
 };
+
+// EV Design — real, live search results. The screenshots in
+// public/images/case-studies are unedited captures; don't add figures here that
+// aren't visible in them.
+const evDesignShots = [
+  {
+    src: "/images/case-studies/ev-design-google-burnley.png",
+    width: 2320,
+    height: 1309,
+    caption: "#1 on Google — local Burnley search",
+    alt: "Google results for “ev design burnley”, with EV Design's website ranked first ahead of competing EV charging installers, and its Google Business Profile shown in the side panel.",
+  },
+  {
+    src: "/images/case-studies/ev-design-google-northwest.png",
+    width: 2521,
+    height: 1093,
+    caption: "Ranking across the North West",
+    alt: "Google results for “ev design north west”, where the AI Overview names EV Design as a specialist EV charging infrastructure provider and its website is the top organic result.",
+  },
+  {
+    src: "/images/case-studies/ev-design-chatgpt.png",
+    width: 2532,
+    height: 1464,
+    caption: "Recommended in ChatGPT",
+    alt: "A ChatGPT conversation answering “EV Design Burnley” by identifying EV Design as a Burnley, Lancashire electrical design consultancy for EV charging infrastructure, followed by its contact details.",
+  },
+];
 
 // ⚠️ PLACEHOLDER DATA — every figure on this page is invented for layout
 // purposes. Replace with the electrician's real signed-off numbers before
@@ -83,16 +111,82 @@ export default function ResultsPage() {
         sub="One electrician, six months, and the full picture: where they started, what we actually built, what changed, and what they said about it afterwards."
       />
 
+      {/* ─── EV DESIGN CASE STUDY (real) ──────────────────────────────── */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel>Case study</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-5 max-w-3xl">
+              EV Design — <span className="text-gradient">#1 on Google in Burnley</span> &amp;
+              recommended by AI
+            </h2>
+            <p className="text-[#565c6b] text-lg leading-relaxed mb-12 max-w-3xl">
+              EV Design is an electrical design consultancy in Burnley, Lancashire, specialising
+              in EV charging infrastructure. Search for them locally and their site comes back
+              first, ahead of national installers. Search wider and Google&apos;s AI Overview
+              names them as a North West specialist. Ask ChatGPT who they are and it answers with
+              the business, the location and the phone number. Same business, three different
+              places people now look — screenshots taken straight from live searches.
+            </p>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {evDesignShots.map((shot, i) => (
+              <FadeIn key={shot.src} delay={i * 0.08}>
+                <figure className="h-full flex flex-col bg-white border border-[#e6e8f2] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(23,26,38,0.06)]">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="w-full aspect-[16/10] object-cover object-top bg-[#0f1220]"
+                  />
+                  <figcaption className="flex-1 border-t border-[#e6e8f2] px-5 py-4 text-[#171a26] text-sm font-semibold">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* ─── EV Design testimonial ──────────────────────────────────
+              Client-approved wording. Do not paraphrase or trim it. */}
+          <FadeIn delay={0.15}>
+            <figure className="mt-10 rounded-2xl bg-gradient-brand-static p-8 md:p-10 text-white shadow-[0_16px_50px_rgba(61,76,245,0.28)]">
+              <svg
+                className="w-10 h-10 text-white/30 mb-6"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M9.5 4C6 4 3 7 3 10.5S6 17 9.5 17c.3 0 .6 0 .9-.1C9.6 18.7 8 20 6 20v2c4.4 0 8-3.6 8-8v-3.5C14 7 12.5 4 9.5 4z" />
+              </svg>
+              <blockquote className="text-xl md:text-2xl font-semibold leading-snug mb-6 max-w-3xl">
+                &ldquo;Since working with TradeGrowth Marketing, my business comes up first on
+                Google when people in Burnley search for what I do — and I&apos;m even showing up
+                in ChatGPT now. Brad clearly knows his stuff and actually delivers the results he
+                promises. Can&apos;t recommend him enough.&rdquo;
+              </blockquote>
+              <figcaption className="text-white/70 text-sm">
+                <span className="block font-semibold text-white">Jonathan</span>
+                EV Design · EV charging infrastructure &amp; site design · Burnley, Lancashire
+              </figcaption>
+            </figure>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ─── PLACEHOLDER WARNING ──────────────────────────────────────── */}
       <section className="bg-white pt-12">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <TodoNote label="To replace">
-              <strong>This entire case study is placeholder content.</strong> Every figure,
-              percentage and quote below is invented to show the layout. Before this page goes
-              live it needs the electrician&apos;s real signed-off numbers, their name and
-              business name, a photo, and the filmed testimonial in place of the video block at
-              the bottom.
+              <strong>The electrician case study below is placeholder content.</strong> Every
+              figure, percentage and quote from here down is invented to show the layout. Before
+              this page goes live it needs the electrician&apos;s real signed-off numbers, their
+              name and business name, a photo, and the filmed testimonial in place of the video
+              block at the bottom. (The EV Design section above is real.)
             </TodoNote>
           </FadeIn>
         </div>
