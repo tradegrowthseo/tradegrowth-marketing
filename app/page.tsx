@@ -7,7 +7,6 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import StatsRow from "@/components/ui/StatsRow";
 import PricingCard from "@/components/ui/PricingCard";
 import CTABand from "@/components/ui/CTABand";
-import TodoNote from "@/components/ui/TodoNote";
 import { services } from "@/lib/services";
 import { tiers, websiteProduct } from "@/lib/pricing";
 import { differentiators, agencyComparison } from "@/lib/differentiators";
@@ -380,36 +379,32 @@ export default function HomePage() {
             </h2>
           </FadeIn>
 
-          <FadeIn delay={0.05}>
-            <TodoNote label="To replace" className="mb-10 max-w-3xl">
-              Every figure and quote in this section is a placeholder. Swap in the electrician&apos;s
-              real signed-off numbers, name, photo and filmed testimonial before launch.
-            </TodoNote>
-          </FadeIn>
-
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-stretch">
             <FadeIn delay={0.1}>
               <div className="h-full rounded-2xl border border-[#e6e8f2] bg-[#f6f7fc] p-8 md:p-10">
                 <span className="inline-block bg-[#eef0ff] text-[#3d4cf5] text-xs font-semibold px-3 py-1 rounded-full mb-6">
-                  Case study · Electrician
+                  Case study · EV Design, Burnley
                 </span>
+                {/* Only what the live screenshots on /results actually show —
+                    no traffic, revenue or job-count figures. */}
                 <div className="grid sm:grid-cols-3 gap-6 mb-8">
                   {[
-                    { value: "0 → 1st", label: "Named first in AI answers" },
-                    { value: "+XX%", label: "More quoted jobs per month" },
-                    { value: "£XX,XXX", label: "Added revenue in 6 months" },
+                    { value: "#1", label: "On Google — local Burnley search" },
+                    { value: "Named", label: "In Google's AI Overview for the North West" },
+                    { value: "Recommended", label: "When you ask ChatGPT" },
                   ].map((s) => (
                     <div key={s.label}>
-                      <div className="text-3xl font-bold text-gradient mb-1">{s.value}</div>
+                      <div className="text-2xl font-bold text-gradient mb-1">{s.value}</div>
                       <div className="text-[#8a90a0] text-sm">{s.label}</div>
                     </div>
                   ))}
                 </div>
                 <p className="text-[#565c6b] leading-relaxed mb-6">
-                  Before we started, asking ChatGPT for an electrician in their town returned three
-                  competitors and no mention of them at all. Ten weeks later they were the first
-                  name in the answer — and the missed calls that used to go to voicemail were
-                  being answered, qualified and booked.
+                  EV Design designs EV charging infrastructure out of Burnley, Lancashire. Search
+                  for them locally and their site comes back first, ahead of national installers.
+                  Search wider and Google&apos;s AI Overview names them as a North West
+                  specialist. Ask ChatGPT who they are and it answers with the business, the
+                  location and the phone number.
                 </p>
                 <Link
                   href="/results"
@@ -424,20 +419,20 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn delay={0.18}>
+              {/* Client-approved wording. Do not paraphrase or trim it. */}
               <figure className="h-full flex flex-col justify-center rounded-2xl bg-gradient-brand-static p-8 md:p-10 text-white shadow-[0_16px_50px_rgba(61,76,245,0.28)]">
                 <svg className="w-10 h-10 text-white/30 mb-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M9.5 4C6 4 3 7 3 10.5S6 17 9.5 17c.3 0 .6 0 .9-.1C9.6 18.7 8 20 6 20v2c4.4 0 8-3.6 8-8v-3.5C14 7 12.5 4 9.5 4z" />
                 </svg>
-                <blockquote className="text-xl md:text-2xl font-semibold leading-snug mb-6">
-                  &ldquo;I didn&apos;t even know people were asking ChatGPT for an electrician.
-                  Now I&apos;m the one it tells them to call.&rdquo;
+                <blockquote className="text-lg md:text-xl font-semibold leading-snug mb-6">
+                  &ldquo;Since working with TradeGrowth Marketing, my business comes up first on
+                  Google when people in Burnley search for what I do — and I&apos;m even showing
+                  up in ChatGPT now. Brad clearly knows his stuff and actually delivers the
+                  results he promises. Can&apos;t recommend him enough.&rdquo;
                 </blockquote>
                 <figcaption className="text-white/70 text-sm">
-                  <span className="block font-semibold text-white">[Client name]</span>
-                  [Business name] · [Town]
-                  <span className="block mt-3 text-white/50 text-xs">
-                    Placeholder quote — to be replaced with the real signed-off testimonial.
-                  </span>
+                  <span className="block font-semibold text-white">Jonathan</span>
+                  EV Design · Burnley, Lancashire
                 </figcaption>
               </figure>
             </FadeIn>
