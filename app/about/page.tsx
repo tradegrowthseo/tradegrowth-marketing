@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Eye, Handshake, Target } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
@@ -55,45 +56,76 @@ export default function AboutPage() {
 
       {/* ─── THE STORY ────────────────────────────────────────────────── */}
       <section className="bg-white py-24">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-8">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>The story</SectionLabel>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-10">
               Why we started
             </h2>
-            <div className="space-y-5 text-[#565c6b] text-lg leading-relaxed">
-              <p>
-                Talk to enough trades and the same story comes back. They&apos;ve paid an agency
-                for a website. Maybe they&apos;ve paid for ads. The leads come in, a report
-                arrives at the end of the month with an encouraging number on it — and the diary
-                still isn&apos;t full.
-              </p>
-              <p>
-                The reason is almost never the marketing. It&apos;s that a lead lands at 4pm on a
-                Tuesday while you&apos;re in a loft, goes to voicemail, and by the time you call
-                back at seven the customer has booked someone who picked up. Or the quote goes
-                out and nobody ever chases it, so a job you were 80% likely to win quietly
-                evaporates.
-              </p>
-              <p>
-                No agency was being paid to fix that half of the problem. They were being paid
-                for leads, so they optimised for leads — and the hardest, most valuable part of
-                the process was left entirely to the person who was already doing a full day on
-                the tools.
-              </p>
-              <p>
-                Then the second thing happened. Homeowners started asking ChatGPT and Google&apos;s
-                AI Overviews who to hire, and getting back three names instead of ten links. An
-                entire channel opened up that almost no trades business in the UK is set up for,
-                while the agencies serving them are still selling page-one rankings.
-              </p>
-              <p className="text-[#171a26] font-semibold">
-                So we built the thing that handles both: get named by the AI, then actually
-                answer the phone and chase the quote. That&apos;s the AI Trades Engine, and
-                it&apos;s the whole business.
-              </p>
-            </div>
           </FadeIn>
+
+          <div className="grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-14 items-start">
+            {/* Pre-cropped 640x800 webp (27 KB). next.config sets
+                images.unoptimized for the static export, so nothing resizes
+                this at build time — the file has to arrive web-ready. 640x800
+                is 2x the display box. The full-res master lives outside
+                public/ at design-assets/brad-redfern.png so it doesn't deploy;
+                regenerate from it if the framing ever changes. */}
+            <FadeIn delay={0.08}>
+              <figure className="w-[280px] sm:w-[320px] mx-auto lg:mx-0">
+                <Image
+                  src="/images/brad-redfern.webp"
+                  alt="Brad Redfern, founder of TradeGrowth Marketing"
+                  width={640}
+                  height={800}
+                  sizes="(min-width: 640px) 320px, 280px"
+                  className="w-full aspect-[4/5] object-cover object-center rounded-2xl border border-[#e6e8f2] shadow-[0_16px_50px_rgba(23,26,38,0.14)]"
+                />
+                <figcaption className="mt-5 text-center lg:text-left">
+                  <span className="block text-[#171a26] font-bold">Brad Redfern</span>
+                  <span className="block text-[#8a90a0] text-sm">
+                    Founder, TradeGrowth Marketing
+                  </span>
+                </figcaption>
+              </figure>
+            </FadeIn>
+
+            <FadeIn delay={0.14} direction="left">
+              <div className="space-y-5 text-[#565c6b] text-lg leading-relaxed">
+                <p>
+                  Talk to enough trades and the same story comes back. They&apos;ve paid an
+                  agency for a website. Maybe they&apos;ve paid for ads. The leads come in, a
+                  report arrives at the end of the month with an encouraging number on it — and
+                  the diary still isn&apos;t full.
+                </p>
+                <p>
+                  The reason is almost never the marketing. It&apos;s that a lead lands at 4pm on
+                  a Tuesday while you&apos;re in a loft, goes to voicemail, and by the time you
+                  call back at seven the customer has booked someone who picked up. Or the quote
+                  goes out and nobody ever chases it, so a job you were 80% likely to win quietly
+                  evaporates.
+                </p>
+                <p>
+                  No agency was being paid to fix that half of the problem. They were being paid
+                  for leads, so they optimised for leads — and the hardest, most valuable part of
+                  the process was left entirely to the person who was already doing a full day on
+                  the tools.
+                </p>
+                <p>
+                  Then the second thing happened. Homeowners started asking ChatGPT and
+                  Google&apos;s AI Overviews who to hire, and getting back three names instead of
+                  ten links. An entire channel opened up that almost no trades business in the UK
+                  is set up for, while the agencies serving them are still selling page-one
+                  rankings.
+                </p>
+                <p className="text-[#171a26] font-semibold">
+                  So we built the thing that handles both: get named by the AI, then actually
+                  answer the phone and chase the quote. That&apos;s the AI Trades Engine, and
+                  it&apos;s the whole business.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
