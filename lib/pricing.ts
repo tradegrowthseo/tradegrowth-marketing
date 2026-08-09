@@ -43,7 +43,7 @@ export const tiers: Tier[] = [
     monthly: "£200",
     setup: "£150 setup",
     minimum: "3 month minimum",
-    best: "Trades who need to be findable — on Google and in AI answers",
+    best: "Trades and local service businesses who need to be findable — on Google and in AI answers",
     features: [
       "Google Business Profile management",
       "AEO foundations active",
@@ -63,7 +63,7 @@ export const tiers: Tier[] = [
     monthly: "£400",
     setup: "£300 setup",
     minimum: "3 month minimum",
-    best: "Trades who want a steady, predictable flow of quoted work",
+    best: "Trades and service businesses who want a steady, predictable flow of quoted work",
     includesBelow: "Everything in Basic, plus:",
     featured: true,
     features: [
@@ -84,7 +84,7 @@ export const tiers: Tier[] = [
     monthly: "£500",
     setup: "£500 setup",
     minimum: "6 month minimum",
-    best: "Established trades ready to stop answering the phone themselves",
+    best: "Established trades and service businesses ready to stop answering the phone themselves",
     includesBelow: "Everything in Standard, plus:",
     features: [
       "AI voice agent — answers within 3 rings, 24/7",
