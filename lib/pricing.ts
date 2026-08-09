@@ -1,9 +1,9 @@
 // Pricing is published in full and in public — it's a deliberate
 // differentiator, so nothing here is hidden behind a "request a quote".
 //
-// Structure: everyone buys The Website once (£1,500 one-off), then chooses one
-// of three monthly packages that sit on top of it. Each package includes
-// everything in the tier below it.
+// Structure: everyone buys The Website once (one-off, from £500 — the final
+// figure depends on the build), then chooses one of three monthly packages that
+// sit on top of it. Each package includes everything in the tier below it.
 
 export interface Tier {
   id: "basic" | "standard" | "premium";
@@ -21,12 +21,12 @@ export interface Tier {
 /** The one-off website build. Sold separately from the monthly packages. */
 export const websiteProduct = {
   name: "The Website",
-  price: "£1,500",
-  terms: "one-off · 50% deposit, 50% on launch",
+  price: "From £500",
+  terms: "Starting price — final cost depends on the build · one-off · 50% deposit, 50% on launch",
   tagline: "The foundation everything else sits on",
   commitment: "No monthly commitment",
   features: [
-    "10-page, mobile-first website",
+    "Mobile-first website",
     "AEO-ready from day one — schema, FAQ structure, llms.txt",
     "Domain registered in your name",
     "Hosting and SSL included for the first year",
@@ -40,7 +40,7 @@ export const tiers: Tier[] = [
     id: "basic",
     name: "Basic",
     tagline: "Get found",
-    monthly: "£300",
+    monthly: "£200",
     setup: "£150 setup",
     minimum: "3 month minimum",
     best: "Trades who need to be findable — on Google and in AI answers",
@@ -60,7 +60,7 @@ export const tiers: Tier[] = [
     id: "standard",
     name: "Standard",
     tagline: "Get booked",
-    monthly: "£600",
+    monthly: "£400",
     setup: "£300 setup",
     minimum: "3 month minimum",
     best: "Trades who want a steady, predictable flow of quoted work",
@@ -81,7 +81,7 @@ export const tiers: Tier[] = [
     id: "premium",
     name: "Premium",
     tagline: "Win the jobs",
-    monthly: "£1,200",
+    monthly: "£500",
     setup: "£500 setup",
     minimum: "6 month minimum",
     best: "Established trades ready to stop answering the phone themselves",
@@ -180,7 +180,7 @@ export const comparison: ComparisonGroup[] = [
   {
     group: "The commercials",
     rows: [
-      { label: "Price", website: "£1,500 one-off", basic: "£300 / mo", standard: "£600 / mo", premium: "£1,200 / mo" },
+      { label: "Price", website: "From £500 one-off", basic: "£200 / mo", standard: "£400 / mo", premium: "£500 / mo" },
       { label: "Setup fee", website: "50% deposit", basic: "£150", standard: "£300", premium: "£500" },
       { label: "Minimum term", website: "None", basic: "3 months", standard: "3 months", premium: "6 months" },
     ],

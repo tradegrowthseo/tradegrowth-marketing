@@ -338,9 +338,9 @@ export default function HomePage() {
                 No &ldquo;book a call for a quote&rdquo;
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                A {websiteProduct.price} website you own outright, then one monthly package on
-                top. Every price we charge is published — because you&apos;d be suspicious of a
-                customer who wouldn&apos;t tell you their budget too.
+                A website {websiteProduct.price.toLowerCase()} that you own outright, then one
+                monthly package on top. Every price we charge is published — because you&apos;d be
+                suspicious of a customer who wouldn&apos;t tell you their budget too.
               </p>
             </div>
           </FadeIn>

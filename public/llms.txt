@@ -16,7 +16,7 @@ Availability: One client per trade or service, per area
 ## What we do
 
 - **Website design** — 10-page, mobile-first websites built AEO-ready from day
-  one. £1,500 one-off. Domain registered in the client's name; hosting and SSL
+  one. From £500 one-off. Domain registered in the client's name; hosting and SSL
   included for the first year.
 - **SEO + AEO** (headline service) — local SEO and Google Business Profile
   management, plus Answer Engine Optimisation to get clients cited and
@@ -37,10 +37,11 @@ Availability: One client per trade or service, per area
 
 ## Pricing (published in full)
 
-- The Website: £1,500 one-off (50% deposit, 50% on launch). No monthly commitment.
-- Basic: £300/month + £150 setup. 3 month minimum.
-- Standard: £600/month + £300 setup. 3 month minimum. Most popular.
-- Premium: £1,200/month + £500 setup. 6 month minimum.
+- The Website: from £500 one-off (50% deposit, 50% on launch). Starting price — the
+  final figure depends on the build. No monthly commitment.
+- Basic: £200/month + £150 setup. 3 month minimum.
+- Standard: £400/month + £300 setup. 3 month minimum. Most popular.
+- Premium: £500/month + £500 setup. 6 month minimum.
 
 Each monthly package includes everything in the tier below it. Full comparison:
 https://tradegrowthseo.com/pricing/

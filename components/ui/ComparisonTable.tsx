@@ -8,10 +8,10 @@ const columns: {
   price: string;
   featured?: boolean;
 }[] = [
-  { key: "website", label: "The Website", price: "£1,500 one-off" },
-  { key: "basic", label: "Basic", price: "£300 / mo" },
-  { key: "standard", label: "Standard", price: "£600 / mo", featured: true },
-  { key: "premium", label: "Premium", price: "£1,200 / mo" },
+  { key: "website", label: "The Website", price: "From £500 one-off" },
+  { key: "basic", label: "Basic", price: "£200 / mo" },
+  { key: "standard", label: "Standard", price: "£400 / mo", featured: true },
+  { key: "premium", label: "Premium", price: "£500 / mo" },
 ];
 
 function CellValue({ value }: { value: Cell }) {
