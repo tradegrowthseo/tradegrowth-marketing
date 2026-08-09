@@ -31,6 +31,13 @@ const evDesignShots = [
     alt: "Google results for “ev design north west”, where the AI Overview names EV Design as a specialist EV charging infrastructure provider and its website is the top organic result.",
   },
   {
+    src: "/images/case-studies/ev-design-google-search-top.png",
+    width: 2211,
+    height: 540,
+    caption: "Top of Google search results",
+    alt: "Google results for “ev design”, with EV Design's website ev-design.co.uk as the top organic result, titled “EV Design | EV Charging Infrastructure & Site Design”.",
+  },
+  {
     src: "/images/case-studies/ev-design-chatgpt.png",
     width: 2532,
     height: 1464,
