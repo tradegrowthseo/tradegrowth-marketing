@@ -1,0 +1,16 @@
+# Cloudflare Pages redirects. Copied verbatim from public/ into the exported
+# out/ folder at build time, the same way public/_headers is.
+#
+# Format: <source> <destination> <status>, one rule per line.
+#
+# These only take effect on Cloudflare Pages — `next dev` and `next start`
+# ignore this file, so a redirect can only be verified against the deployed
+# site, not locally.
+
+# Legacy WordPress homepage. The old site served the homepage at /home/ as
+# well as /, so inbound links and any remaining search results still point
+# there. Both spellings are listed because next.config.ts sets
+# trailingSlash: true, making /home/ the canonical shape, while older links
+# and hand-typed URLs may omit it.
+/home/    /    301
+/home     /    301
