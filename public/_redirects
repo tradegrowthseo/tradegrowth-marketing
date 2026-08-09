@@ -14,3 +14,11 @@
 # and hand-typed URLs may omit it.
 /home/    /    301
 /home     /    301
+
+# Legacy WordPress page for a sector we no longer list separately. Points at
+# the services index rather than a like-for-like page, because there isn't one.
+#
+# Deliberately a single exact-match rule. No splat or wildcard here: other
+# WordPress leftovers (/feed/, /wp-*) are meant to 404 rather than be funnelled
+# somewhere generic.
+/services/restaurants-takeaways.html    /services/    301
