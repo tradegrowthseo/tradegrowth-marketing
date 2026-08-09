@@ -7,7 +7,7 @@ import AuditForm from "@/components/AuditForm";
 export const metadata: Metadata = {
   title: "Free AEO Audit",
   description:
-    "A free scan of how visible your trade business is inside ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",
+    "A free scan of how visible your trade or local service business is inside ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",
 };
 
 const whatYouGet = [
@@ -29,7 +29,7 @@ const whatYouGet = [
 ];
 
 const reportContents = [
-  "Screenshots of the actual AI answers for your trade and area",
+  "Screenshots of the actual AI answers for your service and area",
   "Which of the five answer engines name you, and which don't",
   "Your schema / JSON-LD coverage and what's missing",
   "Whether your site has an llms.txt file (almost certainly not)",
@@ -127,9 +127,9 @@ export default function AuditPage() {
                     Why we give this away
                   </h3>
                   <p className="text-[#565c6b] text-sm leading-relaxed">
-                    Because most trades have genuinely never seen what an AI assistant says about
-                    their business, and it&apos;s usually the moment the penny drops. We&apos;d
-                    rather show you than talk at you.
+                    Because most local business owners have genuinely never seen what an AI
+                    assistant says about their business, and it&apos;s usually the moment the
+                    penny drops. We&apos;d rather show you than talk at you.
                   </p>
                 </div>
               </FadeIn>

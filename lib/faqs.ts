@@ -1,6 +1,6 @@
 // FAQ content, grouped by the page that renders it. These are written
 // question-led and answer-first on purpose: the same structure that makes them
-// useful to a homeowner is what makes them quotable by an answer engine.
+// useful to a customer is what makes them quotable by an answer engine.
 
 export interface Faq {
   q: string;
@@ -17,8 +17,8 @@ export const aeoFaqs: Faq[] = [
     a: "SEO earns you a ranking; AEO earns you a mention. They share foundations — a fast, well-structured site and a strong local presence help both — but AEO adds machine-readable schema, question-led content written the way people actually ask, citations on sources the models trust, and an llms.txt file that tells AI crawlers what your business does. We do both together, because doing one without the other leaves half the searches on the table.",
   },
   {
-    q: "Do homeowners really use AI to find tradespeople?",
-    a: "Increasingly, yes — and the behaviour skews towards bigger jobs. Someone with a dripping tap searches Google. Someone planning a full rewire, a new boiler or an extension asks an assistant to compare their options and explain the trade-offs. Those are exactly the jobs worth winning, and the homeowner never sees a page of blue links.",
+    q: "Do people really use AI to find trades and local services?",
+    a: "Increasingly, yes — and the behaviour skews towards the bigger, more considered jobs. Someone with a dripping tap searches Google. Someone planning a full rewire, a new boiler, an extension, a regular office cleaning contract or a year of personal training asks an assistant to compare their options and explain the trade-offs. Those are exactly the jobs worth winning, and the customer never sees a page of blue links.",
   },
   {
     q: "How do you get my business mentioned by ChatGPT?",
@@ -34,7 +34,7 @@ export const aeoFaqs: Faq[] = [
   },
   {
     q: "What is llms.txt?",
-    a: "It's a plain-text file in the root of your website — the AI-era equivalent of robots.txt — that gives large language models a clear, structured summary of who you are, what you do and where you work. It costs nothing to add and almost no trades website in the UK has one yet. Every site we build ships with it.",
+    a: "It's a plain-text file in the root of your website — the AI-era equivalent of robots.txt — that gives large language models a clear, structured summary of who you are, what you do and where you work. It costs nothing to add and almost no trade or local service website in the UK has one yet. Every site we build ships with it.",
   },
 ];
 
@@ -57,7 +57,7 @@ export const pricingFaqs: Faq[] = [
   },
   {
     q: "What's the double-your-money guarantee?",
-    a: "If the work we do doesn't return at least double what you've paid us, we keep working for free until it does. We can offer that because we only take one client per trade, per area — we don't need to sign everyone.",
+    a: "If the work we do doesn't return at least double what you've paid us, we keep working for free until it does. We can offer that because we only take one client per trade or service, per area — we don't need to sign everyone.",
   },
   {
     q: "What if I want to leave?",
@@ -68,11 +68,11 @@ export const pricingFaqs: Faq[] = [
 export const generalFaqs: Faq[] = [
   {
     q: "Do you only work with trades?",
-    a: "Yes. Electricians, plumbers, gas engineers, roofers, builders, joiners, plasterers, landscapers, fitters and decorators. Specialising is the only way we can build things like trade-specific compliance records and a referral network that actually makes sense.",
+    a: "Trades are where we started and they're still the majority of our clients — electricians, plumbers, gas engineers, roofers, builders, joiners, plasterers, fitters and decorators. We now work with local service businesses on the same model too: cleaning companies, landscapers, mobile mechanics, salons, personal trainers and similar. What we don't do is national brands or businesses with no local service area — the whole system is built around being the name that comes back when someone nearby asks who to hire.",
   },
   {
-    q: "What does one client per trade, per area mean?",
-    a: "If we work with an electrician in your town, we won't take on another one. It keeps our incentives honest, it makes the referral network possible, and it means the work we do for you isn't being done for the business quoting against you.",
+    q: "What does one client per trade or service, per area mean?",
+    a: "If we work with an electrician in your town, we won't take on another one — and the same goes for a cleaning company or a mobile mechanic. It keeps our incentives honest, it makes the referral network possible, and it means the work we do for you isn't being done for the business quoting against you.",
   },
   {
     q: "How quickly can we start?",
@@ -80,6 +80,6 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "Where are you based?",
-    a: "We work with trades across the UK. Everything runs remotely — calls, dashboards and reporting — so where you are makes no difference to how well we can do the work.",
+    a: "We work with trades and local service businesses across the UK. Everything runs remotely — calls, dashboards and reporting — so where you are makes no difference to how well we can do the work.",
   },
 ];

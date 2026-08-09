@@ -10,7 +10,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "The six services behind the AI Trades Engine: website design, SEO + AEO, Google & Meta ads, a trade-specific CRM, done-for-you sales and The Trades Network.",
+    "The six services behind the AI Trades Engine, for UK trades and local service businesses: website design, SEO + AEO, Google & Meta ads, an industry-specific CRM, done-for-you sales and The Trades Network.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {

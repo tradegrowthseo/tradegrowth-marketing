@@ -67,7 +67,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-5">
-              The AI-powered growth engine built for UK trades — get found, get booked, and get
+              The AI-powered growth engine for UK trades and local service businesses — get
+              found, get booked, and get
               recommended by AI.
             </p>
             <div className="flex items-center gap-2.5">
@@ -162,7 +163,7 @@ export default function Footer() {
                 <span className="block text-white/40 text-xs uppercase tracking-wide mb-1">
                   Availability
                 </span>
-                One client per trade, per area
+                One client per trade or service, per area
               </li>
             </ul>
 
@@ -186,7 +187,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} TradeGrowth Marketing. All rights reserved.
           </p>
           <p className="text-white/30 text-xs">
-            tradegrowthseo.com · Marketing built exclusively for UK trades
+            tradegrowthseo.com · Marketing for UK trades &amp; local service businesses
           </p>
         </div>
       </div>

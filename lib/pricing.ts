@@ -70,7 +70,7 @@ export const tiers: Tier[] = [
       "Google & Meta ads management",
       "Ad creative refresh",
       "1 AEO page + 1 SEO post every month",
-      "Trade-specific CRM templates",
+      "Industry-specific CRM templates",
       "Lead nurture + quote follow-up",
       "Monthly strategy call",
       "15+ directory citations",
@@ -145,7 +145,7 @@ export const comparison: ComparisonGroup[] = [
     rows: [
       { label: "Speed-to-lead + missed-call text-back", website: false, basic: true, standard: true, premium: true },
       { label: "Review automation", website: false, basic: true, standard: true, premium: true },
-      { label: "CRM", website: false, basic: "Basic", standard: "Trade-specific", premium: "Trade-specific" },
+      { label: "CRM", website: false, basic: "Basic", standard: "Industry-specific", premium: "Industry-specific" },
       { label: "Lead nurture + quote follow-up", website: false, basic: false, standard: true, premium: true },
       { label: "AI voice agent — answers within 3 rings", website: false, basic: false, standard: false, premium: true },
       { label: "Human appointment setting", website: false, basic: false, standard: false, premium: true },

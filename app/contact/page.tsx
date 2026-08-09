@@ -4,12 +4,12 @@ import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PageHero from "@/components/ui/PageHero";
 import ContactForm from "@/components/ContactForm";
-import { trades } from "@/lib/differentiators";
+import { sectors } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Talk to TradeGrowth Marketing. Email contact@tradegrowthseo.com, book a discovery call, or send us a message — and find out whether your trade and area are still available.",
+    "Talk to TradeGrowth Marketing. Email contact@tradegrowthseo.com, book a discovery call, or send us a message — and find out whether your trade or service and your area are still available.",
 };
 
 const contactDetails: {
@@ -43,7 +43,7 @@ const contactDetails: {
   },
   {
     label: "Availability",
-    value: "One client per trade, per area",
+    value: "One client per trade or service, per area",
     href: null,
     note: "Ask us whether your postcode is still open",
     icon: (
@@ -119,7 +119,7 @@ export default function ContactPage() {
                     Book a discovery call
                   </h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-5">
-                    Twenty minutes on the phone. We&apos;ll look at your trade, your area and
+                    Twenty minutes on the phone. We&apos;ll look at what you do, your area and
                     what the AI currently says about you, then tell you honestly whether
                     there&apos;s a result in it. No slides.
                   </p>
@@ -171,26 +171,26 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ─── TRADES WE SERVE ──────────────────────────────────────────── */}
+      {/* ─── WHO WE SERVE ─────────────────────────────────────────────── */}
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>Who we work with</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
-              Trades we serve
+              Trades and local service businesses
             </h2>
             <p className="text-[#565c6b] text-lg mb-10 max-w-2xl leading-relaxed">
-              We work with UK trades only — and one business per trade, per area. If the trade
-              you&apos;re in isn&apos;t listed, ask anyway.
+              UK trades and local service businesses — one client per trade or service, per area.
+              If what you do isn&apos;t listed, ask anyway.
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {trades.map((trade, i) => (
-              <FadeIn key={trade} delay={i * 0.03}>
+            {sectors.map((sector, i) => (
+              <FadeIn key={sector} delay={i * 0.03}>
                 <div className="flex items-center gap-3 bg-[#f6f7fc] border border-[#e6e8f2] rounded-lg px-4 py-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0" />
-                  <span className="text-[#565c6b] text-sm font-medium">{trade}</span>
+                  <span className="text-[#565c6b] text-sm font-medium">{sector}</span>
                 </div>
               </FadeIn>
             ))}

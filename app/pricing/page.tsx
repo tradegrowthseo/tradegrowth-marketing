@@ -107,7 +107,7 @@ export default function PricingPage() {
                 Then pick one package on top
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                Each tier includes everything in the one below it. Most trades start on Standard
+                Each tier includes everything in the one below it. Most clients start on Standard
                 and move up once the diary is consistently full.
               </p>
             </div>
@@ -134,7 +134,7 @@ export default function PricingPage() {
                 },
                 {
                   title: "Exclusivity",
-                  body: "One client per trade, per area. If we work with you, we turn down your competitors.",
+                  body: "One client per trade or service, per area. If we work with you, we turn down your competitors.",
                 },
               ].map((note) => (
                 <div key={note.title} className="bg-white border border-[#e6e8f2] rounded-xl p-5">
@@ -184,8 +184,8 @@ export default function PricingPage() {
             <p className="text-white/65 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
               If the work we do doesn&apos;t return at least double what you&apos;ve paid us, we
               keep going at no charge until it does. We can offer that because we only take one
-              client per trade, per area — we don&apos;t need to sign everybody, so we can afford
-              to be picky about who we say yes to.
+              client per trade or service, per area — we don&apos;t need to sign everybody, so we
+              can afford to be picky about who we say yes to.
             </p>
             <Link
               href="/contact"

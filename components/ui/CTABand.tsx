@@ -12,7 +12,7 @@ interface CTABandProps {
 
 export default function CTABand({
   heading = "Find out if the AI is recommending you",
-  sub = "Get a free AEO audit: we'll scan how ChatGPT, Perplexity, Gemini and Google AI Overviews answer when someone asks for your trade in your area — and send you the report.",
+  sub = "Get a free AEO audit: we'll scan how ChatGPT, Perplexity, Gemini and Google AI Overviews answer when someone asks for what you do in your area — and send you the report.",
   primaryLabel = "Get my free AEO audit",
   primaryHref = "/audit",
   secondaryLabel = "See pricing",

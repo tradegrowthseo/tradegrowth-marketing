@@ -8,12 +8,12 @@ import PageHero from "@/components/ui/PageHero";
 import CTABand from "@/components/ui/CTABand";
 import FAQ from "@/components/ui/FAQ";
 import { generalFaqs } from "@/lib/faqs";
-import { trades } from "@/lib/differentiators";
+import { sectors } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why TradeGrowth Marketing exists, what we believe, and the two rules we run on: one client per trade per area, and a double-your-money guarantee.",
+    "Why TradeGrowth Marketing exists, what we believe, and the two rules we run on: one client per trade or service per area, and a double-your-money guarantee. For UK trades and local service businesses.",
 };
 
 const values = [
@@ -29,8 +29,8 @@ const values = [
   },
   {
     icon: <Handshake className="w-6 h-6" strokeWidth={1.8} />,
-    title: "Built for trades only",
-    body: "We don't also do dentists, gyms and estate agents. Specialising is the only reason we can build things like EICR generation and a referral network that actually works.",
+    title: "Local service businesses only",
+    body: "Trades first, and local service businesses built the same way — cleaners, landscapers, mobile mechanics, salons, trainers. We don't do national brands or ecommerce. Staying narrow is the only reason we can build things like EICR generation and a referral network that actually works.",
   },
   {
     icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.8} />,
@@ -51,7 +51,7 @@ export default function AboutPage() {
             <span className="text-gradient">We help you win the jobs.</span>
           </>
         }
-        sub="TradeGrowth Marketing exists because the gap between a lead and a booked job is where most trade businesses quietly lose money — and almost nobody in this industry is being paid to close it."
+        sub="TradeGrowth Marketing exists because the gap between a lead and a booked job is where most trades and local service businesses quietly lose money — and almost nobody in this industry is being paid to close it."
       />
 
       {/* ─── THE STORY ────────────────────────────────────────────────── */}
@@ -93,17 +93,17 @@ export default function AboutPage() {
             <FadeIn delay={0.14} direction="left">
               <div className="space-y-5 text-[#565c6b] text-lg leading-relaxed">
                 <p>
-                  Talk to enough trades and the same story comes back. They&apos;ve paid an
-                  agency for a website. Maybe they&apos;ve paid for ads. The leads come in, a
-                  report arrives at the end of the month with an encouraging number on it — and
-                  the diary still isn&apos;t full.
+                  Talk to enough trades and local service businesses and the same story comes
+                  back. They&apos;ve paid an agency for a website. Maybe they&apos;ve paid for
+                  ads. The leads come in, a report arrives at the end of the month with an
+                  encouraging number on it — and the diary still isn&apos;t full.
                 </p>
                 <p>
                   The reason is almost never the marketing. It&apos;s that a lead lands at 4pm on
-                  a Tuesday while you&apos;re in a loft, goes to voicemail, and by the time you
-                  call back at seven the customer has booked someone who picked up. Or the quote
-                  goes out and nobody ever chases it, so a job you were 80% likely to win quietly
-                  evaporates.
+                  a Tuesday while you&apos;re in a loft, under a car or with a client, goes to
+                  voicemail, and by the time you call back at seven the customer has booked
+                  someone who picked up. Or the quote goes out and nobody ever chases it, so a job
+                  you were 80% likely to win quietly evaporates.
                 </p>
                 <p>
                   No agency was being paid to fix that half of the problem. They were being paid
@@ -112,9 +112,9 @@ export default function AboutPage() {
                   the tools.
                 </p>
                 <p>
-                  Then the second thing happened. Homeowners started asking ChatGPT and
+                  Then the second thing happened. Customers started asking ChatGPT and
                   Google&apos;s AI Overviews who to hire, and getting back three names instead of
-                  ten links. An entire channel opened up that almost no trades business in the UK
+                  ten links. An entire channel opened up that almost no local business in the UK
                   is set up for, while the agencies serving them are still selling page-one
                   rankings.
                 </p>
@@ -138,7 +138,7 @@ export default function AboutPage() {
               Our mission
             </SectionLabel>
             <p className="text-2xl md:text-4xl font-bold text-white leading-snug tracking-tight">
-              To make good UK trade businesses the ones{" "}
+              To make good UK trades and local service businesses the ones{" "}
               <span className="text-gradient">both Google and the AI recommend</span> — and then
               to make sure the work actually gets booked.
             </p>
@@ -182,12 +182,13 @@ export default function AboutPage() {
                   Exclusivity
                 </span>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#171a26] mb-5">
-                  One client per trade, per area
+                  One client per trade or service, per area
                 </h3>
                 <div className="space-y-4 text-[#565c6b] leading-relaxed">
                   <p>
                     If we work with an electrician in your town, we will not take on another one.
-                    Not for more money, not for a bigger budget, not next quarter.
+                    The same goes for a cleaning company, a mobile mechanic or a salon. Not for
+                    more money, not for a bigger budget, not next quarter.
                   </p>
                   <p>
                     It costs us revenue and it&apos;s the single best decision we&apos;ve made.
@@ -250,29 +251,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── TRADES WE SERVE ──────────────────────────────────────────── */}
+      {/* ─── WHO WE SERVE ─────────────────────────────────────────────── */}
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>Who we work with</SectionLabel>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-10 max-w-2xl">
-              Trades we serve
+            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
+              Trades and local service businesses
             </h2>
+            <p className="text-[#565c6b] text-lg mb-10 max-w-2xl leading-relaxed">
+              Trades are where we started and they&apos;re still most of what we do. The same
+              engine works for any local business that sells a service to people nearby.
+            </p>
           </FadeIn>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {trades.map((trade, i) => (
-              <FadeIn key={trade} delay={i * 0.03}>
+            {sectors.map((sector, i) => (
+              <FadeIn key={sector} delay={i * 0.03}>
                 <div className="flex items-center gap-3 bg-[#f6f7fc] border border-[#e6e8f2] rounded-lg px-4 py-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0" />
-                  <span className="text-[#565c6b] text-sm font-medium">{trade}</span>
+                  <span className="text-[#565c6b] text-sm font-medium">{sector}</span>
                 </div>
               </FadeIn>
             ))}
           </div>
           <FadeIn delay={0.2}>
             <p className="text-[#8a90a0] text-sm mt-6">
-              Trade not on the list? Ask anyway — if we can get a result for you we&apos;ll say
-              so, and if we can&apos;t we&apos;ll say that instead.
+              Not on the list? Ask anyway — if we can get a result for you we&apos;ll say so, and
+              if we can&apos;t we&apos;ll say that instead.
             </p>
           </FadeIn>
         </div>

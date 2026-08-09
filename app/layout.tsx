@@ -26,14 +26,17 @@ export const metadata: Metadata = {
     template: "%s | TradeGrowth Marketing",
   },
   description:
-    "The AI-powered growth engine built for UK trades. AEO to get you recommended by ChatGPT and Google AI Overviews, a trade-specific CRM, done-for-you sales and a closed referral network.",
+    "The AI-powered growth engine for UK trades and local service businesses. AEO to get you recommended by ChatGPT and Google AI Overviews, an industry-specific CRM, done-for-you sales and a closed referral network.",
   keywords: [
     "AEO for trades",
+    "AEO for local service businesses",
     "answer engine optimisation UK",
     "get recommended by ChatGPT",
     "marketing for tradesmen",
     "trades marketing agency",
+    "marketing for service businesses",
     "SEO for electricians",
+    "SEO for cleaning companies",
     "CRM for trades",
     "AI voice agent for trades",
     "local SEO UK",

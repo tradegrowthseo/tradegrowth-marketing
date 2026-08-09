@@ -12,7 +12,10 @@ interface FormState {
   message: string;
 }
 
-const tradeOptions = [
+// Trades first — still the primary audience — then local service businesses.
+// The submitted field is named `trade` for continuity with existing enquiry
+// emails; the visible label reads "trade or service".
+const sectorOptions = [
   "Electrician",
   "Plumber / heating engineer",
   "Gas engineer",
@@ -20,11 +23,17 @@ const tradeOptions = [
   "Builder",
   "Joiner / carpenter",
   "Plasterer",
-  "Landscaper",
   "Kitchen / bathroom fitter",
   "Painter & decorator",
   "EV charger installer",
-  "Other trade",
+  "Landscaper / garden care",
+  "Cleaning company",
+  "Mobile mechanic",
+  "Salon / barber",
+  "Personal trainer / gym",
+  "Pest control / property care",
+  "Removals / man with a van",
+  "Other trade or service",
 ];
 
 // Delivery goes through Web3Forms — endpoint, access key and the POST itself
@@ -189,7 +198,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            placeholder="you@yourtrade.co.uk"
+            placeholder="you@yourbusiness.co.uk"
             className={field}
           />
         </div>
@@ -211,7 +220,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="trade" className={labelClass}>
-          Your trade
+          Your trade or service
         </label>
         <select
           id="trade"
@@ -220,8 +229,8 @@ export default function ContactForm() {
           onChange={handleChange}
           className={`${field} text-[#171a26]`}
         >
-          <option value="">Select your trade…</option>
-          {tradeOptions.map((t) => (
+          <option value="">Select your trade or service…</option>
+          {sectorOptions.map((t) => (
             <option key={t} value={t}>
               {t}
             </option>

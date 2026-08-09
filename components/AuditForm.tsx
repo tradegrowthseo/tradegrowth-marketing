@@ -14,7 +14,10 @@ interface FormState {
   competitor: string;
 }
 
-const tradeOptions = [
+// Trades first — still the primary audience — then local service businesses.
+// The submitted field is named `trade` for continuity with existing enquiry
+// emails; the visible label reads "trade or service".
+const sectorOptions = [
   "Electrician",
   "Plumber / heating engineer",
   "Gas engineer",
@@ -22,11 +25,17 @@ const tradeOptions = [
   "Builder",
   "Joiner / carpenter",
   "Plasterer",
-  "Landscaper",
   "Kitchen / bathroom fitter",
   "Painter & decorator",
   "EV charger installer",
-  "Other trade",
+  "Landscaper / garden care",
+  "Cleaning company",
+  "Mobile mechanic",
+  "Salon / barber",
+  "Personal trainer / gym",
+  "Pest control / property care",
+  "Removals / man with a van",
+  "Other trade or service",
 ];
 
 // Delivery goes through Web3Forms — see lib/forms.ts, shared with ContactForm.
@@ -175,7 +184,7 @@ export default function AuditForm() {
             required
             value={form.email}
             onChange={handleChange}
-            placeholder="you@yourtrade.co.uk"
+            placeholder="you@yourbusiness.co.uk"
             className={field}
           />
         </div>
@@ -198,7 +207,7 @@ export default function AuditForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="audit-trade" className={labelClass}>
-            Your trade <span className="text-[#3d4cf5]">*</span>
+            Your trade or service <span className="text-[#3d4cf5]">*</span>
           </label>
           <select
             id="audit-trade"
@@ -208,8 +217,8 @@ export default function AuditForm() {
             onChange={handleChange}
             className={`${field} text-[#171a26]`}
           >
-            <option value="">Select your trade…</option>
-            {tradeOptions.map((t) => (
+            <option value="">Select your trade or service…</option>
+            {sectorOptions.map((t) => (
               <option key={t} value={t}>
                 {t}
               </option>
@@ -243,7 +252,7 @@ export default function AuditForm() {
           type="text"
           value={form.website}
           onChange={handleChange}
-          placeholder="yourtrade.co.uk — or leave blank if you don't have one"
+          placeholder="yourbusiness.co.uk — or leave blank if you don't have one"
           className={field}
         />
       </div>

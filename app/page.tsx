@@ -14,7 +14,7 @@ import { differentiators, agencyComparison } from "@/lib/differentiators";
 export const metadata: Metadata = {
   title: "TradeGrowth Marketing | Get Found, Get Booked, Get Recommended by AI",
   description:
-    "The AI-powered growth engine built for UK trades. Get found on Google, get named inside ChatGPT and AI Overviews, and get the jobs actually booked — with pricing published openly.",
+    "The AI-powered growth engine built for UK trades and local service businesses. Get found on Google, get named inside ChatGPT and AI Overviews, and get the jobs actually booked — with pricing published openly.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -29,7 +29,7 @@ const iconMap: Record<string, React.ReactNode> = {
 const stats = [
   { value: "3", label: "Rings before the AI agent answers", suffix: " rings" },
   { value: "5", label: "AI assistants we optimise you for" },
-  { value: "1", label: "Client per trade, per area" },
+  { value: "1", label: "Client per trade or service, per area" },
   { value: "2×", label: "Your money back, guaranteed" },
 ];
 
@@ -56,7 +56,7 @@ export default function HomePage() {
                 <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/10 rounded-full px-4 py-1.5 mb-7">
                   <span className="w-2 h-2 rounded-full bg-[#8b93ff]" />
                   <span className="text-white/80 text-xs font-medium tracking-wide">
-                    The AI Trades Engine — built exclusively for UK trades
+                    The AI Trades Engine — for UK trades &amp; local service businesses
                   </span>
                 </div>
               </FadeIn>
@@ -70,9 +70,9 @@ export default function HomePage() {
 
               <FadeIn delay={0.2}>
                 <p className="text-white/75 text-lg md:text-xl leading-relaxed mb-9 max-w-xl">
-                  Homeowners have stopped scrolling through ten blue links. They ask ChatGPT who
-                  to hire — and get three names back. We make sure one of them is yours, then we
-                  answer the phone and chase the quote so the job actually gets booked.
+                  Your customers have stopped scrolling through ten blue links. They ask ChatGPT
+                  who to hire — and get three names back. We make sure one of them is yours, then
+                  we answer the phone and chase the quote so the job actually gets booked.
                 </p>
               </FadeIn>
 
@@ -98,7 +98,7 @@ export default function HomePage() {
 
               <FadeIn delay={0.36}>
                 <p className="text-white/45 text-xs mt-8 font-medium tracking-wide uppercase">
-                  One client per trade, per area · Double-your-money guarantee
+                  One client per trade or service, per area · Double-your-money guarantee
                 </p>
               </FadeIn>
             </div>
@@ -273,7 +273,7 @@ export default function HomePage() {
               <span className="text-gradient">We help you win the jobs.</span>
             </h2>
             <p className="text-white/60 text-lg mb-12 max-w-2xl leading-relaxed">
-              Here&apos;s a straight comparison against how a typical trades marketing agency
+              Here&apos;s a straight comparison against how a typical local marketing agency
               works. Judge it for yourself.
             </p>
           </FadeIn>
@@ -282,7 +282,7 @@ export default function HomePage() {
             <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
               <table className="w-full min-w-[680px] border-collapse">
                 <caption className="sr-only">
-                  TradeGrowth Marketing compared with a typical trades marketing agency
+                  TradeGrowth Marketing compared with a typical local marketing agency
                 </caption>
                 <thead>
                   <tr className="border-b border-white/15">
@@ -290,7 +290,7 @@ export default function HomePage() {
                       &nbsp;
                     </th>
                     <th scope="col" className="text-left text-white/40 text-xs font-semibold uppercase tracking-widest pb-4 px-6 w-[38%]">
-                      A typical trades agency
+                      A typical local agency
                     </th>
                     <th scope="col" className="text-left text-xs font-semibold uppercase tracking-widest pb-4 pl-6 w-[38%] text-[#8b93ff]">
                       TradeGrowth Marketing

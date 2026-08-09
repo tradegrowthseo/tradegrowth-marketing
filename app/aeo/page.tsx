@@ -11,7 +11,7 @@ import { aeoFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "What is AEO?",
   description:
-    "Answer Engine Optimisation explained for UK trades: how homeowners now ask ChatGPT, Perplexity, Gemini and Google AI Overviews who to hire — and how we get your business named in the answer.",
+    "Answer Engine Optimisation explained for UK trades and local service businesses: how customers now ask ChatGPT, Perplexity, Gemini and Google AI Overviews who to hire — and how we get your business named in the answer.",
 };
 
 const engines = [
@@ -45,7 +45,7 @@ const levers = [
     icon: <FileText className="w-6 h-6" strokeWidth={1.8} />,
     number: "04",
     title: "llms.txt",
-    body: "A plain-text file at the root of your site — the AI-era robots.txt — giving language models a clean summary of who you are, what you do and where you work. It costs nothing and almost no UK trades website has one.",
+    body: "A plain-text file at the root of your site — the AI-era robots.txt — giving language models a clean summary of who you are, what you do and where you work. It costs nothing and almost no UK trade or local service website has one.",
   },
   {
     icon: <LineChart className="w-6 h-6" strokeWidth={1.8} />,
@@ -137,8 +137,8 @@ export default function AeoPage() {
         eyebrow="The AI Trades Engine"
         title={
           <>
-            What is <span className="text-gradient">AEO</span>, and why should a
-            tradesperson care?
+            What is <span className="text-gradient">AEO</span>, and why should a local
+            business care?
           </>
         }
         sub="Answer Engine Optimisation is the work of getting your business named and recommended inside AI-generated answers. Not ranked in a list of links — named, in the answer itself, as the business to call."
@@ -151,16 +151,16 @@ export default function AeoPage() {
             <FadeIn>
               <SectionLabel>What changed</SectionLabel>
               <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-6 leading-tight">
-                Homeowners stopped scrolling. They started asking.
+                Customers stopped scrolling. They started asking.
               </h2>
               <div className="space-y-5 text-[#565c6b] text-lg leading-relaxed">
                 <p>
-                  For twenty years, finding a tradesperson meant typing something into Google and
-                  working down a page of ten blue links. Every agency in the country learned to
-                  compete for those ten places.
+                  For twenty years, finding a tradesperson or a local service meant typing
+                  something into Google and working down a page of ten blue links. Every agency in
+                  the country learned to compete for those ten places.
                 </p>
                 <p>
-                  That&apos;s not how a growing number of jobs start any more. A homeowner opens
+                  That&apos;s not how a growing number of jobs start any more. Someone opens
                   ChatGPT and types &ldquo;we need a full rewire in a 1930s semi in Bolton, who
                   should we call and what should it cost?&rdquo; — and gets back a short answer
                   with two or three businesses named and a reason for each.
@@ -171,9 +171,10 @@ export default function AeoPage() {
                 </p>
                 <p>
                   The behaviour skews towards the jobs worth winning. Someone with a dripping tap
-                  still searches Google. Someone planning a rewire, a new boiler or an extension
-                  asks an assistant to compare the options first — because it&apos;s a bigger
-                  decision and they want it explained.
+                  still searches Google. Someone planning a rewire, a new boiler, an extension, a
+                  weekly cleaning contract or a year of personal training asks an assistant to
+                  compare the options first — because it&apos;s a bigger decision and they want it
+                  explained.
                 </p>
               </div>
             </FadeIn>
@@ -247,8 +248,8 @@ export default function AeoPage() {
           <FadeIn delay={0.2}>
             <p className="text-[#8a90a0] text-sm text-center mt-8 max-w-2xl mx-auto">
               Illustrative example of the change AEO produces. Your free audit shows you the real
-              version — the actual answers each assistant gives for your trade in your area right
-              now.
+              version — the actual answers each assistant gives for your trade or service in your
+              area right now.
             </p>
           </FadeIn>
         </div>
@@ -264,7 +265,7 @@ export default function AeoPage() {
             </h2>
             <p className="text-[#565c6b] text-lg mb-14 max-w-2xl leading-relaxed">
               None of these is a secret and none of them is magic. They work because almost no
-              trades business in the UK is doing them yet.
+              trade or local service business in the UK is doing them yet.
             </p>
           </FadeIn>
 
@@ -289,8 +290,8 @@ export default function AeoPage() {
                 <h3 className="font-bold text-xl mb-3">See where you stand today</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-6">
                   We&apos;ll run all five checks against your business and send you a 5-page
-                  report showing exactly what each assistant says when someone asks for your
-                  trade in your area.
+                  report showing exactly what each assistant says when someone asks for what you
+                  do in your area.
                 </p>
                 <Link
                   href="/audit"

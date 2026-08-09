@@ -1,15 +1,17 @@
 # TradeGrowth Marketing
 
-> The AI-powered growth engine built for UK trades — get found, get booked, and
-> get recommended by AI. We help UK trade businesses (electricians, plumbers,
-> gas engineers, roofers, builders, joiners and others) get named inside
-> AI-generated answers, then make sure the resulting enquiries actually convert
-> into booked jobs.
+> The AI-powered growth engine for UK trades and local service businesses — get
+> found, get booked, and get recommended by AI. We help UK trades (electricians,
+> plumbers, gas engineers, roofers, builders, joiners and others) and local
+> service businesses (cleaning companies, landscapers, mobile mechanics, salons,
+> personal trainers and similar) get named inside AI-generated answers, then make
+> sure the resulting enquiries actually convert into booked work.
 
 Website: https://tradegrowthseo.com
 Contact: contact@tradegrowthseo.com
 Coverage: United Kingdom, remote-first
-Availability: One client per trade, per area
+Serves: UK trades and local service businesses (not national brands or ecommerce)
+Availability: One client per trade or service, per area
 
 ## What we do
 
@@ -21,13 +23,17 @@ Availability: One client per trade, per area
   recommended inside ChatGPT, Perplexity, Gemini, Claude and Google AI Overviews.
 - **Google & Meta ads** — Google-led paid acquisition, because search intent
   converts better. Ad spend is paid by the client directly to the platforms.
-- **Trade-specific CRM** — issues EICR and gas safety records, splits materials
-  and labour for VAT, job costing, van stock and compliance certificate tracking.
+- **Industry-specific CRM** — configured per sector. For trades: EICR and gas
+  safety records, materials/labour split for VAT, job costing, van stock and
+  compliance certificate tracking. For service businesses: recurring bookings,
+  deposits, no-show chasing and repeat-customer reminders.
 - **Done-for-you sales** — an AI voice agent answering missed calls within three
   rings 24/7, plus a human appointment setter chasing quotes at 48 hours, 5, 10,
   20 and 30 days.
-- **The Trades Network** — a closed referral network between clients, with
-  one-click referrals, a £25–50 finder's fee and quarterly meetups.
+- **The Trades Network** — a closed referral network between clients (trades and
+  local service businesses alike), with one-click referrals, a £25–50 finder's
+  fee and quarterly meetups. One client per trade or service, per area, so no
+  member ever refers work to a competitor.
 
 ## Pricing (published in full)
 

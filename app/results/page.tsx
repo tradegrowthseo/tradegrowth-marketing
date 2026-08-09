@@ -120,7 +120,7 @@ export default function ResultsPage() {
 
       <CTABand
         heading="Your area might still be free"
-        sub="We take one client per trade, per area. If your postcode isn't taken yet, the free AEO audit is the fastest way to find out what we'd be working with."
+        sub="We take one client per trade or service, per area. If your postcode isn't taken yet, the free AEO audit is the fastest way to find out what we'd be working with."
         secondaryLabel="See pricing"
         secondaryHref="/pricing"
       />
