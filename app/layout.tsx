@@ -49,21 +49,33 @@ export const metadata: Metadata = {
   },
   // The single source of truth for favicons. Deliberately no app/favicon.ico or
   // app/icon.* file-convention files — those take priority over this config and
-  // were serving the old starter icon. The ?v=2 query busts browser caches still
-  // holding it; bump it if the logo changes.
+  // were serving the old starter icon. The ?v=3 query busts browser caches still
+  // holding an older one; bump it whenever the icons are regenerated.
+  //
+  // The 48/96/192/512 sizes exist for Google: it picks a search-result favicon
+  // from these declarations and wants a square PNG that is a multiple of 48px.
+  // The original 16/32/64 set had none, which is why search showed a generic
+  // placeholder. 16 and 32 stay for browser tabs.
   //
   // public/favicon.ico is a byte-identical copy of public/images/favicon.ico,
   // kept only so crawlers that request the root path by convention (ignoring
   // these tags) still get the right logo. Static export can't redirect, so it
-  // has to be a real file. Update both if the icon ever changes.
+  // has to be a real file.
+  //
+  // Regenerate the whole set — both .ico files included — with:
+  //   node design-assets/regenerate-favicons.js
   icons: {
     icon: [
-      { url: "/images/favicon.ico?v=2", sizes: "any" },
-      { url: "/images/favicon-16.png?v=2", type: "image/png", sizes: "16x16" },
-      { url: "/images/favicon-32.png?v=2", type: "image/png", sizes: "32x32" },
-      { url: "/images/favicon-64.png?v=2", type: "image/png", sizes: "64x64" },
+      { url: "/images/favicon.ico?v=3", sizes: "any" },
+      { url: "/images/favicon-16.png?v=3", type: "image/png", sizes: "16x16" },
+      { url: "/images/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
+      { url: "/images/favicon-48.png?v=3", type: "image/png", sizes: "48x48" },
+      { url: "/images/favicon-64.png?v=3", type: "image/png", sizes: "64x64" },
+      { url: "/images/favicon-96.png?v=3", type: "image/png", sizes: "96x96" },
+      { url: "/images/favicon-192.png?v=3", type: "image/png", sizes: "192x192" },
+      { url: "/images/favicon-512.png?v=3", type: "image/png", sizes: "512x512" },
     ],
-    apple: { url: "/images/apple-touch-icon.png?v=2", sizes: "180x180" },
+    apple: { url: "/images/apple-touch-icon.png?v=3", sizes: "180x180" },
   },
 };
 
