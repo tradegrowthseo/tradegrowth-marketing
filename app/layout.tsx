@@ -44,9 +44,23 @@ export const metadata: Metadata = {
     type: "website",
     images: ["/images/tradegrowth-marketing-logo.png"],
   },
+  // The single source of truth for favicons. Deliberately no app/favicon.ico or
+  // app/icon.* file-convention files — those take priority over this config and
+  // were serving the old starter icon. The ?v=2 query busts browser caches still
+  // holding it; bump it if the logo changes.
+  //
+  // public/favicon.ico is a byte-identical copy of public/images/favicon.ico,
+  // kept only so crawlers that request the root path by convention (ignoring
+  // these tags) still get the right logo. Static export can't redirect, so it
+  // has to be a real file. Update both if the icon ever changes.
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/images/favicon.ico?v=2", sizes: "any" },
+      { url: "/images/favicon-16.png?v=2", type: "image/png", sizes: "16x16" },
+      { url: "/images/favicon-32.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/images/favicon-64.png?v=2", type: "image/png", sizes: "64x64" },
+    ],
+    apple: { url: "/images/apple-touch-icon.png?v=2", sizes: "180x180" },
   },
 };
 
