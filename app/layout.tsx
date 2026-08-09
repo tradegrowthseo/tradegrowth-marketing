@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
 
 // Inter throughout — headings and body. Weights cover the display sizes used
 // in the heroes (800) down to body copy (400).
@@ -91,6 +92,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        {/* Renders nothing — attaches the site-wide GA4 click listeners. */}
+        <AnalyticsEvents />
       </body>
       {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
