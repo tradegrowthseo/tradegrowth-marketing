@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
+import ScreenshotGallery from "@/components/ui/ScreenshotGallery";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PageHero from "@/components/ui/PageHero";
 import CTABand from "@/components/ui/CTABand";
@@ -72,25 +72,7 @@ export default function ResultsPage() {
             </p>
           </FadeIn>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {evDesignShots.map((shot, i) => (
-              <FadeIn key={shot.src} delay={i * 0.08}>
-                <figure className="h-full flex flex-col bg-white border border-[#e6e8f2] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(23,26,38,0.06)]">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={shot.width}
-                    height={shot.height}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="w-full aspect-[16/10] object-cover object-top bg-[#0f1220]"
-                  />
-                  <figcaption className="flex-1 border-t border-[#e6e8f2] px-5 py-4 text-[#171a26] text-sm font-semibold">
-                    {shot.caption}
-                  </figcaption>
-                </figure>
-              </FadeIn>
-            ))}
-          </div>
+          <ScreenshotGallery shots={evDesignShots} />
 
           {/* ─── EV Design testimonial ──────────────────────────────────
               Client-approved wording. Do not paraphrase or trim it. */}
