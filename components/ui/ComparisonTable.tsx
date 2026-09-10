@@ -9,9 +9,9 @@ const columns: {
   featured?: boolean;
 }[] = [
   { key: "website", label: "The Website", price: "From £500 one-off" },
-  { key: "basic", label: "Basic", price: "£200 / mo" },
-  { key: "standard", label: "Standard", price: "£400 / mo", featured: true },
-  { key: "premium", label: "Premium", price: "£500 / mo" },
+  { key: "basic", label: "Basic", price: "£395 / mo" },
+  { key: "standard", label: "Standard", price: "£495 / mo", featured: true },
+  { key: "premium", label: "Premium", price: "£595 / mo" },
 ];
 
 function CellValue({ value }: { value: Cell }) {
