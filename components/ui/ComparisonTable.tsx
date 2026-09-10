@@ -8,7 +8,7 @@ const columns: {
   price: string;
   featured?: boolean;
 }[] = [
-  { key: "website", label: "The Website", price: "From £500 one-off" },
+  { key: "website", label: "The Website", price: "£500+ one-off" },
   { key: "basic", label: "Basic", price: "£395 / mo" },
   { key: "standard", label: "Standard", price: "£495 / mo", featured: true },
   { key: "premium", label: "Premium", price: "£595 / mo" },

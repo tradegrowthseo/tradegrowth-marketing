@@ -13,7 +13,7 @@ import { pricingFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Every price published in full. A website from £500 that you own outright, then Basic £395/mo, Standard £495/mo or Premium £595/mo — with a complete feature comparison and a double-your-money guarantee.",
+    "Every price published in full. Websites start at £500 and you own them outright, then Basic £395/mo, Standard £495/mo or Premium £595/mo on top — with a complete feature comparison and a double-your-money guarantee.",
 };
 
 export default function PricingPage() {

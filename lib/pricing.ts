@@ -1,8 +1,8 @@
 // Pricing is published in full and in public — it's a deliberate
 // differentiator, so nothing here is hidden behind a "request a quote".
 //
-// Structure: everyone buys The Website once (one-off, from £500 — the final
-// figure depends on the build), then chooses one of three monthly packages that
+// Structure: everyone buys The Website once (one-off, from £500 — animations
+// and larger builds cost more), then chooses one of three monthly packages that
 // sit on top of it. Each package includes everything in the tier below it.
 
 export interface Tier {
@@ -10,7 +10,6 @@ export interface Tier {
   name: string;
   tagline: string;
   monthly: string;
-  setup: string;
   minimum: string;
   best: string;
   includesBelow?: string;
@@ -21,8 +20,8 @@ export interface Tier {
 /** The one-off website build. Sold separately from the monthly packages. */
 export const websiteProduct = {
   name: "The Website",
-  price: "From £500",
-  terms: "Starting price — final cost depends on the build · one-off · 50% deposit, 50% on launch",
+  price: "£500+",
+  terms: "Websites start at £500 — animations and larger builds cost more · one-off · 50% deposit, 50% on launch",
   tagline: "The foundation everything else sits on",
   commitment: "No monthly commitment",
   features: [
@@ -41,7 +40,6 @@ export const tiers: Tier[] = [
     name: "Basic",
     tagline: "Get found",
     monthly: "£395",
-    setup: "£150 setup",
     minimum: "3 month minimum",
     best: "Trades and local service businesses who need to be findable — on Google and in AI answers",
     features: [
@@ -61,7 +59,6 @@ export const tiers: Tier[] = [
     name: "Standard",
     tagline: "Get booked",
     monthly: "£495",
-    setup: "£300 setup",
     minimum: "3 month minimum",
     best: "Trades and service businesses who want a steady, predictable flow of quoted work",
     includesBelow: "Everything in Basic, plus:",
@@ -82,7 +79,6 @@ export const tiers: Tier[] = [
     name: "Premium",
     tagline: "Win the jobs",
     monthly: "£595",
-    setup: "£500 setup",
     minimum: "6 month minimum",
     best: "Established trades and service businesses ready to stop answering the phone themselves",
     includesBelow: "Everything in Standard, plus:",
@@ -180,8 +176,7 @@ export const comparison: ComparisonGroup[] = [
   {
     group: "The commercials",
     rows: [
-      { label: "Price", website: "From £500 one-off", basic: "£395 / mo", standard: "£495 / mo", premium: "£595 / mo" },
-      { label: "Setup fee", website: "50% deposit", basic: "£150", standard: "£300", premium: "£500" },
+      { label: "Price", website: "£500+ one-off", basic: "£395 / mo + website", standard: "£495 / mo + website", premium: "£595 / mo + website" },
       { label: "Minimum term", website: "None", basic: "3 months", standard: "3 months", premium: "6 months" },
     ],
   },
