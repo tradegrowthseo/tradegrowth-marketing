@@ -11,7 +11,7 @@ const WHATSAPP_URL =
  * Floating WhatsApp button, rendered site-wide from app/layout.tsx.
  *
  * It hides itself while the footer is on screen. The footer carries its own
- * "Get a free AEO audit" CTA and the contact block, and on a narrow viewport a
+ * "Get a free AI-search audit" CTA and the contact block, and on a narrow viewport a
  * fixed bottom-right bubble sits directly on top of them — so rather than
  * fighting it with padding, the button gets out of the way once the reader has
  * reached the bottom of the page.

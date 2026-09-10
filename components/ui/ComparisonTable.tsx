@@ -1,4 +1,12 @@
-import { comparison, type Cell, type ComparisonRow } from "@/lib/pricing";
+import {
+  comparison,
+  monthlyLabel,
+  tiers,
+  websitePriceLabel,
+  websiteProduct,
+  type Cell,
+  type ComparisonRow,
+} from "@/lib/pricing";
 
 // `key` is narrowed to the tier fields of ComparisonRow so `row[col.key]`
 // type-checks without a cast.
@@ -8,10 +16,13 @@ const columns: {
   price: string;
   featured?: boolean;
 }[] = [
-  { key: "website", label: "The Website", price: "£500+ one-off" },
-  { key: "basic", label: "Basic", price: "£395 / mo" },
-  { key: "standard", label: "Standard", price: "£495 / mo", featured: true },
-  { key: "premium", label: "Premium", price: "£595 / mo" },
+  { key: "website", label: websiteProduct.name, price: websitePriceLabel },
+  ...tiers.map((tier) => ({
+    key: tier.id as Exclude<keyof ComparisonRow, "label">,
+    label: tier.name,
+    price: monthlyLabel(tier),
+    featured: tier.featured,
+  })),
 ];
 
 function CellValue({ value }: { value: Cell }) {
@@ -45,12 +56,26 @@ function CellValue({ value }: { value: Cell }) {
 
 /**
  * Full feature matrix across all four tiers. The table scrolls horizontally
- * inside its own container on narrow screens rather than pushing the page wide;
- * the first column is sticky so row labels stay readable while scrolling.
+ * inside its own container on narrow screens rather than pushing the page wide.
+ *
+ * Note: the row-label column is NOT sticky. Scrolled right on a narrow screen
+ * the labels go out of view, leaving unlabelled columns of ticks — worth fixing,
+ * but it needs a background and z-index on the label cells to avoid the rows
+ * showing through, so it isn't a one-liner.
+ *
+ * `contain-content` (contain: layout paint) on the scroller is load-bearing.
+ * Without it Chromium propagates the 820px table's min-content width all the way
+ * to documentElement.scrollWidth even though nothing visibly overflows, and
+ * mobile Chrome then sizes its layout viewport from that number — the page
+ * renders 776px wide at 375px and the header CTA sits off-screen for the whole
+ * visit. Measured: overflow-x:clip on the scroller, section, main, body and html
+ * all fail; min-width:0, table-layout:fixed and a fixed width all fail; only
+ * containment works. Don't remove it without re-measuring html.scrollWidth at
+ * 375px.
  */
 export default function ComparisonTable() {
   return (
-    <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
+    <div className="contain-content overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
       <table className="w-full min-w-[820px] border-collapse">
         <caption className="sr-only">
           Feature comparison across The Website, Basic, Standard and Premium

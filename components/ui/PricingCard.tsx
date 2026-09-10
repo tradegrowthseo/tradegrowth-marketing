@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Tier } from "@/lib/pricing";
+import { minimumLabel, type Tier } from "@/lib/pricing";
 
 /**
  * A monthly package card. The featured tier (Standard) is wrapped in a
@@ -33,7 +33,7 @@ export default function PricingCard({ tier }: { tier: Tier }) {
         <span className="text-[#8a90a0] text-sm font-medium">/ month</span>
       </div>
       <p className="text-[#8a90a0] text-sm mb-5">
-        + website fee · {tier.minimum}
+        + website fee · {minimumLabel(tier)}
       </p>
 
       <p className="text-[#565c6b] text-sm leading-relaxed mb-6 pb-6 border-b border-[#e6e8f2]">

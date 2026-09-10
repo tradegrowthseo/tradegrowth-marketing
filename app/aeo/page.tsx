@@ -11,7 +11,7 @@ import { aeoFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "What is AEO?",
   description:
-    "Answer Engine Optimisation explained for UK trades and local service businesses: how customers now ask ChatGPT, Perplexity, Gemini and Google AI Overviews who to hire — and how we get your business named in the answer.",
+    "Answer Engine Optimisation explained for construction, engineering and design businesses: how clients now use ChatGPT, Perplexity, Gemini and Google AI Overviews to research consultants — and the work that makes your expertise legible to them.",
 };
 
 const engines = [
@@ -27,31 +27,31 @@ const levers = [
     icon: <Code2 className="w-6 h-6" strokeWidth={1.8} />,
     number: "01",
     title: "Schema / JSON-LD",
-    body: "Machine-readable markup describing your services, service areas, credentials, opening hours, reviews and prices. It's how a model knows you're a NICEIC-registered electrician covering Bolton rather than just a page of words.",
+    body: "Machine-readable markup describing your services, sectors, project types, credentials and locations. It's how a model can tell you're a chartered structural engineer working on conservation projects across the North West, rather than just a page of words.",
   },
   {
     icon: <MessageSquareQuote className="w-6 h-6" strokeWidth={1.8} />,
     number: "02",
     title: "AI-ready FAQ content",
-    body: "Content written the way people actually ask — \"how much does a full rewire cost?\", not \"our rewiring services\". Answer-first, specific, and structured so a model can lift a clean paragraph straight out of it.",
+    body: "Content written the way clients actually ask — \"do I need a structural engineer to remove a load-bearing wall?\", not \"our structural services\". Answer-first, specific, and structured so a model can lift a clean paragraph straight out of it.",
   },
   {
     icon: <BadgeCheck className="w-6 h-6" strokeWidth={1.8} />,
     number: "03",
     title: "Trusted citations",
-    body: "Consistent listings across the directories, review platforms and local sources these models were trained on and still cite. Consistency matters more than volume: one wrong phone number across four sites does real damage.",
+    body: "Consistent details across the directories, professional bodies and industry sources these models were trained on and still draw from. Consistency matters more than volume: one wrong phone number across four listings does real damage.",
   },
   {
     icon: <FileText className="w-6 h-6" strokeWidth={1.8} />,
     number: "04",
     title: "llms.txt",
-    body: "A plain-text file at the root of your site — the AI-era robots.txt — giving language models a clean summary of who you are, what you do and where you work. It costs nothing and almost no UK trade or local service website has one.",
+    body: "A plain-text file at the root of your site giving language models a clean summary of who you are, what you do and where you work. It costs almost nothing and few UK consultancy websites have one — though on its own it is a small piece, not a route into AI answers.",
   },
   {
     icon: <LineChart className="w-6 h-6" strokeWidth={1.8} />,
     number: "05",
     title: "Monthly visibility tracking",
-    body: "We ask each assistant the questions your customers ask, every month, and record whether you're named, where you rank in the answer and who's beating you. Without this you're guessing, and so is everyone selling you AEO.",
+    body: "We ask each assistant the questions your clients ask, every month, and record whether you're named, how you're described and who else appears. Without this you're guessing, and so is anyone selling you AEO.",
   },
 ];
 
@@ -77,13 +77,14 @@ function AnswerPanel({
             isAfter ? "text-[#3d4cf5]" : "text-[#8a90a0]"
           }`}
         >
-          {isAfter ? "After — month 3" : "Before — month 0"}
+          {isAfter ? "After the work" : "Before the work"}
         </span>
         <span className="text-[#8a90a0] text-xs">AI assistant</span>
       </div>
 
       <p className="text-[#8a90a0] text-sm mb-5">
-        &ldquo;Who&apos;s the best electrician near me for a full rewire?&rdquo;
+        &ldquo;Which practices handle mill-to-residential conversions in Greater
+        Manchester?&rdquo;
       </p>
 
       <div className="space-y-2.5">
@@ -118,7 +119,7 @@ function AnswerPanel({
       <p className="text-[#8a90a0] text-xs mt-5 pt-4 border-t border-[#e6e8f2]">
         {isAfter ? (
           <>
-            You&apos;re the first name in the answer
+            Your practice is named, and described accurately
             <span className="ai-caret text-[#3d4cf5]">▌</span>
           </>
         ) : (
@@ -134,14 +135,14 @@ export default function AeoPage() {
     <>
       <PageHero
         patternId="aeo-grid"
-        eyebrow="The AI Trades Engine"
+        eyebrow="AI-assisted search"
         title={
           <>
-            What is <span className="text-gradient">AEO</span>, and why should a local
-            business care?
+            What is <span className="text-gradient">AEO</span>, and why should a practice
+            care?
           </>
         }
-        sub="Answer Engine Optimisation is the work of getting your business named and recommended inside AI-generated answers. Not ranked in a list of links — named, in the answer itself, as the business to call."
+        sub="Answer Engine Optimisation is the work of making a business and its expertise easy for AI assistants to find, read and describe accurately. Not a position in a list of links — how you are represented when the answer is written as prose instead."
       />
 
       {/* ─── THE SHIFT ────────────────────────────────────────────────── */}
@@ -151,30 +152,31 @@ export default function AeoPage() {
             <FadeIn>
               <SectionLabel>What changed</SectionLabel>
               <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-6 leading-tight">
-                Customers stopped scrolling. They started asking.
+                Clients stopped scrolling. They started asking.
               </h2>
               <div className="space-y-5 text-[#565c6b] text-lg leading-relaxed">
                 <p>
-                  For twenty years, finding a tradesperson or a local service meant typing
-                  something into Google and working down a page of ten blue links. Every agency in
-                  the country learned to compete for those ten places.
+                  For twenty years, finding a consultant meant typing something into Google and
+                  working down a page of ten blue links. Every agency in the country learned to
+                  compete for those ten places.
                 </p>
                 <p>
-                  That&apos;s not how a growing number of jobs start any more. Someone opens
-                  ChatGPT and types &ldquo;we need a full rewire in a 1930s semi in Bolton, who
-                  should we call and what should it cost?&rdquo; — and gets back a short answer
-                  with two or three businesses named and a reason for each.
+                  A growing share of research doesn&apos;t start there any more. Someone opens
+                  ChatGPT and types &ldquo;we&apos;re converting a mill building into apartments
+                  in Greater Manchester — what consultants do we need and who handles this kind of
+                  scheme?&rdquo; — and gets back a short written answer naming a few practices,
+                  with a reason for each.
                 </p>
                 <p className="text-[#171a26] font-semibold">
-                  There is no page two. There are no ten links. There are three names, and either
-                  you&apos;re one of them or you don&apos;t exist for that customer.
+                  There is no page two, and there are no ten links. There is a paragraph, and
+                  either your practice is described in it or it isn&apos;t.
                 </p>
                 <p>
-                  The behaviour skews towards the jobs worth winning. Someone with a dripping tap
-                  still searches Google. Someone planning a rewire, a new boiler, an extension, a
-                  weekly cleaning contract or a year of personal training asks an assistant to
-                  compare the options first — because it&apos;s a bigger decision and they want it
-                  explained.
+                  The behaviour skews towards the more considered work. Someone who already knows
+                  exactly which consultant they want still goes straight to Google. Someone
+                  scoping a refurbishment, working out which disciplines a project needs, or
+                  drawing up a list of practices to approach asks an assistant to explain the
+                  options first — because it is a bigger decision and they want it set out.
                 </p>
               </div>
             </FadeIn>
@@ -210,14 +212,14 @@ export default function AeoPage() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-14">
-              <SectionLabel center>The difference AEO makes</SectionLabel>
+              <SectionLabel center>What the work changes</SectionLabel>
               <h2 className="text-3xl md:text-5xl font-bold text-[#171a26] mb-4">
-                You weren&apos;t recommended.{" "}
-                <span className="text-gradient">Now you&apos;re first.</span>
+                Not mentioned at all.{" "}
+                <span className="text-gradient">Then named and described.</span>
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                Same question, same assistant, same town — asked before we started and again
-                three months in.
+                The same question put to the same assistant, before the groundwork and after it.
+                An illustration of what changes — not a result we can promise.
               </p>
             </div>
           </FadeIn>
@@ -227,9 +229,9 @@ export default function AeoPage() {
               <AnswerPanel
                 variant="before"
                 results={[
-                  { name: "Competitor A", note: "Named first, with a reason" },
-                  { name: "Competitor B", note: "Named second" },
-                  { name: "Competitor C", note: "Mentioned as an alternative" },
+                  { name: "Another practice", note: "Named first, with a reason" },
+                  { name: "A second practice", note: "Named second" },
+                  { name: "A third practice", note: "Mentioned as an alternative" },
                 ]}
               />
             </FadeIn>
@@ -237,9 +239,9 @@ export default function AeoPage() {
               <AnswerPanel
                 variant="after"
                 results={[
-                  { name: "Your business", note: "NICEIC registered · 18 yrs · 94 reviews", us: true },
-                  { name: "Competitor A", note: "Named second" },
-                  { name: "Competitor B", note: "Mentioned as an alternative" },
+                  { name: "Your practice", note: "Chartered · conservation & retrofit projects", us: true },
+                  { name: "Another practice", note: "Named second" },
+                  { name: "A second practice", note: "Mentioned as an alternative" },
                 ]}
               />
             </FadeIn>
@@ -247,9 +249,8 @@ export default function AeoPage() {
 
           <FadeIn delay={0.2}>
             <p className="text-[#8a90a0] text-sm text-center mt-8 max-w-2xl mx-auto">
-              Illustrative example of the change AEO produces. Your free audit shows you the real
-              version — the actual answers each assistant gives for your trade or service in your
-              area right now.
+              Illustrative example, not a client result. Your free audit shows the real version —
+              the actual answers each assistant gives for the kind of work you do, right now.
             </p>
           </FadeIn>
         </div>
@@ -264,8 +265,9 @@ export default function AeoPage() {
               Five levers, pulled together
             </h2>
             <p className="text-[#565c6b] text-lg mb-14 max-w-2xl leading-relaxed">
-              None of these is a secret and none of them is magic. They work because almost no
-              trade or local service business in the UK is doing them yet.
+              None of these is a secret and none is a guarantee. They are the groundwork that
+              makes it possible for an assistant to describe you accurately — worth doing partly
+              because few UK consultancies have done any of it yet.
             </p>
           </FadeIn>
 
@@ -289,9 +291,9 @@ export default function AeoPage() {
               <div className="h-full rounded-xl bg-gradient-brand-static p-7 text-white flex flex-col justify-center shadow-[0_12px_40px_rgba(61,76,245,0.28)]">
                 <h3 className="font-bold text-xl mb-3">See where you stand today</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-6">
-                  We&apos;ll run all five checks against your business and send you a 5-page
-                  report showing exactly what each assistant says when someone asks for what you
-                  do in your area.
+                  We&apos;ll run all five checks against your practice and send you a 5-page
+                  report showing what each assistant actually says when someone asks for the kind
+                  of work you do.
                 </p>
                 <Link
                   href="/audit"

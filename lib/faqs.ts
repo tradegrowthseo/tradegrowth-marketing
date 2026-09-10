@@ -1,6 +1,9 @@
 // FAQ content, grouped by the page that renders it. These are written
 // question-led and answer-first on purpose: the same structure that makes them
-// useful to a customer is what makes them quotable by an answer engine.
+// useful to a reader is what makes them quotable by an answer engine.
+//
+// Claims discipline: nothing here promises a ranking, a citation or an AI
+// recommendation. Where a question invites that promise, the answer says no.
 
 export interface Faq {
   q: string;
@@ -10,42 +13,42 @@ export interface Faq {
 export const aeoFaqs: Faq[] = [
   {
     q: "What is Answer Engine Optimisation (AEO)?",
-    a: "AEO is the practice of getting your business named and recommended inside AI-generated answers — the ones ChatGPT, Perplexity, Gemini, Claude and Google's AI Overviews give when someone asks who to hire. Traditional SEO competes for a position in a list of links. AEO competes to be the answer itself.",
+    a: "AEO is the work of making a business and its expertise easy for AI assistants to find, read and represent accurately — the assistants people now use to research and shortlist consultants. Traditional SEO competes for a position in a list of links. AEO is concerned with how you are described when the answer is written as prose instead.",
   },
   {
     q: "How is AEO different from SEO?",
-    a: "SEO earns you a ranking; AEO earns you a mention. They share foundations — a fast, well-structured site and a strong local presence help both — but AEO adds machine-readable schema, question-led content written the way people actually ask, citations on sources the models trust, and an llms.txt file that tells AI crawlers what your business does. We do both together, because doing one without the other leaves half the searches on the table.",
+    a: "They share most of their foundations: a fast, well-structured site, clear service and project information, and consistent details wherever your business appears. AEO adds machine-readable structured data, content written the way buyers actually ask questions, and an llms.txt summary of the practice. We do them together, because separating them means paying twice for the same groundwork.",
   },
   {
-    q: "Do people really use AI to find trades and local services?",
-    a: "Increasingly, yes — and the behaviour skews towards the bigger, more considered jobs. Someone with a dripping tap searches Google. Someone planning a full rewire, a new boiler, an extension, a regular office cleaning contract or a year of personal training asks an assistant to compare their options and explain the trade-offs. Those are exactly the jobs worth winning, and the customer never sees a page of blue links.",
+    q: "Do clients really use AI assistants to find consultants?",
+    a: "It is a growing part of how professional research starts, particularly at the early stage where someone is working out who to approach rather than who to appoint. A client sizing up a refurbishment, a developer drawing up a consultant list, a homeowner working out whether their extension needs a structural engineer — all of that increasingly begins with a question to an assistant rather than a page of links. It sits alongside conventional search rather than replacing it, which is why we work on both.",
   },
   {
-    q: "How do you get my business mentioned by ChatGPT?",
-    a: "Five levers, applied together: JSON-LD schema so machines can read your services, areas and credentials; AI-ready FAQ content that answers real questions directly; trusted citations across the directories and sources these models learn from; an llms.txt file that gives AI crawlers a clean summary of your business; and monthly visibility tracking so we can see which assistants name you and push on the ones that don't yet.",
+    q: "Can you get my practice named by ChatGPT?",
+    a: "Not as a promise, and you should be wary of anyone who says otherwise. Nobody controls what an AI assistant says, the models change, and so do the sources they draw on. What we can do is the groundwork that makes it possible: structured data describing your services, sectors and credentials; question-led content; consistent business information across the sources these systems use; and an llms.txt file. Then we track what each assistant actually says about you, month by month, and tell you honestly what has moved.",
   },
   {
-    q: "How long does AEO take to work?",
-    a: "Foundations go live in the first month. Visible movement in AI answers typically starts around weeks 6–12, because the models need to encounter your business across enough trusted sources to start repeating it. It's slower than paid ads and faster than traditional SEO — which is why we usually run all three together.",
+    q: "How long does this take to show anything?",
+    a: "Foundations go live in the first month. Any visible change in how assistants describe you typically takes longer — think in terms of months rather than weeks — because these systems need to encounter your business across enough sources for it to register. It is slower than paid ads and broadly comparable with conventional SEO, which is why we usually run them together.",
   },
   {
     q: "Can you guarantee I'll be recommended?",
-    a: "Nobody can guarantee a specific AI will name you on a specific day — the models change and so do their sources. What we do guarantee is our double-your-money guarantee: if the work we do doesn't double what you spend with us, we keep working for free until it does.",
+    a: "No, and nobody else can either. No agency controls what a particular assistant says on a particular day — the models change and so do the sources behind them. What we can tell you is what the work involves, what we have observed for other clients, and what your own audit shows about where you stand today.",
   },
   {
     q: "What is llms.txt?",
-    a: "It's a plain-text file in the root of your website — the AI-era equivalent of robots.txt — that gives large language models a clear, structured summary of who you are, what you do and where you work. It costs nothing to add and almost no trade or local service website in the UK has one yet. Every site we build ships with it.",
+    a: "A plain-text file at the root of a website giving large language models a clear summary of who you are, what you do and where you work. It is cheap to add and still rare on UK consultancy websites, so it is worth having. It is not a route into AI answers on its own, and we don't present it as one — it is one small part of making a business legible, alongside the structured data, the content and the consistency of your information elsewhere.",
   },
 ];
 
 export const pricingFaqs: Faq[] = [
   {
     q: "Why do you publish your prices when nobody else does?",
-    a: "Because hiding them wastes everybody's time. You know what a job costs before you quote it, and you'd be suspicious of a customer who wouldn't tell you their budget. Every price we charge is on this page.",
+    a: "Because hiding them wastes everybody's time. You scope a fee proposal before you send it, and you would think twice about a client who wouldn't discuss a budget. Every price we charge is on this page.",
   },
   {
-    q: "Do I have to buy the website to get a monthly package?",
-    a: "The monthly packages are built on top of a site that's structured for AEO, so in practice yes — unless you already have a fast, modern site we can work with. If you do, send us the URL and we'll tell you honestly whether it needs replacing.",
+    q: "Do I have to buy the website to take a monthly package?",
+    a: "The monthly packages are built on top of a site structured for search and AI-assisted search, so in practice yes — unless you already have a fast, modern site we can work with. If you do, send us the URL and we'll tell you honestly whether it needs replacing or just improving.",
   },
   {
     q: "Is there a long contract?",
@@ -56,30 +59,34 @@ export const pricingFaqs: Faq[] = [
     a: "You do, directly to Google and Meta. We never take a percentage of it or route it through us — our management fee is the flat amount in your package, and you can see every penny you spend in your own ad accounts.",
   },
   {
-    q: "What's the double-your-money guarantee?",
-    a: "If the work we do doesn't return at least double what you've paid us, we keep working for free until it does. We can offer that because we only take one client per trade or service, per area — we don't need to sign everyone.",
+    q: "What am I committing to up front?",
+    a: "The one-off website fee, and then the minimum term on whichever package you choose — 3 months on Basic and Standard, 6 months on Premium. There is nothing else: no setup fee, no percentage of your ad spend, and no charge for the audit.",
   },
   {
     q: "What if I want to leave?",
-    a: "After your minimum term, give us a month's notice. The domain is already in your name and the website is yours — you take it with you. We'd rather you left cleanly than stayed resentfully.",
+    a: "After your minimum term, give us a month's notice. The domain is already in your name and the website is yours — you take it with you. We'd rather you left cleanly than stayed reluctantly.",
   },
 ];
 
 export const generalFaqs: Faq[] = [
   {
-    q: "Do you only work with trades?",
-    a: "Trades are where we started and they're still the majority of our clients — electricians, plumbers, gas engineers, roofers, builders, joiners, plasterers, fitters and decorators. We now work with local service businesses on the same model too: cleaning companies, landscapers, mobile mechanics, salons, personal trainers and similar. What we don't do is national brands or businesses with no local service area — the whole system is built around being the name that comes back when someone nearby asks who to hire.",
+    q: "Who do you work with?",
+    a: "Construction, engineering and design businesses. Architects, MEP and building services engineers, structural engineers and interior designers are the four we work with most, and alongside them civil engineering consultancies, building and quantity surveyors, planning consultants, energy and sustainability consultants, landscape architects, project management and construction consultancies, specialist electrical and EV infrastructure design consultancies, and main contractors, design-and-build firms and specialist construction contractors.",
   },
   {
-    q: "What does one client per trade or service, per area mean?",
-    a: "If we work with an electrician in your town, we won't take on another one — and the same goes for a cleaning company or a mobile mechanic. It keeps our incentives honest, it makes the referral network possible, and it means the work we do for you isn't being done for the business quoting against you.",
+    q: "Who actually handles the enquiries?",
+    a: "You do. We configure and maintain the system — the pipeline, the connected forms, the tasks and reminders, and the workflows included in your tier. Your team assesses whether a project suits you, prepares the proposals, has the conversations and records what happened. We don't sit between you and your prospective clients, and we don't chase your proposals for you.",
+  },
+  {
+    q: "Do you work with both residential and commercial practices?",
+    a: "Yes, and the work is genuinely different. A practice attracting homeowners needs to be findable locally and to explain the process to people commissioning something like this for the first time. A consultancy attracting developers, contractors, architects and estates teams needs to demonstrate relevant sector experience to people who will compare it against a shortlist. Plenty of firms do both, in which case the site needs to serve each without confusing either.",
   },
   {
     q: "How quickly can we start?",
-    a: "The free AEO audit comes back within a few working days. If you go ahead, the website build typically runs 3–4 weeks from deposit, and the monthly package foundations go live alongside it.",
+    a: "The free AI-search audit comes back within a few working days. If you go ahead, the website build typically runs 3–4 weeks from deposit, and the monthly package foundations go live alongside it.",
   },
   {
     q: "Where are you based?",
-    a: "We work with trades and local service businesses across the UK. Everything runs remotely — calls, dashboards and reporting — so where you are makes no difference to how well we can do the work.",
+    a: "We work with construction, engineering and design businesses across the UK. Everything runs remotely — calls, dashboards and reporting — so where you are makes no difference to how well we can do the work.",
   },
 ];

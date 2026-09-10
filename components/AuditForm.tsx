@@ -14,28 +14,25 @@ interface FormState {
   competitor: string;
 }
 
-// Trades first — still the primary audience — then local service businesses.
-// The submitted field is named `trade` for continuity with existing enquiry
-// emails; the visible label reads "trade or service".
+// The four primary disciplines first, then the related built-environment
+// professions. The submitted field is still named `trade` for continuity with
+// existing enquiry emails and the Web3Forms setup; only the visible label and
+// the options change.
 const sectorOptions = [
-  "Electrician",
-  "Plumber / heating engineer",
-  "Gas engineer",
-  "Roofer",
-  "Builder",
-  "Joiner / carpenter",
-  "Plasterer",
-  "Kitchen / bathroom fitter",
-  "Painter & decorator",
-  "EV charger installer",
-  "Landscaper / garden care",
-  "Cleaning company",
-  "Mobile mechanic",
-  "Salon / barber",
-  "Personal trainer / gym",
-  "Pest control / property care",
-  "Removals / man with a van",
-  "Other trade or service",
+  "Architect / architectural practice",
+  "MEP / building services engineer",
+  "Structural engineer",
+  "Interior designer",
+  "Civil engineering consultancy",
+  "Building or quantity surveyor",
+  "Planning consultant",
+  "Energy / sustainability consultant",
+  "Landscape architect",
+  "Project / construction consultancy",
+  "Electrical / EV charging design",
+  "Main contractor / design & build",
+  "Specialist construction contractor",
+  "Other construction/design business",
 ];
 
 // Delivery goes through Web3Forms — see lib/forms.ts, shared with ContactForm.
@@ -166,7 +163,7 @@ export default function AuditForm() {
             required
             value={form.business}
             onChange={handleChange}
-            placeholder="Smith Electrical Ltd"
+            placeholder="Smith Structural Design Ltd"
             className={field}
           />
         </div>
@@ -207,7 +204,7 @@ export default function AuditForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="audit-trade" className={labelClass}>
-            Your trade or service <span className="text-[#3d4cf5]">*</span>
+            Your discipline <span className="text-[#3d4cf5]">*</span>
           </label>
           <select
             id="audit-trade"
@@ -215,9 +212,9 @@ export default function AuditForm() {
             required
             value={form.trade}
             onChange={handleChange}
-            className={`${field} text-[#171a26]`}
+            className={`${field} text-[#171a26] text-ellipsis`}
           >
-            <option value="">Select your trade or service…</option>
+            <option value="">Select your discipline…</option>
             {sectorOptions.map((t) => (
               <option key={t} value={t}>
                 {t}
@@ -236,7 +233,7 @@ export default function AuditForm() {
             required
             value={form.area}
             onChange={handleChange}
-            placeholder="Bolton and 20 miles around"
+            placeholder="Greater Manchester, or UK-wide"
             className={field}
           />
         </div>
@@ -252,7 +249,7 @@ export default function AuditForm() {
           type="text"
           value={form.website}
           onChange={handleChange}
-          placeholder="yourbusiness.co.uk — or leave blank if you don't have one"
+          placeholder="yourpractice.co.uk — or leave blank if you don't have one"
           className={field}
         />
       </div>
@@ -267,12 +264,12 @@ export default function AuditForm() {
           type="text"
           value={form.competitor}
           onChange={handleChange}
-          placeholder="The firm you keep losing jobs to"
+          placeholder="A practice you often come up against"
           className={field}
         />
         <p className="text-[#8a90a0] text-xs mt-1.5">
-          Optional — if you leave it blank we&apos;ll pick the business the AI names most often
-          in your area.
+          Optional — if you leave it blank we&apos;ll pick the practice the assistants name most
+          often for that kind of work.
         </p>
       </div>
 
@@ -310,7 +307,7 @@ export default function AuditForm() {
           </>
         ) : (
           <>
-            Send me my free AEO audit
+            Send me my free AI-search audit
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

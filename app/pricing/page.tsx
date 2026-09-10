@@ -10,10 +10,16 @@ import FAQ from "@/components/ui/FAQ";
 import { tiers, websiteProduct } from "@/lib/pricing";
 import { pricingFaqs } from "@/lib/faqs";
 
+// Built from lib/pricing.ts rather than retyped, so the SERP description can't
+// quote a price the page no longer charges.
+const [basic, standard, premium] = tiers;
+
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Every price published in full. Websites start at £500 and you own them outright, then Basic £395/mo, Standard £495/mo or Premium £595/mo on top — with a complete feature comparison and a double-your-money guarantee.",
+    `Every price published in full. Websites start at ${websiteProduct.from} and you own them ` +
+    `outright, then ${basic.name} ${basic.monthly}/mo, ${standard.name} ${standard.monthly}/mo or ` +
+    `${premium.name} ${premium.monthly}/mo on top — with a complete feature comparison.`,
 };
 
 export default function PricingPage() {
@@ -27,7 +33,7 @@ export default function PricingPage() {
             Every price we charge, <span className="text-gradient">published</span>
           </>
         }
-        sub="No &ldquo;book a call for a bespoke quote&rdquo;. You know what a job costs before you quote it, and you'd be wary of a customer who wouldn't tell you their budget. Same principle, applied to us."
+        sub="No &ldquo;book a call for a bespoke quote&rdquo;. You scope a fee proposal before you send it, and you'd think twice about a client who wouldn't discuss a budget. Same principle, applied to us."
       />
 
       {/* ─── THE WEBSITE ──────────────────────────────────────────────── */}
@@ -107,8 +113,8 @@ export default function PricingPage() {
                 Then pick one package on top
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                Each tier includes everything in the one below it. Most clients start on Standard
-                and move up once the diary is consistently full.
+                Each tier includes everything in the one below it. Start where the work you want
+                needs you to, and move up or down as the project pipeline changes.
               </p>
             </div>
           </FadeIn>
@@ -122,19 +128,23 @@ export default function PricingPage() {
           </div>
 
           <FadeIn delay={0.25}>
-            <div className="grid sm:grid-cols-3 gap-4 mt-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
               {[
                 {
                   title: "Minimum terms",
-                  body: "3 months on Basic and Standard, 6 months on Premium. Month-to-month after that.",
+                  body: `${basic.minimumMonths} months on ${basic.name} and ${standard.name}, ${premium.minimumMonths} months on ${premium.name}. Month-to-month after that.`,
+                },
+                {
+                  title: "If you already have a site",
+                  body: "The website fee assumes we're building it. Already have a fast, modern site we can work with? Send us the URL — if it stands up, there's no website fee.",
                 },
                 {
                   title: "Ad spend",
                   body: "Paid by you directly to Google and Meta. We never take a cut of it or route it through us.",
                 },
                 {
-                  title: "Exclusivity",
-                  body: "One client per trade or service, per area. If we work with you, we turn down your competitors.",
+                  title: "Costs outside the fee",
+                  body: "Software licences, messaging and third-party usage charges are itemised and agreed before anything is switched on.",
                 },
               ].map((note) => (
                 <div key={note.title} className="bg-white border border-[#e6e8f2] rounded-xl p-5">
@@ -161,41 +171,36 @@ export default function PricingPage() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.08}>
+          {/* direction="none" keeps a transform off this wrapper, which stops the
+              table's scroll container leaking overflow to document.body. It is not
+              on its own enough to stop the page going wide at 375px — the fix for
+              that is `contain-content` on the scroller inside ComparisonTable. */}
+          <FadeIn delay={0.08} direction="none">
             <ComparisonTable />
           </FadeIn>
-        </div>
-      </section>
 
-      {/* ─── GUARANTEE ────────────────────────────────────────────────── */}
-      <section className="bg-[#0f1220] py-20 relative overflow-hidden">
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] h-[440px] bg-[#5b1cf0] opacity-[0.18] rounded-full blur-[140px] pointer-events-none" />
-        <div className="relative max-w-[900px] mx-auto px-6 lg:px-8 text-center">
-          <FadeIn>
-            <span className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/15 rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#8b93ff]" />
-              <span className="text-white/80 text-xs font-medium tracking-wide">
-                The double-your-money guarantee
-              </span>
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">
-              Double your money back — or we work for free
-            </h2>
-            <p className="text-white/65 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-              If the work we do doesn&apos;t return at least double what you&apos;ve paid us, we
-              keep going at no charge until it does. We can offer that because we only take one
-              client per trade or service, per area — we don&apos;t need to sign everybody, so we
-              can afford to be picky about who we say yes to.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-gradient-brand text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-[0_8px_30px_rgba(61,76,245,0.4)]"
-            >
-              Check if your area is free
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+          <FadeIn delay={0.14}>
+            <div className="mt-10 rounded-xl border border-[#e6e8f2] bg-[#f6f7fc] p-6 md:p-7">
+              <h3 className="text-[#171a26] font-bold text-base mb-2">
+                What sits outside the monthly fee
+              </h3>
+              <p className="text-[#565c6b] text-sm leading-relaxed mb-4 max-w-3xl">
+                The fee covers configuration and management of the scope listed above — there is
+                no separate setup fee. Software licences, messaging, telephone and third-party
+                usage charges are itemised and agreed with you before anything is switched on;
+                messaging is not unlimited. Data migrations, custom integrations, additional
+                pipelines and substantial workflow builds are scoped and quoted separately.
+              </p>
+              <Link
+                href="/services#scope-and-costs"
+                className="inline-flex items-center gap-2 text-[#3d4cf5] font-semibold text-sm hover:gap-3 transition-all"
+              >
+                Full scope and costs
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -217,7 +222,7 @@ export default function PricingPage() {
 
       <CTABand
         heading="Still weighing it up?"
-        sub="Get the free AEO audit first. It costs nothing, it tells you where you actually stand in AI answers today, and it'll make the pricing decision a lot easier either way."
+        sub="Get the free AI-search audit first. It costs nothing, it shows how your practice is described in AI answers today, and it'll make the pricing decision a lot easier either way."
         secondaryLabel="Talk to us"
         secondaryHref="/contact"
       />

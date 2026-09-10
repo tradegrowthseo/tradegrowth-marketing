@@ -9,7 +9,7 @@ import CTABand from "@/components/ui/CTABand";
 export const metadata: Metadata = {
   title: "Results",
   description:
-    "EV Design ranks #1 on Google in Burnley, gets named in Google's AI Overview across the North West, and is recommended by ChatGPT. Here's what that looks like.",
+    "EV Design ranks #1 on Google in Burnley, is named in Google's AI Overview across the North West, and is described accurately by ChatGPT. Here's what that looks like.",
 };
 
 // EV Design — real, live search results. The screenshots in
@@ -41,7 +41,7 @@ const evDesignShots = [
     src: "/images/case-studies/ev-design-chatgpt.png",
     width: 2532,
     height: 1464,
-    caption: "Recommended in ChatGPT",
+    caption: "Described accurately in ChatGPT",
     alt: "A ChatGPT conversation answering “EV Design Burnley” by identifying EV Design as a Burnley, Lancashire electrical design consultancy for EV charging infrastructure, followed by its contact details.",
   },
 ];
@@ -54,10 +54,10 @@ export default function ResultsPage() {
         eyebrow="Results"
         title={
           <>
-            From invisible to <span className="text-gradient">first in the answer</span>
+            First on Google. <span className="text-gradient">Named in the answer.</span>
           </>
         }
-        sub="Where a client ends up when the work is done: first on Google in their own town, named in Google's AI Overview, and recommended by ChatGPT."
+        sub="Where a client ended up once the work was done: first on Google in their own town, named in Google's AI Overview for the region, and described accurately by ChatGPT. These are visibility results — screenshots of live searches, not enquiry or revenue figures."
       />
 
       {/* ─── EV DESIGN CASE STUDY ─────────────────────────────────────── */}
@@ -67,15 +67,21 @@ export default function ResultsPage() {
             <SectionLabel>Case study</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-5 max-w-3xl">
               EV Design — <span className="text-gradient">#1 on Google in Burnley</span> &amp;
-              recommended by AI
+              named by AI
             </h2>
-            <p className="text-[#565c6b] text-lg leading-relaxed mb-12 max-w-3xl">
-              EV Design is an electrical design consultancy in Burnley, Lancashire, specialising
-              in EV charging infrastructure. Search for them locally and their site comes back
-              first, ahead of national installers. Search wider and Google&apos;s AI Overview
-              names them as a North West specialist. Ask ChatGPT who they are and it answers with
-              the business, the location and the phone number. Same business, three different
-              places people now look — screenshots taken straight from live searches.
+            <p className="text-[#565c6b] text-lg leading-relaxed mb-6 max-w-3xl">
+              EV Design is an electrical design consultancy based in Burnley, Lancashire,
+              specialising in EV charging infrastructure and working on projects across the UK.
+              Search for them locally and their site comes back first, ahead of national
+              installers. Search wider and Google&apos;s AI Overview names them as a North West
+              specialist. Ask ChatGPT who they are and it answers with the business, the location
+              and the phone number. Same business, three different places people now look —
+              screenshots taken straight from live searches.
+            </p>
+            <p className="text-[#8a90a0] text-sm leading-relaxed mb-12 max-w-3xl">
+              What these screenshots evidence is visibility: where the business appears and how it
+              is described. They are not a measure of enquiries, appointments or revenue, and we
+              have not attributed any to them here.
             </p>
           </FadeIn>
 
@@ -115,7 +121,7 @@ export default function ResultsPage() {
                 href="/audit"
                 className="inline-flex items-center gap-2 bg-gradient-brand text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-[0_8px_30px_rgba(61,76,245,0.3)]"
               >
-                Get your free AEO audit
+                Get your free AI-search audit
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -126,8 +132,8 @@ export default function ResultsPage() {
       </section>
 
       <CTABand
-        heading="Your area might still be free"
-        sub="We take one client per trade or service, per area. If your postcode isn't taken yet, the free AEO audit is the fastest way to find out what we'd be working with."
+        heading="Want to know where you'd be starting from?"
+        sub="The free AI-search audit is the fastest way to find out what we'd be working with — how your practice is described in search and by AI assistants today."
         secondaryLabel="See pricing"
         secondaryHref="/pricing"
       />

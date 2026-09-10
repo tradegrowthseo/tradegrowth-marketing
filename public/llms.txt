@@ -1,39 +1,97 @@
 # TradeGrowth Marketing
 
-> The AI-powered growth engine for UK trades and local service businesses — get
-> found, get booked, and get recommended by AI. We help UK trades (electricians,
-> plumbers, gas engineers, roofers, builders, joiners and others) and local
-> service businesses (cleaning companies, landscapers, mobile mechanics, salons,
-> personal trainers and similar) get named inside AI-generated answers, then make
-> sure the resulting enquiries actually convert into booked work.
+> Marketing for UK construction, engineering and design businesses. We help
+> architects, MEP and building services engineers, structural engineers and
+> interior designers — along with related built-environment consultancies and
+> contractors — showcase their expertise, improve their visibility in search and
+> in AI-assisted search, and attract more relevant project enquiries.
 
 Website: https://tradegrowthseo.com
 Contact: contact@tradegrowthseo.com
 Coverage: United Kingdom, remote-first
-Serves: UK trades and local service businesses (not national brands or ecommerce)
-Availability: One client per trade or service, per area
+Serves: UK construction, engineering and design businesses (not ecommerce or
+  national consumer brands)
+Availability: Taking on new clients
+
+## Who we work with
+
+Primary disciplines:
+
+- Architects and architectural practices
+- MEP and building services engineers
+- Structural engineers
+- Interior designers and interior architecture studios
+
+Also working with: civil engineering consultancies; building and quantity
+surveyors; planning consultants; energy and sustainability consultants;
+landscape architects; project management and construction consultancies;
+specialist electrical and EV infrastructure design consultancies; main
+contractors, design-and-build firms and specialist construction contractors.
+
+Clients range from practices serving homeowners on residential projects to
+consultancies selling to developers, contractors, architects and estates teams.
 
 ## What we do
 
-- **Website design** — 10-page, mobile-first websites built AEO-ready from day
-  one. From £500 one-off — animations and larger builds cost more. Domain
-  registered in the client's name; hosting and SSL included for the first year.
-- **SEO + AEO** (headline service) — local SEO and Google Business Profile
-  management, plus Answer Engine Optimisation to get clients cited and
-  recommended inside ChatGPT, Perplexity, Gemini, Claude and Google AI Overviews.
-- **Google & Meta ads** — Google-led paid acquisition, because search intent
-  converts better. Ad spend is paid by the client directly to the platforms.
-- **Industry-specific CRM** — configured per sector. For trades: EICR and gas
-  safety records, materials/labour split for VAT, job costing, van stock and
-  compliance certificate tracking. For service businesses: recurring bookings,
-  deposits, no-show chasing and repeat-customer reminders.
-- **Done-for-you sales** — an AI voice agent answering missed calls within three
-  rings 24/7, plus a human appointment setter chasing quotes at 48 hours, 5, 10,
-  20 and 30 days.
-- **The Trades Network** — a closed referral network between clients (trades and
-  local service businesses alike), with one-click referrals, a £25–50 finder's
-  fee and quarterly meetups. One client per trade or service, per area, so no
-  member ever refers work to a competitor.
+- **Website design** — 10-page, mobile-first websites organised around project
+  portfolios, case studies, specialisms, sector experience and team credentials,
+  with a straightforward enquiry journey. From £500 one-off — animations and
+  larger builds cost more. Domain registered in the client's name; hosting and
+  SSL included for the first year.
+- **SEO + AI-search visibility** (headline service) — search visibility for the
+  client's services, project types and locations, targeted locally, regionally
+  or nationally to match their actual market, including Google Business Profile
+  management. Alongside it, the groundwork that makes a practice legible to
+  AI-assisted search: structured data, question-led content, consistent business
+  information and llms.txt. No ranking, citation or AI recommendation is
+  guaranteed; monthly reporting covers what can actually be observed.
+- **Google & Meta ads** — Google Search led, because the intent is specific;
+  Meta where the work is visual or for audience follow-up. Ad spend is paid by
+  the client directly to the platforms. LinkedIn Ads management is not offered.
+- **Enquiry management & follow-up** — keeping project enquiries organised and
+  making follow-up easier. A practical CRM pipeline (GoHighLevel, white-labelled)
+  configured to capture enquiries from agreed sources, track consultations and
+  proposals, and remind the client's team when action is due. Includes contact
+  and company records, a project-enquiry pipeline, website enquiry capture from
+  connected forms, consultation booking where configured, internal tasks and
+  reminders, agreed acknowledgement and follow-up workflows, and reporting based
+  on recorded activity and outcomes.
+
+  TradeGrowth configures and maintains the agreed system. The client's team
+  assesses project suitability, prepares proposals, handles sales conversations
+  and records progress. We do not chase proposals on the client's behalf, qualify
+  opportunities or close sales, and there is no AI telephone answering or human
+  appointment setting in the offering.
+
+  Package scope: Basic — enquiry tracking foundations (one CRM workspace with
+  client access, contact records, one project-enquiry pipeline, one connected
+  website enquiry form, internal new-enquiry notification, one handover session;
+  no automated proposal-follow-up sequence). Standard — everything in Basic plus
+  one consultation-booking calendar connection, up to three agreed standard
+  workflows, simple pipeline-stage tailoring, and basic source and outcome
+  reporting where the data is captured. Premium — everything in Standard plus a
+  monthly review of recorded enquiry and proposal activity, reporting on recorded
+  sources, stages and outcomes, and one minor adjustment to an existing workflow
+  per month (copy, timing or an existing condition — not a new integration or
+  custom development).
+
+  It does not replace design, analysis, project management or accounting
+  software.
+
+## Scope and costs
+
+- The monthly fee covers configuration and management of the scope listed for
+  the tier. There is no separate setup fee.
+- Software licences, messaging, telephone, third-party integration and usage
+  charges are itemised and agreed before activation. Messaging is not unlimited
+  and not every software cost is absorbed.
+- Data migrations, custom integrations, additional pipelines and substantial
+  workflow builds are scoped and quoted separately.
+- An existing client CRM is assessed before any replacement is recommended.
+- Reporting depends on connected sources and the client recording outcomes.
+- CRM access, ongoing software costs and data-export arrangements on
+  cancellation are agreed during onboarding. The underlying software is
+  licensed, not owned.
 
 ## Pricing (published in full)
 
@@ -46,10 +104,14 @@ Availability: One client per trade or service, per area
 Each monthly package includes everything in the tier below it. Full comparison:
 https://tradegrowthseo.com/pricing/
 
-## Guarantee
+## Case study
 
-Double-your-money guarantee: if the work doesn't return at least double what the
-client has paid, we keep working at no charge until it does.
+EV Design — an electrical design consultancy based in Burnley, Lancashire,
+specialising in EV charging infrastructure and working on projects across the
+UK. Ranks first on Google for local Burnley searches, is named in Google's AI
+Overview as a North West specialist, and is described accurately by ChatGPT.
+These are visibility results, evidenced by screenshots of live searches; no
+enquiry or revenue figures are attributed to them.
 
 ## Key pages
 
@@ -59,5 +121,5 @@ client has paid, we keep working at no charge until it does.
 - Pricing: https://tradegrowthseo.com/pricing/
 - Results / case study: https://tradegrowthseo.com/results/
 - About: https://tradegrowthseo.com/about/
-- Free AEO audit: https://tradegrowthseo.com/audit/
+- Free AI-search audit: https://tradegrowthseo.com/audit/
 - Contact: https://tradegrowthseo.com/contact/

@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Globe, Search, Target, Inbox, PhoneCall, Network } from "lucide-react";
+import { Globe, Search, Target, Inbox } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PageHero from "@/components/ui/PageHero";
 import CTABand from "@/components/ui/CTABand";
-import { services } from "@/lib/services";
+import {
+  services,
+  enquiryPipeline,
+  pipelineOutcomes,
+  responsibilities,
+  attributionNotes,
+  trackingCaveats,
+} from "@/lib/services";
+import { scopeNotes } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "The six services behind the AI Trades Engine, for UK trades and local service businesses: website design, SEO + AEO, Google & Meta ads, an industry-specific CRM, done-for-you sales and The Trades Network.",
+    "Four services for UK construction, engineering and design businesses: website design, SEO and AI-search visibility, Google & Meta ads, and enquiry management and follow-up.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -18,8 +26,14 @@ const iconMap: Record<string, React.ReactNode> = {
   "seo-aeo": <Search className="w-6 h-6" strokeWidth={1.8} />,
   "google-meta-ads": <Target className="w-6 h-6" strokeWidth={1.8} />,
   "trade-crm": <Inbox className="w-6 h-6" strokeWidth={1.8} />,
-  "done-for-you-sales": <PhoneCall className="w-6 h-6" strokeWidth={1.8} />,
-  "trades-network": <Network className="w-6 h-6" strokeWidth={1.8} />,
+};
+
+// Sections that were consolidated away still have links pointing at them from
+// older pages and anything already indexed. Rendering their old ids inside the
+// section that absorbed the content keeps those links landing on the relevant
+// content instead of dumping the reader at the top of the page.
+const legacyAnchors: Record<string, string[]> = {
+  "trade-crm": ["done-for-you-sales"],
 };
 
 export default function ServicesPage() {
@@ -30,10 +44,10 @@ export default function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            Six services. One <span className="text-gradient">connected system.</span>
+            Four services. One <span className="text-gradient">connected system.</span>
           </>
         }
-        sub="Buy the piece you need or the whole engine. Either way, every single one is built AEO-ready from day one — schema, FAQ structure and llms.txt included, never sold back to you later as an upgrade."
+        sub="Take the piece you need or the whole thing. Either way, every build ships ready for search and AI-assisted search — structured data, question-led content and llms.txt included, never sold back to you later as an upgrade."
       />
 
       {/* ─── JUMP NAV ─────────────────────────────────────────────────── */}
@@ -66,6 +80,9 @@ export default function ServicesPage() {
             }`}
           >
             <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+              {legacyAnchors[service.slug]?.map((id) => (
+                <span key={id} id={id} className="block scroll-mt-44" aria-hidden="true" />
+              ))}
               <div className="grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16">
                 <FadeIn>
                   <div className="flex items-center gap-4 mb-5">
@@ -146,6 +163,156 @@ export default function ServicesPage() {
         );
       })}
 
+      {/* ─── ILLUSTRATIVE PIPELINE ────────────────────────────────────── */}
+      <section id="enquiry-pipeline" className="scroll-mt-44 bg-white py-20 md:py-24 border-b border-[#e6e8f2]">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel>An example pipeline</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
+              What a project-enquiry pipeline looks like
+            </h2>
+            <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
+              An illustration, not a fixed process — stages and timings are agreed with you. A
+              studio taking residential work and a consultancy tendering on frameworks do not
+              want the same pipeline.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.08}>
+            <ol className="flex flex-wrap items-stretch gap-3 mb-8">
+              {enquiryPipeline.map((stage, i) => (
+                <li key={stage} className="flex items-center gap-3">
+                  <span className="flex items-center gap-3 h-full bg-[#f6f7fc] border border-[#e6e8f2] rounded-xl px-5 py-4">
+                    <span className="w-6 h-6 rounded-md bg-gradient-brand-static text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                      {i + 1}
+                    </span>
+                    <span className="text-[#171a26] text-sm font-semibold whitespace-nowrap">
+                      {stage}
+                    </span>
+                  </span>
+                  {/* Arrows only at xl, the one breakpoint where all five stages
+                      fit on a single line. Below that the row wraps and the arrow
+                      on the last item of a line points into empty space. */}
+                  {i < enquiryPipeline.length - 1 && (
+                    <svg className="w-4 h-4 text-[#8a90a0] flex-shrink-0 hidden xl:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </FadeIn>
+
+          <FadeIn delay={0.14}>
+            <div className="rounded-xl border border-[#e6e8f2] bg-[#f6f7fc] p-6 md:p-7">
+              <h3 className="text-[#171a26] font-bold text-base mb-1.5">
+                Outcomes, not further steps
+              </h3>
+              <p className="text-[#565c6b] text-sm leading-relaxed mb-4">
+                An enquiry can reach any of these from any stage. Nothing has to walk the whole
+                line, and plenty of good enquiries don&apos;t.
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                {pipelineOutcomes.map((outcome) => (
+                  <span
+                    key={outcome}
+                    className="inline-flex items-center gap-2 bg-white border border-[#e6e8f2] rounded-full px-4 py-1.5 text-sm font-medium text-[#565c6b]"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static" />
+                    {outcome}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="grid sm:grid-cols-2 gap-5 mt-8">
+              <div className="rounded-xl border border-[#e6e8f2] bg-white p-6">
+                <h3 className="text-[#3d4cf5] text-[11px] font-bold tracking-widest uppercase mb-2.5">
+                  What we do
+                </h3>
+                <p className="text-[#565c6b] text-sm leading-relaxed">{responsibilities.ours}</p>
+              </div>
+              <div className="rounded-xl border border-[#e6e8f2] bg-white p-6">
+                <h3 className="text-[#3d4cf5] text-[11px] font-bold tracking-widest uppercase mb-2.5">
+                  What your team does
+                </h3>
+                <p className="text-[#565c6b] text-sm leading-relaxed">{responsibilities.yours}</p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ─── WHAT GETS RECORDED, AND WHAT CAN BE ATTRIBUTED ──────────── */}
+      <section id="attribution" className="scroll-mt-44 bg-[#0f1220] py-20 md:py-24 relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[560px] h-[380px] bg-[#5b1cf0] opacity-[0.14] rounded-full blur-[140px] pointer-events-none" />
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel light>What the reporting can and can&apos;t say</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 max-w-2xl leading-snug">
+              Four things worth keeping apart
+            </h2>
+            <p className="text-white/60 text-lg mb-12 max-w-2xl leading-relaxed">
+              Most marketing reports quietly blur these together, which is how a click count ends
+              up being presented as a pipeline. We keep them separate.
+            </p>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 gap-5 mb-10">
+            {attributionNotes.map((note, i) => (
+              <FadeIn key={note.term} delay={(i % 2) * 0.08}>
+                <div className="h-full rounded-xl border border-white/10 bg-white/[0.04] p-6">
+                  <h3 className="text-white font-bold text-base mb-2">{note.term}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{note.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.2}>
+            <ul className="space-y-3">
+              {trackingCaveats.map((caveat) => (
+                <li key={caveat} className="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
+                  <svg className="w-4 h-4 text-[#8b93ff] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zM12 15.75h.007v.008H12v-.008z" />
+                  </svg>
+                  {caveat}
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ─── SCOPE AND COSTS ──────────────────────────────────────────── */}
+      <section id="scope-and-costs" className="scroll-mt-44 bg-[#f6f7fc] py-20 md:py-24 border-b border-[#e6e8f2]">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel>Scope and costs</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
+              What&apos;s included, and what isn&apos;t
+            </h2>
+            <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
+              The packages are a defined standard scope. Here is where that scope ends, so
+              nothing arrives as a surprise on an invoice.
+            </p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {scopeNotes.map((note, i) => (
+              <FadeIn key={note.title} delay={(i % 3) * 0.07}>
+                <div className="h-full rounded-xl border border-[#e6e8f2] bg-white p-6">
+                  <h3 className="text-[#171a26] font-bold text-base mb-2">{note.title}</h3>
+                  <p className="text-[#565c6b] text-sm leading-relaxed">{note.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── AEO-READY BAND ───────────────────────────────────────────── */}
       <section className="bg-[#0f1220] py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#3d4cf5] opacity-[0.16] rounded-full blur-[130px] pointer-events-none" />
@@ -154,13 +321,14 @@ export default function ServicesPage() {
             <FadeIn>
               <SectionLabel light>Built in, not bolted on</SectionLabel>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug">
-                Every service ships AEO-ready from day one
+                Every service ships ready for AI-assisted search
               </h2>
               <p className="text-white/60 leading-relaxed mb-6">
-                Most agencies build you a site, then come back in six months to sell you
-                &ldquo;AI optimisation&rdquo; as a separate line item. We think that&apos;s
-                selling you the same job twice. Schema, question-led FAQ structure and llms.txt
-                are part of the build, whichever services you take.
+                The common pattern is to build a site, then return six months later to sell
+                &ldquo;AI optimisation&rdquo; as a separate line item. That is charging twice for
+                the same groundwork. Structured data, question-led content and llms.txt are part
+                of the build, whichever services you take — none of it a guarantee that an
+                assistant will name you, all of it the work that makes it possible.
               </p>
               <Link
                 href="/aeo"
@@ -176,12 +344,12 @@ export default function ServicesPage() {
             <FadeIn delay={0.1}>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  "JSON-LD schema markup",
-                  "Question-led FAQ structure",
+                  "JSON-LD structured data",
+                  "Question-led content structure",
                   "llms.txt for AI crawlers",
-                  "Trusted citation building",
+                  "Consistent listings and citations",
                   "Entity-consistent business data",
-                  "Monthly AI visibility tracking",
+                  "Monthly AI visibility reporting",
                 ].map((item) => (
                   <div
                     key={item}
@@ -198,8 +366,8 @@ export default function ServicesPage() {
       </section>
 
       <CTABand
-        heading="Not sure which services you actually need?"
-        sub="Start with the free AEO audit. It shows you exactly where you stand in AI answers today, and we'll tell you honestly which of the six would move the needle first."
+        heading="Not sure which of these you actually need?"
+        sub="Start with the free AI-search audit. It shows how you're described in AI answers today, and we'll tell you honestly which of the four would make the most difference first."
       />
     </>
   );

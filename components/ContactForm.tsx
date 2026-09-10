@@ -12,28 +12,25 @@ interface FormState {
   message: string;
 }
 
-// Trades first — still the primary audience — then local service businesses.
-// The submitted field is named `trade` for continuity with existing enquiry
-// emails; the visible label reads "trade or service".
+// The four primary disciplines first, then the related built-environment
+// professions. The submitted field is still named `trade` for continuity with
+// existing enquiry emails and the Web3Forms setup; only the visible label and
+// the options change.
 const sectorOptions = [
-  "Electrician",
-  "Plumber / heating engineer",
-  "Gas engineer",
-  "Roofer",
-  "Builder",
-  "Joiner / carpenter",
-  "Plasterer",
-  "Kitchen / bathroom fitter",
-  "Painter & decorator",
-  "EV charger installer",
-  "Landscaper / garden care",
-  "Cleaning company",
-  "Mobile mechanic",
-  "Salon / barber",
-  "Personal trainer / gym",
-  "Pest control / property care",
-  "Removals / man with a van",
-  "Other trade or service",
+  "Architect / architectural practice",
+  "MEP / building services engineer",
+  "Structural engineer",
+  "Interior designer",
+  "Civil engineering consultancy",
+  "Building or quantity surveyor",
+  "Planning consultant",
+  "Energy / sustainability consultant",
+  "Landscape architect",
+  "Project / construction consultancy",
+  "Electrical / EV charging design",
+  "Main contractor / design & build",
+  "Specialist construction contractor",
+  "Other construction/design business",
 ];
 
 // Delivery goes through Web3Forms — endpoint, access key and the POST itself
@@ -180,7 +177,7 @@ export default function ContactForm() {
             type="text"
             value={form.business}
             onChange={handleChange}
-            placeholder="Smith Electrical Ltd"
+            placeholder="Smith Structural Design Ltd"
             className={field}
           />
         </div>
@@ -220,16 +217,16 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="trade" className={labelClass}>
-          Your trade or service
+          Your discipline
         </label>
         <select
           id="trade"
           name="trade"
           value={form.trade}
           onChange={handleChange}
-          className={`${field} text-[#171a26]`}
+          className={`${field} text-[#171a26] text-ellipsis`}
         >
-          <option value="">Select your trade or service…</option>
+          <option value="">Select your discipline…</option>
           {sectorOptions.map((t) => (
             <option key={t} value={t}>
               {t}
@@ -249,7 +246,7 @@ export default function ContactForm() {
           rows={5}
           value={form.message}
           onChange={handleChange}
-          placeholder="Tell us about your business: where you work, what you'd like more of, and what you've tried so far…"
+          placeholder="Tell us about the practice: the work you do, the projects you'd like more of, and what you've tried so far…"
           className={`${field} resize-none`}
         />
       </div>

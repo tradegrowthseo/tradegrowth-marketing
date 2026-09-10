@@ -4,12 +4,12 @@ import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PageHero from "@/components/ui/PageHero";
 import ContactForm from "@/components/ContactForm";
-import { sectors } from "@/lib/differentiators";
+import AudienceCards from "@/components/ui/AudienceCards";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Talk to TradeGrowth Marketing. Email contact@tradegrowthseo.com, book a discovery call, or send us a message — and find out whether your trade or service and your area are still available.",
+    "Talk to TradeGrowth Marketing. Email contact@tradegrowthseo.com, request a discovery call, or send us a message about the projects you'd like more of.",
 };
 
 const contactDetails: {
@@ -81,9 +81,9 @@ const contactDetails: {
   },
   {
     label: "Availability",
-    value: "One client per trade or service, per area",
+    value: "Taking on new clients",
     href: null,
-    note: "Ask us whether your postcode is still open",
+    note: "Tell us the work you want more of and we'll say whether we can help",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -101,11 +101,11 @@ export default function ContactPage() {
         eyebrow="Get in touch"
         title={
           <>
-            Let&apos;s find out if your area is{" "}
-            <span className="text-gradient">still free</span>
+            Let&apos;s talk about the work{" "}
+            <span className="text-gradient">you want more of</span>
           </>
         }
-        sub="Whether you're ready to start or just want to know what the AI currently says about your business, we're happy to talk. No scripts, no pressure, and an honest answer if we don't think we can help."
+        sub="Whether you're ready to start or just want to know how your practice is currently described in search and by AI assistants, we're happy to talk. No scripts, no pressure, and an honest answer if we don't think we can help."
       />
 
       {/* ─── CONTACT BODY ─────────────────────────────────────────────── */}
@@ -160,14 +160,14 @@ export default function ContactPage() {
                     Book a discovery call
                   </h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-5">
-                    Twenty minutes on the phone. We&apos;ll look at what you do, your area and
-                    what the AI currently says about you, then tell you honestly whether
-                    there&apos;s a result in it. No slides.
+                    Twenty minutes on the phone. We&apos;ll look at the work you do, the projects
+                    you want more of and how you currently show up in search, then tell you
+                    honestly whether there&apos;s a result in it. No slides.
                   </p>
                   <ul className="space-y-2 mb-6">
                     {[
                       "20 minutes, no obligation",
-                      "We check your area is available",
+                      "We look at the work you want more of",
                       "Straight answer either way",
                     ].map((p) => (
                       <li key={p} className="flex items-center gap-2.5 text-sm text-white/85">
@@ -184,13 +184,13 @@ export default function ContactPage() {
                     href="mailto:contact@tradegrowthseo.com?subject=Discovery%20call%20request"
                     className="inline-flex items-center gap-2 bg-white text-[#3d4cf5] font-semibold px-5 py-3 rounded-lg text-sm hover:gap-3 transition-all"
                   >
-                    Request a call
+                    Request a discovery call
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </a>
                   <p className="text-white/50 text-xs mt-3">
-                    Placeholder: opens an email until the booking calendar is connected.
+                    Opens an email — tell us roughly when suits and we&apos;ll confirm a time.
                   </p>
                 </div>
               </FadeIn>
@@ -218,24 +218,15 @@ export default function ContactPage() {
           <FadeIn>
             <SectionLabel>Who we work with</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
-              Trades and local service businesses
+              Construction, engineering and design businesses
             </h2>
             <p className="text-[#565c6b] text-lg mb-10 max-w-2xl leading-relaxed">
-              UK trades and local service businesses — one client per trade or service, per area.
-              If what you do isn&apos;t listed, ask anyway.
+              UK construction, engineering and design businesses. If what you do isn&apos;t
+              listed, ask anyway.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {sectors.map((sector, i) => (
-              <FadeIn key={sector} delay={i * 0.03}>
-                <div className="flex items-center gap-3 bg-[#f6f7fc] border border-[#e6e8f2] rounded-lg px-4 py-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0" />
-                  <span className="text-[#565c6b] text-sm font-medium">{sector}</span>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <AudienceCards />
 
           <FadeIn delay={0.2}>
             <div className="mt-12 rounded-2xl border border-[#e6e8f2] bg-[#f6f7fc] p-8 text-center">
@@ -243,8 +234,8 @@ export default function ContactPage() {
                 Not ready to talk yet?
               </h3>
               <p className="text-[#565c6b] mb-6 max-w-xl mx-auto">
-                Start with the free AEO audit instead. It shows you what ChatGPT, Perplexity,
-                Gemini and Google AI Overviews say about your business today — no call required.
+                Start with the free AI-search audit instead. It shows how ChatGPT, Perplexity,
+                Gemini and Google AI Overviews describe your practice today — no call required.
               </p>
               <Link
                 href="/audit"

@@ -25,7 +25,7 @@ export default function NotFound() {
             href="/audit"
             className="inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white/50 bg-white/5 hover:bg-white/10 text-white/85 hover:text-white font-semibold px-7 py-3.5 rounded-lg transition-colors"
           >
-            Get a free AEO audit
+            Get a free AI-search audit
           </Link>
         </div>
       </div>

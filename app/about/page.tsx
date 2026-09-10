@@ -8,34 +8,34 @@ import PageHero from "@/components/ui/PageHero";
 import CTABand from "@/components/ui/CTABand";
 import FAQ from "@/components/ui/FAQ";
 import { generalFaqs } from "@/lib/faqs";
-import { sectors } from "@/lib/differentiators";
+import AudienceCards from "@/components/ui/AudienceCards";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why TradeGrowth Marketing exists, what we believe, and the two rules we run on: one client per trade or service per area, and a double-your-money guarantee. For UK trades and local service businesses.",
+    "Why TradeGrowth Marketing exists, what we believe, and how we work with UK construction, engineering and design businesses — architects, engineers and interior designers.",
 };
 
 const values = [
   {
     icon: <Eye className="w-6 h-6" strokeWidth={1.8} />,
     title: "Transparent by default",
-    body: "Every price is published on this website. Ad spend goes straight from you to Google and Meta so we can't skim it. Reports show what happened, including the months where the answer is \"not much yet\".",
+    body: "Every price is published on this website. Ad spend goes straight from you to Google and Meta so we can't skim it. Reports show what happened, including the months where the honest answer is \"not much yet\".",
   },
   {
     icon: <Target className="w-6 h-6" strokeWidth={1.8} />,
-    title: "Judged on jobs, not leads",
-    body: "A lead is not a result. Anyone can buy you clicks and send a screenshot of them. We measure whether the phone got answered, whether the quote got chased and whether the job got booked.",
+    title: "Judged on enquiries, not clicks",
+    body: "Traffic is not a result. Anyone can buy you clicks and put them in a report. What matters is whether the right kind of project enquiry arrived, whether it got answered, and whether the fee proposal that followed got a decision.",
   },
   {
     icon: <Handshake className="w-6 h-6" strokeWidth={1.8} />,
-    title: "Local service businesses only",
-    body: "Trades first, and local service businesses built the same way — cleaners, landscapers, mobile mechanics, salons, trainers. We don't do national brands or ecommerce. Staying narrow is the only reason we can build things like EICR generation and a referral network that actually works.",
+    title: "Built environment only",
+    body: "Construction, engineering and design businesses. Not ecommerce, not national consumer brands. Staying narrow is what lets us understand how a project enquiry actually arrives in this sector, and what a developer or an estates team is looking for before they shortlist anybody.",
   },
   {
     icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.8} />,
-    title: "Skin in the game",
-    body: "The double-your-money guarantee means if it doesn't work, we keep working for free until it does. That's only possible because we're selective about who we take on.",
+    title: "Realistic about outcomes",
+    body: "Nobody controls what Google ranks or what an AI assistant says, and we don't pretend otherwise. We'll tell you what the work involves, report what can actually be observed, and say so on the first call if we don't think we can get you a result.",
   },
 ];
 
@@ -47,11 +47,11 @@ export default function AboutPage() {
         eyebrow="About us"
         title={
           <>
-            Everyone helps you get leads.{" "}
-            <span className="text-gradient">We help you win the jobs.</span>
+            Expertise is the product.{" "}
+            <span className="text-gradient">Most websites hide it.</span>
           </>
         }
-        sub="TradeGrowth Marketing exists because the gap between a lead and a booked job is where most trades and local service businesses quietly lose money — and almost nobody in this industry is being paid to close it."
+        sub="TradeGrowth Marketing helps construction, engineering and design businesses show what they are good at, get found by the people commissioning that kind of work, and keep the resulting enquiries organised."
       />
 
       {/* ─── THE STORY ────────────────────────────────────────────────── */}
@@ -93,35 +93,34 @@ export default function AboutPage() {
             <FadeIn delay={0.14} direction="left">
               <div className="space-y-5 text-[#565c6b] text-lg leading-relaxed">
                 <p>
-                  Talk to enough trades and local service businesses and the same story comes
-                  back. They&apos;ve paid an agency for a website. Maybe they&apos;ve paid for
-                  ads. The leads come in, a report arrives at the end of the month with an
-                  encouraging number on it — and the diary still isn&apos;t full.
+                  Look at enough websites belonging to architects, engineers and design studios
+                  and a pattern shows up. The work is genuinely good. The site lists services in
+                  three lines each, shows a handful of images with no context, and says almost
+                  nothing about the projects, the constraints or the people who solved them.
                 </p>
                 <p>
-                  The reason is almost never the marketing. It&apos;s that a lead lands at 4pm on
-                  a Tuesday while you&apos;re in a loft, under a car or with a client, goes to
-                  voicemail, and by the time you call back at seven the customer has booked
-                  someone who picked up. Or the quote goes out and nobody ever chases it, so a job
-                  you were 80% likely to win quietly evaporates.
+                  That matters because of how the work is actually won. Someone deciding who to
+                  approach — a developer, an architect looking for a consultant, a homeowner
+                  planning an extension — is looking for evidence that you have handled something
+                  like their project before. A list of services does not provide it. A properly
+                  presented portfolio does, and most practices already have the material.
                 </p>
                 <p>
-                  No agency was being paid to fix that half of the problem. They were being paid
-                  for leads, so they optimised for leads — and the hardest, most valuable part of
-                  the process was left entirely to the person who was already doing a full day on
-                  the tools.
+                  The second thing is what happens after the enquiry arrives. It lands while you
+                  are on site or in a meeting. The fee proposal goes out and then sits, and nobody
+                  is paid to follow it up. Plenty of good practices lose appointments there rather
+                  than in the pitch.
                 </p>
                 <p>
-                  Then the second thing happened. Customers started asking ChatGPT and
-                  Google&apos;s AI Overviews who to hire, and getting back three names instead of
-                  ten links. An entire channel opened up that almost no local business in the UK
-                  is set up for, while the agencies serving them are still selling page-one
-                  rankings.
+                  Meanwhile, how people research has shifted again. A growing share of enquiries
+                  start with a question to ChatGPT or Google&apos;s AI Overview rather than a page
+                  of links, and those systems answer from whatever they can read and trust about
+                  a practice. Most consultancy websites give them very little to work with.
                 </p>
                 <p className="text-[#171a26] font-semibold">
-                  So we built the thing that handles both: get named by the AI, then actually
-                  answer the phone and chase the quote. That&apos;s the AI Trades Engine, and
-                  it&apos;s the whole business.
+                  So that is what this business does: make the expertise visible, make it findable
+                  in both kinds of search, and put a system behind it so the enquiries that follow
+                  are organised and easy for your team to keep on top of.
                 </p>
               </div>
             </FadeIn>
@@ -138,9 +137,9 @@ export default function AboutPage() {
               Our mission
             </SectionLabel>
             <p className="text-2xl md:text-4xl font-bold text-white leading-snug tracking-tight">
-              To make good UK trades and local service businesses the ones{" "}
-              <span className="text-gradient">both Google and the AI recommend</span> — and then
-              to make sure the work actually gets booked.
+              To help good UK construction, engineering and design businesses{" "}
+              <span className="text-gradient">be found for the work they do best</span> — and to
+              keep the enquiries that follow organised enough to act on.
             </p>
           </FadeIn>
         </div>
@@ -172,119 +171,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── EXCLUSIVITY + GUARANTEE ──────────────────────────────────── */}
-      <section className="bg-[#f6f7fc] py-24 border-y border-[#e6e8f2]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8">
-            <FadeIn>
-              <div className="h-full bg-white border border-[#e6e8f2] rounded-2xl p-8 md:p-10">
-                <span className="inline-block text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-4">
-                  Exclusivity
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#171a26] mb-5">
-                  One client per trade or service, per area
-                </h3>
-                <div className="space-y-4 text-[#565c6b] leading-relaxed">
-                  <p>
-                    If we work with an electrician in your town, we will not take on another one.
-                    The same goes for a cleaning company, a mobile mechanic or a salon. Not for
-                    more money, not for a bigger budget, not next quarter.
-                  </p>
-                  <p>
-                    It costs us revenue and it&apos;s the single best decision we&apos;ve made.
-                    It means our incentives point the same way as yours, it means the referral
-                    network can exist at all, and it means we can look you in the eye about the
-                    guarantee.
-                  </p>
-                  <p className="text-[#171a26] font-semibold">
-                    The practical consequence: areas run out. If your postcode is still free,
-                    it won&apos;t necessarily stay that way.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 text-[#3d4cf5] font-semibold hover:gap-3 transition-all"
-                >
-                  Check if your area is available
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <div className="h-full rounded-2xl bg-gradient-brand-static p-8 md:p-10 text-white shadow-[0_16px_50px_rgba(61,76,245,0.28)]">
-                <span className="inline-block text-[11px] font-bold tracking-widest uppercase text-white/70 mb-4">
-                  The guarantee
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-5">
-                  Double your money — or we work for free
-                </h3>
-                <div className="space-y-4 text-white/80 leading-relaxed">
-                  <p>
-                    If the work we do doesn&apos;t return at least double what you&apos;ve paid
-                    us, we keep working at no charge until it does.
-                  </p>
-                  <p>
-                    It isn&apos;t a gimmick and it isn&apos;t buried in small print. It&apos;s
-                    what happens when you only take on clients you&apos;re confident you can get
-                    a result for — which is exactly what the one-per-area rule forces us to do.
-                  </p>
-                  <p className="font-semibold text-white">
-                    If we don&apos;t think we can do that for your business, we&apos;ll tell you
-                    on the first call rather than take your money.
-                  </p>
-                </div>
-                <Link
-                  href="/pricing"
-                  className="mt-7 inline-flex items-center gap-2 bg-white text-[#3d4cf5] font-semibold px-5 py-3 rounded-lg text-sm w-fit hover:gap-3 transition-all"
-                >
-                  See what it costs
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* ─── WHO WE SERVE ─────────────────────────────────────────────── */}
-      <section className="bg-white py-24">
+      <section className="bg-[#f6f7fc] py-24 border-y border-[#e6e8f2]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>Who we work with</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
-              Trades and local service businesses
+              Construction, engineering and design businesses
             </h2>
             <p className="text-[#565c6b] text-lg mb-10 max-w-2xl leading-relaxed">
-              Trades are where we started and they&apos;re still most of what we do. The same
-              engine works for any local business that sells a service to people nearby.
+              Four disciplines make up most of what we do, with related built-environment
+              consultancies and contractors alongside them.
             </p>
           </FadeIn>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {sectors.map((sector, i) => (
-              <FadeIn key={sector} delay={i * 0.03}>
-                <div className="flex items-center gap-3 bg-[#f6f7fc] border border-[#e6e8f2] rounded-lg px-4 py-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0" />
-                  <span className="text-[#565c6b] text-sm font-medium">{sector}</span>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          <FadeIn delay={0.2}>
+
+          <AudienceCards alt />
+
+          <FadeIn delay={0.24}>
             <p className="text-[#8a90a0] text-sm mt-6">
-              Not on the list? Ask anyway — if we can get a result for you we&apos;ll say so, and
-              if we can&apos;t we&apos;ll say that instead.
+              Not on the list? Ask anyway — if we think we can get a result for you we&apos;ll say
+              so, and if we can&apos;t we&apos;ll say that instead.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* ─── FAQ ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#f6f7fc] py-24 border-t border-[#e6e8f2]">
+      <section className="bg-white py-24">
         <div className="max-w-[900px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>Questions</SectionLabel>

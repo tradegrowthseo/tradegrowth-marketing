@@ -29,7 +29,7 @@ const navLinks: {
 // There are no per-service routes — the dropdown deep-links into the sections
 // of the single /services page.
 const serviceLinks = [
-  { label: "All Services", href: "/services", desc: "The full AI Trades Engine" },
+  { label: "All Services", href: "/services", desc: "Everything we do, in detail" },
   ...services.map((s) => ({
     label: s.label,
     href: `/services#${s.slug}`,
@@ -156,7 +156,7 @@ export default function Header() {
             href="/audit"
             className="inline-flex items-center gap-2 bg-gradient-brand text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all shadow-[0_4px_16px_rgba(61,76,245,0.3)] flex-shrink-0"
           >
-            Free AEO audit
+            Free AI-search audit
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

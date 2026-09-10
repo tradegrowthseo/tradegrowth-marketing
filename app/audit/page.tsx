@@ -5,36 +5,36 @@ import PageHero from "@/components/ui/PageHero";
 import AuditForm from "@/components/AuditForm";
 
 export const metadata: Metadata = {
-  title: "Free AEO Audit",
+  title: "Free AI-Search Audit",
   description:
-    "A free scan of how visible your trade or local service business is inside ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",
+    "A free check of how your practice is described inside ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",
 };
 
 const whatYouGet = [
   {
     number: "01",
     title: "Your AI visibility scan",
-    body: "We ask ChatGPT, Perplexity, Gemini and Google AI Overviews the questions your customers actually ask — and record, word for word, whether your business gets named.",
+    body: "We ask ChatGPT, Perplexity, Gemini and Google AI Overviews the questions your prospective clients actually ask — and record, word for word, whether your practice gets named and how it is described.",
   },
   {
     number: "02",
     title: "A competitor benchmark",
-    body: "The same questions, scored against the business the AI names most often in your area. You'll see exactly what they have that you don't.",
+    body: "The same questions, scored against the practice the assistants name most often for that work. You'll see what they have that you don't.",
   },
   {
     number: "03",
     title: "A 5-page PDF report",
-    body: "The findings, the specific gaps in your schema, content, citations and llms.txt, and a prioritised list of what to fix first. Yours to keep either way.",
+    body: "The findings, the specific gaps in your structured data, content, listings and llms.txt, and a prioritised list of what to address first. Yours to keep either way.",
   },
 ];
 
 const reportContents = [
-  "Screenshots of the actual AI answers for your service and area",
+  "Screenshots of the actual AI answers for your services and project types",
   "Which of the five answer engines name you, and which don't",
-  "Your schema / JSON-LD coverage and what's missing",
-  "Whether your site has an llms.txt file (almost certainly not)",
-  "Citation consistency across the sources these models trust",
-  "A prioritised fix list, ordered by impact",
+  "Your structured data coverage and what's missing",
+  "Whether your site has an llms.txt file",
+  "Consistency of your business information across trusted sources",
+  "A prioritised list of what to address first",
 ];
 
 export default function AuditPage() {
@@ -42,14 +42,14 @@ export default function AuditPage() {
     <>
       <PageHero
         patternId="audit-grid"
-        eyebrow="Free AEO audit"
+        eyebrow="Free AI-search audit"
         title={
           <>
             Find out what the AI says about you{" "}
             <span className="text-gradient">right now</span>
           </>
         }
-        sub="We'll scan how visible your business is across ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmark you against a competitor, and send you a 5-page report. Free, no card details, no obligation."
+        sub="We'll check how your practice is described across ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmark you against a competitor, and send you a 5-page report. Free, no card details, no obligation."
       >
         <div className="flex flex-wrap gap-3 mt-8">
           {["Completely free", "No card details", "Back within days", "Yours to keep"].map((p) => (
@@ -122,14 +122,26 @@ export default function AuditPage() {
                   ))}
                 </ul>
 
+                <div className="bg-white border border-[#e6e8f2] rounded-xl p-5 mb-4">
+                  <h3 className="text-[#171a26] font-bold text-sm mb-2">
+                    What the AI checks actually show
+                  </h3>
+                  <p className="text-[#565c6b] text-sm leading-relaxed">
+                    A set of selected prompts, asked at one point in time. Assistants word things
+                    differently from one run to the next and change as their sources change, so
+                    treat the answers as a snapshot of how you&apos;re currently described — not a
+                    ranking, and not a score that will read the same next week.
+                  </p>
+                </div>
+
                 <div className="bg-white border border-[#e6e8f2] rounded-xl p-5">
                   <h3 className="text-[#171a26] font-bold text-sm mb-2">
                     Why we give this away
                   </h3>
                   <p className="text-[#565c6b] text-sm leading-relaxed">
-                    Because most local business owners have genuinely never seen what an AI
-                    assistant says about their business, and it&apos;s usually the moment the
-                    penny drops. We&apos;d rather show you than talk at you.
+                    Because most practice owners have genuinely never seen what an AI assistant
+                    says about their business, and it&apos;s usually the moment the penny drops.
+                    We&apos;d rather show you than talk at you.
                   </p>
                 </div>
               </FadeIn>
