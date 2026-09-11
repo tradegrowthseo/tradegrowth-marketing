@@ -1,9 +1,9 @@
 // Pricing is published in full and in public — it's a deliberate
 // differentiator, so nothing here is hidden behind a "request a quote".
 //
-// Structure: everyone buys The Website once (one-off, from £500 — animations
-// and larger builds cost more), then chooses one of three monthly packages that
-// sit on top of it. Each package includes everything in the tier below it.
+// Structure: everyone buys The Website once (one-off, at one of two fixed
+// prices), then chooses one of three monthly packages that sit on top of it.
+// Each package includes everything in the tier below it.
 
 export interface Tier {
   id: "basic" | "standard" | "premium";
@@ -18,22 +18,44 @@ export interface Tier {
 }
 
 /**
- * The starting price for a website build. The final figure depends on the size
- * of the build — animations and larger sites cost more — which is why it is
- * shown with a "+" everywhere rather than as a flat price.
+ * The website build, sold as two fixed-price options rather than an open
+ * "from" figure.
  *
- * Declared once and reused below so the headline price and the terms line
- * underneath it can never quote different numbers.
+ * An estimate undercuts the whole "every price published in full" position —
+ * if the real number needs a conversation, the price isn't published. Two named
+ * options let a practice place itself without asking, and the figure they see
+ * is the figure they pay.
  */
-const WEBSITE_FROM = "£500";
+export interface WebsiteOption {
+  id: "practice" | "multi-sector";
+  name: string;
+  price: string;
+  /** Who this one is for, so the buyer self-selects. */
+  best: string;
+}
+
+export const websiteOptions: WebsiteOption[] = [
+  {
+    id: "practice",
+    name: "Practice site",
+    price: "£1,200",
+    best: "One discipline and one core set of services — most architectural, structural and interior design practices",
+  },
+  {
+    id: "multi-sector",
+    name: "Multi-sector site",
+    price: "£1,500",
+    best: "Several disciplines or sectors needing their own pages — MEP consultancies, multi-service firms and contractors",
+  },
+];
 
 /** The one-off website build. Sold separately from the monthly packages. */
 export const websiteProduct = {
   name: "The Website",
-  /** The starting figure on its own, for sentences like "websites start at X". */
-  from: WEBSITE_FROM,
-  price: `${WEBSITE_FROM}+`,
-  terms: `Websites start at ${WEBSITE_FROM} — animations and larger builds cost more · one-off · 50% deposit, 50% on launch`,
+  /** The entry figure, for sentences like "websites start at X". */
+  from: websiteOptions[0].price,
+  terms:
+    "Fixed price, not an estimate · one-off · 50% deposit, 50% on launch",
   tagline: "The foundation everything else sits on",
   commitment: "No monthly commitment",
   features: [
@@ -132,8 +154,8 @@ export const minimumLabel = (tier: Tier) => `${tier.minimumMonths} month minimum
 /** The minimum term, phrased for the comparison table. */
 export const termLabel = (tier: Tier) => `${tier.minimumMonths} months`;
 
-/** The website build price, formatted for display. */
-export const websitePriceLabel = `${websiteProduct.price} one-off`;
+/** The website build price, formatted for display. Names both options. */
+export const websitePriceLabel = websiteOptions.map((o) => o.price).join(" or ");
 
 // ─── What is included, and what is charged separately ─────────────────
 // Rendered on /pricing and /services. The point of these is that the package

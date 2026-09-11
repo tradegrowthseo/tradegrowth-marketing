@@ -61,6 +61,10 @@ export default function AnalyticsEvents() {
 
       if (href.startsWith("tel:")) {
         event = "phone_click";
+      } else if (href.startsWith("mailto:")) {
+        // The discovery-call CTA is a mailto, so email was the one enquiry
+        // route firing nothing at all.
+        event = "email_click";
       } else if (WHATSAPP.test(href)) {
         event = "whatsapp_click";
       } else if (a.origin === window.location.origin && AUDIT_PATH.test(a.pathname)) {

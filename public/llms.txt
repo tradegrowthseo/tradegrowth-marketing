@@ -35,9 +35,9 @@ consultancies selling to developers, contractors, architects and estates teams.
 
 - **Website design** — 10-page, mobile-first websites organised around project
   portfolios, case studies, specialisms, sector experience and team credentials,
-  with a straightforward enquiry journey. From £500 one-off — animations and
-  larger builds cost more. Domain registered in the client's name; hosting and
-  SSL included for the first year.
+  with a straightforward enquiry journey. Fixed price, one-off: £1,200 for a
+  practice site, £1,500 for a multi-sector site. Domain registered in the
+  client's name; hosting and SSL included for the first year.
 - **SEO + AI-search visibility** (headline service) — search visibility for the
   client's services, project types and locations, targeted locally, regionally
   or nationally to match their actual market, including Google Business Profile
@@ -95,8 +95,10 @@ consultancies selling to developers, contractors, architects and estates teams.
 
 ## Pricing (published in full)
 
-- The Website: from £500 one-off (50% deposit, 50% on launch). Animations and
-  larger builds cost more. No monthly commitment.
+- The Website: two fixed-price options, one-off (50% deposit, 50% on launch),
+  no monthly commitment. Practice site £1,200 — one discipline and one core set
+  of services. Multi-sector site £1,500 — several disciplines or sectors needing
+  their own pages. These are fixed prices, not estimates.
 - Basic: £395/month plus the one-off website fee. 3 month minimum.
 - Standard: £495/month plus the one-off website fee. 3 month minimum. Most popular.
 - Premium: £595/month plus the one-off website fee. 6 month minimum.

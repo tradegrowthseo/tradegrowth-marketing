@@ -8,7 +8,7 @@ import PricingCard from "@/components/ui/PricingCard";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import CTABand from "@/components/ui/CTABand";
 import FAQ from "@/components/ui/FAQ";
-import { tiers, websiteProduct } from "@/lib/pricing";
+import { tiers, websiteProduct, websiteOptions } from "@/lib/pricing";
 import { pricingFaqs } from "@/lib/faqs";
 
 // Built from lib/pricing.ts rather than retyped, so the SERP description can't
@@ -19,9 +19,10 @@ export const metadata: Metadata = {
   ...routeMeta("/pricing/"),
   title: "Pricing",
   description:
-    `Every price published in full. Websites start at ${websiteProduct.from} and you own them ` +
-    `outright, then ${basic.name} ${basic.monthly}/mo, ${standard.name} ${standard.monthly}/mo or ` +
-    `${premium.name} ${premium.monthly}/mo on top — with a complete feature comparison.`,
+    `Every price published in full. A website you own outright at ` +
+    `${websiteOptions[0].price} or ${websiteOptions[1].price}, then ${basic.name} ` +
+    `${basic.monthly}/mo, ${standard.name} ${standard.monthly}/mo or ${premium.name} ` +
+    `${premium.monthly}/mo on top — with a complete feature comparison.`,
 };
 
 export default function PricingPage() {
@@ -60,8 +61,21 @@ export default function PricingPage() {
                     {websiteProduct.tagline}
                   </span>
                   <h3 className="text-white text-2xl font-bold mb-4">{websiteProduct.name}</h3>
-                  <div className="text-5xl font-extrabold tracking-tight mb-2">
-                    {websiteProduct.price}
+                  <div className="space-y-3 mb-5">
+                    {websiteOptions.map((option) => (
+                      <div
+                        key={option.id}
+                        className="rounded-xl bg-white/10 border border-white/20 px-4 py-3"
+                      >
+                        <div className="flex items-baseline justify-between gap-3">
+                          <span className="text-white font-semibold text-sm">{option.name}</span>
+                          <span className="text-white text-2xl font-extrabold tracking-tight">
+                            {option.price}
+                          </span>
+                        </div>
+                        <p className="text-white/70 text-xs leading-relaxed mt-1.5">{option.best}</p>
+                      </div>
+                    ))}
                   </div>
                   <p className="text-white/75 text-sm mb-6">{websiteProduct.terms}</p>
                   <span className="inline-flex items-center gap-2 bg-white/15 border border-white/25 rounded-full px-4 py-1.5 text-xs font-semibold w-fit">

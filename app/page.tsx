@@ -10,7 +10,7 @@ import PricingCard from "@/components/ui/PricingCard";
 import AudienceCards from "@/components/ui/AudienceCards";
 import CTABand from "@/components/ui/CTABand";
 import { services } from "@/lib/services";
-import { tiers, websiteProduct } from "@/lib/pricing";
+import { tiers, websiteOptions } from "@/lib/pricing";
 import { differentiators } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
@@ -377,7 +377,8 @@ Every price published in full · No setup fee
                 No &ldquo;book a call for a quote&rdquo;
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                A website you own outright from {websiteProduct.price}, then one monthly package
+                A website you own outright at {websiteOptions[0].price} or{" "}
+                {websiteOptions[1].price}, then one monthly package
                 on top. Every price we charge is published — you scope a fee proposal before you
                 send it, and we think the same courtesy runs both ways.
               </p>
