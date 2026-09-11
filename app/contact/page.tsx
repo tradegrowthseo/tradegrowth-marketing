@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -7,6 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import AudienceCards from "@/components/ui/AudienceCards";
 
 export const metadata: Metadata = {
+  ...routeMeta("/contact/"),
   title: "Contact",
   description:
     "Talk to TradeGrowth Marketing. Email contact@tradegrowthseo.com, request a discovery call, or send us a message about the projects you'd like more of.",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Globe, Search, Target, Inbox } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
@@ -13,6 +14,7 @@ import { tiers, websiteProduct } from "@/lib/pricing";
 import { differentiators } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
+  ...routeMeta("/"),
   title: "TradeGrowth Marketing | Marketing for Construction, Engineering & Design",
   description:
     "Websites, SEO, AI-search visibility and targeted advertising for architects, engineers, interior designers and construction specialists across the UK. Every price published in full.",

@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
+import { siteSchema } from "@/lib/schema";
 
 // Inter throughout — headings and body. Weights cover the display sizes used
 // in the heroes (800) down to body copy (400).
@@ -46,7 +47,17 @@ export const metadata: Metadata = {
     siteName: "TradeGrowth Marketing",
     locale: "en_GB",
     type: "website",
-    images: ["/images/tradegrowth-marketing-logo.png"],
+    // Purpose-built 1.91:1 card. The raw logo is 963x330, which card renderers
+    // letterbox or centre-crop — LinkedIn was clipping the wordmark. Regenerate
+    // with `npm run og-image`.
+    images: [
+      {
+        url: "/images/og-card.png",
+        width: 1200,
+        height: 630,
+        alt: "TradeGrowth Marketing — marketing for construction, engineering and design",
+      },
+    ],
   },
   // The single source of truth for favicons. Deliberately no app/favicon.ico or
   // app/icon.* file-convention files — those take priority over this config and
@@ -88,8 +99,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="bg-white antialiased">
+        {/* One @graph for the whole site — see lib/schema.ts, and read the
+            service-area note there before adding any address field. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
+        />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#171a26] focus:font-semibold focus:px-5 focus:py-3 focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3d4cf5]"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
         <WhatsAppButton />
         {/* Renders nothing — attaches the site-wide GA4 click listeners. */}

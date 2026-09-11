@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sitemap-dates": "node scripts/generate-sitemap-dates.mjs",
+    "og-image": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.10",
@@ -24,6 +26,7 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.15",
+    "schema-dts": "^2.0.0",
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3"
   }

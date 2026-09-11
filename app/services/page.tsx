@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Globe, Search, Target, Inbox } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
@@ -16,6 +17,7 @@ import {
 import { scopeNotes } from "@/lib/pricing";
 
 export const metadata: Metadata = {
+  ...routeMeta("/services/"),
   title: "Services",
   description:
     "Four services for UK construction, engineering and design businesses: website design, SEO and AI-search visibility, Google & Meta ads, and enquiry management and follow-up.",

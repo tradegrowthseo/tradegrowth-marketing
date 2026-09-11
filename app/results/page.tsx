@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import ScreenshotGallery from "@/components/ui/ScreenshotGallery";
@@ -7,6 +8,7 @@ import PageHero from "@/components/ui/PageHero";
 import CTABand from "@/components/ui/CTABand";
 
 export const metadata: Metadata = {
+  ...routeMeta("/results/"),
   title: "Results",
   description:
     "EV Design ranks #1 on Google in Burnley, is named in Google's AI Overview across the North West, and is described accurately by ChatGPT. Here's what that looks like.",

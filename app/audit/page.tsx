@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PageHero from "@/components/ui/PageHero";
 import AuditForm from "@/components/AuditForm";
 
 export const metadata: Metadata = {
+  ...routeMeta("/audit/"),
   title: "Free AI-Search Audit",
   description:
     "A free check of how your practice is described inside ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",

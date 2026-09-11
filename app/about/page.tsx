@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Eye, Handshake, Target } from "lucide-react";
@@ -11,6 +12,7 @@ import { generalFaqs } from "@/lib/faqs";
 import AudienceCards from "@/components/ui/AudienceCards";
 
 export const metadata: Metadata = {
+  ...routeMeta("/about/"),
   title: "About",
   description:
     "Why TradeGrowth Marketing exists, what we believe, and how we work with UK construction, engineering and design businesses — architects, engineers and interior designers.",

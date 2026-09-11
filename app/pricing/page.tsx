@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -15,6 +16,7 @@ import { pricingFaqs } from "@/lib/faqs";
 const [basic, standard, premium] = tiers;
 
 export const metadata: Metadata = {
+  ...routeMeta("/pricing/"),
   title: "Pricing",
   description:
     `Every price published in full. Websites start at ${websiteProduct.from} and you own them ` +

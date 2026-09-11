@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { routeMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Code2, MessageSquareQuote, BadgeCheck, FileText, LineChart } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
@@ -9,6 +10,7 @@ import FAQ from "@/components/ui/FAQ";
 import { aeoFaqs } from "@/lib/faqs";
 
 export const metadata: Metadata = {
+  ...routeMeta("/aeo/"),
   title: "What is AEO?",
   description:
     "Answer Engine Optimisation explained for construction, engineering and design businesses: how clients now use ChatGPT, Perplexity, Gemini and Google AI Overviews to research consultants — and the work that makes your expertise legible to them.",
