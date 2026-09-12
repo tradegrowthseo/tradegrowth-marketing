@@ -61,8 +61,8 @@ const contactDetails: {
   },
   {
     label: "LinkedIn",
-    value: "TradeGrowth Marketing",
-    href: "https://www.linkedin.com/company/138514390/",
+    value: "Bradley Redfern",
+    href: "https://www.linkedin.com/in/bradley-redfern/",
     external: true,
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

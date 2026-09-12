@@ -317,7 +317,11 @@ export default function AuditForm() {
 
       <p className="text-[#8a90a0] text-xs text-center">
         Free, no obligation, and no card details. We&apos;ll only use your details to send the
-        audit and follow it up once.
+        audit and follow it up once. See our{" "}
+        <a href="/privacy/" className="text-[#3d4cf5] font-semibold hover:underline">
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   );

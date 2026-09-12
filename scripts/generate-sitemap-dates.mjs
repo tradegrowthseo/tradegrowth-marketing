@@ -24,6 +24,7 @@ const CONTENT = {
   "/results": ["app/results/page.tsx"],
   "/about": ["app/about/page.tsx", "lib/faqs.ts", "lib/audiences.ts"],
   "/contact": ["app/contact/page.tsx", "components/ContactForm.tsx", "lib/audiences.ts"],
+  "/privacy": ["app/privacy/page.tsx"],
 };
 
 const lastCommit = (file) => {

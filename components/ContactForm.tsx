@@ -294,8 +294,11 @@ export default function ContactForm() {
       </button>
 
       <p className="text-[#8a90a0] text-xs text-center">
-        {/* TODO: link a privacy policy once written */}
-        We&apos;ll only use your details to respond to your enquiry.
+        We&apos;ll only use your details to respond to your enquiry. See our{" "}
+        <a href="/privacy/" className="text-[#3d4cf5] font-semibold hover:underline">
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   );

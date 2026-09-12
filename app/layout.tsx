@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
+import Analytics from "@/components/Analytics";
+import CookieConsent from "@/components/CookieConsent";
 import { siteSchema } from "@/lib/schema";
 
 // Inter throughout — headings and body. Weights cover the display sizes used
@@ -117,8 +118,10 @@ export default function RootLayout({
         <WhatsAppButton />
         {/* Renders nothing — attaches the site-wide GA4 click listeners. */}
         <AnalyticsEvents />
+        <CookieConsent />
       </body>
-      {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
+      {/* Gated on consent — see components/Analytics.tsx. */}
+      {GA_MEASUREMENT_ID && <Analytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }

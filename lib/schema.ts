@@ -1,4 +1,4 @@
-import type { Graph, ProfessionalService, WebSite } from "schema-dts";
+import type { Graph, Person, ProfessionalService, WebSite } from "schema-dts";
 
 /**
  * Site-wide structured data, emitted once in the root layout as a single
@@ -24,6 +24,7 @@ const SITE_URL = "https://tradegrowthseo.com";
 
 const ORGANISATION_ID = `${SITE_URL}/#organisation`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const FOUNDER_ID = `${SITE_URL}/#founder`;
 
 const organisation: ProfessionalService = {
   "@type": "ProfessionalService",
@@ -49,12 +50,28 @@ const organisation: ProfessionalService = {
   },
   // sameAs disambiguates the entity. Only profiles that actually exist.
   sameAs: ["https://www.linkedin.com/company/138514390/"],
+  founder: { "@id": FOUNDER_ID },
   knowsAbout: [
     "Marketing for architects",
     "SEO for engineering consultancies",
     "AI-search visibility",
     "Website design for construction businesses",
   ],
+};
+
+/**
+ * The founder as a distinct entity. Only verified facts — a name, a role and a
+ * profile that exists. No invented credentials, qualifications or dates: this
+ * is exactly the markup that gets a site into trouble when it is embellished.
+ */
+const founder: Person = {
+  "@type": "Person",
+  "@id": FOUNDER_ID,
+  name: "Bradley Redfern",
+  jobTitle: "Founder",
+  worksFor: { "@id": ORGANISATION_ID },
+  url: `${SITE_URL}/about/`,
+  sameAs: ["https://www.linkedin.com/in/bradley-redfern/"],
 };
 
 const website: WebSite = {
@@ -68,5 +85,5 @@ const website: WebSite = {
 
 export const siteSchema: Graph = {
   "@context": "https://schema.org",
-  "@graph": [organisation, website],
+  "@graph": [organisation, founder, website],
 };
