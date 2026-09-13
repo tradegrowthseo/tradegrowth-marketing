@@ -49,7 +49,7 @@ export default function ServicesPage() {
             Three services. <span className="text-gradient">Built in the right order.</span>
           </>
         }
-        sub="Foundations first, then the retainer if you want it. Every build ships ready for search and AI-assisted search — structured data, question-led content and case studies included, never sold back to you later as an upgrade."
+        sub="The website first, then one package on top. Every build ships ready for search and AI-assisted search — structured data, question-led content and case studies included, never sold back to you later as an upgrade."
       />
 
       {/* ─── JUMP NAV ─────────────────────────────────────────────────── */}

@@ -5,7 +5,9 @@
 // Claims discipline: nothing here promises a ranking, a citation or an AI
 // recommendation. Where a question invites that promise, the answer says no.
 
-import { addOns, capacity, foundations, retainer } from "./pricing";
+import { capacity, tiers, websiteOptions } from "./pricing";
+
+const [basic, standard, premium] = tiers;
 
 export interface Faq {
   q: string;
@@ -35,7 +37,7 @@ export const aeoFaqs: Faq[] = [
   },
   {
     q: "Can you guarantee I'll be recommended?",
-    a: "No, and nobody else can either. No agency controls what a particular assistant says on a particular day — the models change and so do the sources behind them. Our guarantees cover the things we do control: what ships in month one, when a new site launches, and what the reports quote. What we can tell you is what the work involves, what we have observed for other clients, and what your own audit shows about where you stand today.",
+    a: "No, and nobody else can either. No agency controls what a particular assistant says on a particular day — the models change and so do the sources behind them. Our guarantees cover the things we do control: what ships in month one, when the site launches, and what the reports quote. What we can tell you is what the work involves, what we have observed for other clients, and what your own audit shows about where you stand today.",
   },
   {
     q: "What is llms.txt?",
@@ -49,28 +51,36 @@ export const pricingFaqs: Faq[] = [
     a: "Because hiding them wastes everybody's time. You scope a fee proposal before you send it, and you would think twice about a client who wouldn't discuss a budget. Every price we charge is on this page, and so is what sits outside it.",
   },
   {
-    q: "Do I need a new website?",
-    a: `Not necessarily. ${foundations.name} comes in two versions. If your site is sound underneath — fast, mobile-friendly, on a platform you control — we do the work to it at ${foundations.options[0].price}. If it can't carry the work, we build one as part of ${foundations.name} at ${foundations.options[1].price}. Send us the URL with the audit request and we'll tell you honestly which one applies.`,
+    q: "Do I have to buy the website to take a monthly package?",
+    a: `Only if yours can't carry the work. The packages are built on a site structured for search and AI-assisted search, so if your site is slow, not mobile-friendly, has no project pages or sits on a platform you don't control, the ${websiteOptions[0].price} or ${websiteOptions[1].price} build comes first. If it's sound underneath, send us the URL with the audit request and we'll say so — then there's no website fee and the package starts in month one.`,
   },
   {
     q: "Is there a long contract?",
-    a: `${foundations.name} is ninety days at a fixed price, paid in three monthly instalments. After that the ${retainer.name} retainer is month to month on thirty days' notice, and there is no minimum term. You can finish ${foundations.name} and stop.`,
+    a: `${basic.name}, ${standard.name} and ${premium.name} all have a ${basic.minimumMonths}-month minimum. After that you're month to month on a month's notice. The website itself has no monthly commitment at all.`,
   },
   {
     q: "What am I committing to up front?",
-    a: `The ${foundations.name} price for the version you choose, paid in three instalments. There is nothing else: no setup fee, no percentage of your ad spend, no charge for the audit, and no retainer you have to take afterwards.`,
+    a: `The one-off website fee if you need the build, and then the ${basic.minimumMonths}-month minimum on whichever package you choose. There is nothing else: no setup fee, no percentage of your ad spend, and no charge for the audit.`,
+  },
+  {
+    q: "What's the difference between the residential and national tracks?",
+    a: `Who you sell to. A practice taking homeowner work has local search intent to capture, so ${standard.name} and ${premium.name} put the work into Google Business Profile, reviews, local-intent pages and, on ${premium.name}, Google Ads. A consultancy selling to developers and contractors nationally has almost no search volume to buy, so the same tiers put the work into getting your practice mentioned — partner credits, LinkedIn tags, trade press — which is what the published evidence says moves AI visibility. ${basic.name} is the same for everyone.`,
+  },
+  {
+    q: "Why is there content in every tier?",
+    a: "Because nothing moves without it. A package that maintains listings and sends a report, but never adds a case study or answers a question buyers actually ask, will show you the same numbers every month. So even Basic includes one piece a month, drafted by us from a twenty-minute call — and if there's genuinely nothing worth adding that month, we say so rather than publish filler.",
   },
   {
     q: "What do the guarantees actually cover?",
-    a: "The things we control: what ships in the first thirty days, when a new site launches after you sign off the content, what the reports quote, and what you keep when you leave. They deliberately do not cover rankings, AI mentions or enquiry numbers, because nobody controls those and any guarantee that claims to is a marketing device.",
+    a: "The things we control: what ships in the first thirty days, when the site launches after you sign off the content, what the reports quote, and what you keep when you leave. They deliberately do not cover rankings, AI mentions or enquiry numbers, because nobody controls those and any guarantee that claims to is a marketing device.",
   },
   {
     q: "Why do you only take on a few practices a quarter?",
-    a: `Because one person does the work. ${capacity.body.replace("TradeGrowth is one person doing the work rather than a team selling it, so we", "We")}`,
+    a: `Because one person does the work. We take on ${capacity.perQuarter} new practices a quarter; when a quarter is full, the audit still runs and you're offered the next start date.`,
   },
   {
     q: "Who pays for the ad spend?",
-    a: `You do, directly to Google and Meta. Ads are an add-on at ${addOns[0].price} for residential-facing practices, where the intent exists. We never take a percentage of spend or route it through us, and you can see every penny in your own ad accounts.`,
+    a: `You do, directly to Google. Ads management is included in ${premium.name} for residential-facing practices, where the intent exists; we never take a percentage of spend or route it through us, and you can see every penny in your own ad account.`,
   },
   {
     q: "Is VAT included?",
@@ -78,7 +88,7 @@ export const pricingFaqs: Faq[] = [
   },
   {
     q: "What if I want to leave?",
-    a: `After ${foundations.name}, give us thirty days' notice — or simply don't take the retainer. The domain is already in your name and the website, the reports and the research are yours. We'd rather you left cleanly than stayed reluctantly.`,
+    a: "After your minimum term, give us a month's notice. The domain is already in your name and the website, the reports and the research are yours — you take them with you. We'd rather you left cleanly than stayed reluctantly.",
   },
 ];
 
@@ -93,11 +103,11 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "Do you work with both residential and commercial practices?",
-    a: "Yes, and the work is genuinely different. A practice attracting homeowners needs to be findable locally and to explain the process to people commissioning something like this for the first time. A consultancy attracting developers, contractors, architects and estates teams needs to demonstrate relevant sector experience to people who will compare it against a shortlist — and needs other people in the industry to mention it. The retainer has a track for each, because the levers aren't the same.",
+    a: "Yes, and the work is genuinely different. A practice attracting homeowners needs to be findable locally and to explain the process to people commissioning something like this for the first time. A consultancy attracting developers, contractors, architects and estates teams needs to demonstrate relevant sector experience to people who will compare it against a shortlist — and needs other people in the industry to mention it. Standard and Premium have a track for each, because the levers aren't the same.",
   },
   {
     q: "How quickly can we start?",
-    a: `The free AI-search audit comes back within a few working days. ${foundations.name} starts at the next open slot — we take on ${capacity.perQuarter} new practices a quarter — and a new site typically goes live three to four weeks after you sign off the content.`,
+    a: `The free AI-search audit comes back within a few working days. Work starts at the next open slot — we take on ${capacity.perQuarter} new practices a quarter — and a new site typically goes live three to four weeks after you sign off the content, with the launch date in writing.`,
   },
   {
     q: "Where are you based?",

@@ -30,7 +30,7 @@ function CellValue({ value }: { value: Cell }) {
 }
 
 /**
- * Full feature matrix across the two Foundations options and the retainer.
+ * Full feature matrix across The Website and the three monthly packages.
  * The table scrolls horizontally inside its own container on narrow screens
  * rather than pushing the page wide.
  *
@@ -52,19 +52,18 @@ function CellValue({ value }: { value: Cell }) {
 export default function ComparisonTable() {
   return (
     <div className="contain-content overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
-      <table className="w-full min-w-[760px] border-collapse">
+      <table className="w-full min-w-[820px] border-collapse">
         <caption className="sr-only">
-          Feature comparison across Foundations on your site, Foundations with a new site, and the
-          Visibility retainer
+          Feature comparison across The Website, Basic, Standard and Premium
         </caption>
         <thead>
           <tr>
-            <th scope="col" className="w-[37%] text-left align-bottom pb-5 pr-4" />
+            <th scope="col" className="w-[32%] text-left align-bottom pb-5 pr-4" />
             {comparisonColumns.map((col) => (
               <th
                 key={col.key}
                 scope="col"
-                className={`w-[21%] align-bottom pb-5 px-3 text-center ${
+                className={`w-[17%] align-bottom pb-5 px-3 text-center ${
                   col.featured ? "bg-[#f6f7fc] rounded-t-xl" : ""
                 }`}
               >
@@ -80,7 +79,7 @@ export default function ComparisonTable() {
             <tr>
               <th
                 scope="colgroup"
-                colSpan={4}
+                colSpan={comparisonColumns.length + 1}
                 className="text-left text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] pt-8 pb-3"
               >
                 {group.group}

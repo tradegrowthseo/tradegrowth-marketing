@@ -10,7 +10,7 @@ import PricingCard from "@/components/ui/PricingCard";
 import AudienceCards from "@/components/ui/AudienceCards";
 import CTABand from "@/components/ui/CTABand";
 import { soldServices } from "@/lib/services";
-import { foundations, retainer, guarantees, capacity } from "@/lib/pricing";
+import { tiers, websiteOptions, guarantees, capacity, minimumLabel } from "@/lib/pricing";
 import { differentiators } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
@@ -30,10 +30,10 @@ const iconMap: Record<string, React.ReactNode> = {
 // Facts about the offer, not counts of the site's own structure. Each one
 // derives from lib/pricing.ts so it can't drift from the price list.
 const stats = [
-  { value: foundations.duration, label: `${foundations.name}, fixed price, then month to month` },
-  { value: String(capacity.perQuarter), label: "New practices taken on each quarter" },
-  { value: String(guarantees.length), label: "Guarantees, in writing" },
   { value: "£0", label: "Setup fee, cut of ad spend, or charge for the audit" },
+  { value: String(guarantees.length), label: "Guarantees, in writing" },
+  { value: String(capacity.perQuarter), label: "New practices taken on each quarter" },
+  { value: `${tiers[0].minimumMonths} mo`, label: "Minimum term on every package, then month to month" },
 ];
 
 export default function HomePage() {
@@ -378,43 +378,31 @@ Every price published in full · Five guarantees in writing · No setup fee
                 No &ldquo;book a call for a quote&rdquo;
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                Ninety days of {foundations.name} at a fixed {foundations.options[0].price} or{" "}
-                {foundations.options[1].price}, then one retainer at {retainer.monthly} a month,
-                month to month. Every price we charge is published — you scope a fee proposal before you
+                A website you own outright at {websiteOptions[0].price} or{" "}
+                {websiteOptions[1].price}, then one monthly package on top — every tier with
+                content in it, and five guarantees in writing. Every price we charge is published — you scope a fee proposal before you
                 send it, and we think the same courtesy runs both ways.
               </p>
             </div>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-            {foundations.options.map((option, i) => (
-              <FadeIn key={option.id} delay={i * 0.1} className="h-full">
+            {tiers.map((tier, i) => (
+              <FadeIn key={tier.id} delay={i * 0.1} className="h-full">
                 <PricingCard
-                  eyebrow={foundations.tagline}
-                  name={option.name}
-                  price={option.price}
-                  priceSuffix="fixed"
-                  meta="90 days · three monthly instalments"
-                  best={option.best}
-                  includesHeading="On top of the full Foundations scope:"
-                  features={option.adds}
-                  featured={option.featured}
-                  badge={option.featured ? "Most practices" : undefined}
+                  eyebrow={tier.tagline}
+                  name={tier.name}
+                  price={tier.monthly}
+                  priceSuffix="/ month"
+                  meta={`+ website fee · ${minimumLabel(tier)}`}
+                  best={tier.best}
+                  includesHeading={tier.includesBelow}
+                  features={tier.features}
+                  featured={tier.featured}
+                  badge={tier.featured ? "Recommended" : undefined}
                 />
               </FadeIn>
             ))}
-            <FadeIn delay={0.2} className="h-full">
-              <PricingCard
-                eyebrow={retainer.tagline}
-                name={`${retainer.name} retainer`}
-                price={retainer.monthly}
-                priceSuffix="/ month"
-                meta={retainer.term}
-                best={retainer.best}
-                includesHeading="Every month:"
-                features={retainer.common}
-              />
-            </FadeIn>
           </div>
 
           <FadeIn delay={0.2}>

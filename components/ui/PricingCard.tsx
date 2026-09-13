@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 /**
- * A package card. Used for the two Foundations options and the Visibility
- * retainer, on /pricing and in the home-page teaser. The featured card is
+ * A package card. Used for the three monthly tiers on /pricing and in the
+ * home-page teaser. The featured card is
  * wrapped in a gradient hairline via `.border-gradient-brand` — the wrapper
  * supplies the 1px border, the inner div repaints the middle white.
  */

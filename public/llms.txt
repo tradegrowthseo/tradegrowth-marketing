@@ -33,87 +33,89 @@ consultancies selling to developers, contractors, architects and estates teams.
 
 ## What we do
 
-- **Website design** — mobile-first websites of up to ten pages organised
-  around project case studies, specialisms, sector experience and team
-  credentials, with a straightforward enquiry journey. Built as part of
-  Foundations (below) where the existing site cannot carry the work; otherwise
-  the existing site is fixed and restructured in place. Domain registered in
-  the client's name; hosting and SSL included for the first year.
+- **Website design** — mobile-first websites organised around project case
+  studies (drafted by us from a call with the client), specialisms, sector
+  experience and team credentials, with a straightforward enquiry journey.
+  Fixed price, one-off: £1,200 for a practice site (up to ten pages), £1,500
+  for a multi-sector site (up to fourteen pages). Domain registered in the
+  client's name; hosting and SSL included for the first year; launch date in
+  writing. If the client's existing site is sound, there is no website fee.
 - **SEO + AI-search visibility** (headline service) — search visibility for the
   client's services, project types and locations, targeted locally, regionally
   or nationally to match their actual market. Alongside it, the groundwork that
   makes a practice legible to AI-assisted search: structured data, question-led
-  content, case studies drafted by us from a call with the client, consistent
-  business information across trade bodies, and third-party mentions. No
-  ranking, citation or AI recommendation is guaranteed; monthly reporting
-  quotes Search Console totals and sampled AI-assistant answers.
-- **Google & Meta ads** — an add-on for residential-facing practices only,
-  where search intent exists. Google Search led; Meta where the work is visual.
-  Not offered to national consultancies. Ad spend is paid by the client
-  directly to the platforms. LinkedIn Ads management is not offered.
+  content, case studies, consistent business information across trade bodies,
+  and third-party mentions. No ranking, citation or AI recommendation is
+  guaranteed; monthly reporting quotes Search Console totals and sampled
+  AI-assistant answers.
+- **Google & Meta ads** — included in the Premium package for residential-
+  facing practices only, where search intent exists. Not offered to national
+  consultancies. Ad spend is paid by the client directly to the platforms.
+  LinkedIn Ads management is not offered.
 - **Enquiry management & follow-up** — in pilot with one client. Not sold. It
   will be priced when the pilot shows it works. It will not chase proposals,
   qualify opportunities, close sales, send SMS or run campaigns.
 
 ## Pricing (published in full)
 
-Structure: one fixed-price 90-day project, then one optional month-to-month
-retainer. There is no setup fee, no minimum term after the project, and no
-percentage of ad spend.
-
-- **Foundations on your site: £2,950**, fixed, 90 days, three equal monthly
-  instalments. For practices whose existing site is sound underneath.
-- **Foundations with a new site: £4,750**, fixed, 90 days, three equal monthly
-  instalments. Includes a mobile-first site of up to ten pages, domain in the
-  client's name, hosting and SSL for year one, and a launch date in writing.
-- Every Foundations includes: a technical baseline measured on day one and day
-  ninety; structured data for services, sectors and credentials; up to four
-  project case studies drafted from a twenty-minute call each; service and
-  sector pages rebuilt around buyers' real questions; consistent business
-  details across trade bodies; Google Business Profile where local intent
-  exists; a search and AI-visibility baseline at day one and day ninety; three
-  monthly reports and a day-ninety review with a written plan.
-- **Visibility retainer: £695/month**, month to month, 30 days' notice, billed
-  monthly in advance, no minimum term. Includes a monthly report on Search
-  Console totals with sampled AI visibility, one new case study or question-led
-  page a month where there is a real question to answer, small site changes,
-  and a quarterly review. Two tracks: residential-facing practices (Google
-  Business Profile, local-intent pages, ads available) and national
-  consultancies (mention outreach each quarter, sector case studies, no ads).
-- **Add-ons:** Google Ads management £350/month plus the client's ad spend
-  (residential-facing practices on the retainer only); additional site pages
-  £150 each beyond the ten in a new site; enquiry management not yet sold.
+- The Website: two fixed-price options, one-off (50% deposit, 50% on launch),
+  no monthly commitment. Practice site £1,200. Multi-sector site £1,500.
+  Fixed prices, not estimates. Includes up to four case studies drafted from
+  a call.
+- Basic ("Get found"): £395/month plus the one-off website fee. 3 month
+  minimum, then month to month. Technical baseline measured in month one and
+  month three; structured data kept current; business details consistent
+  across trade bodies; Google Business Profile where local intent exists; one
+  case study or question-led page a month, drafted from a call; monthly report
+  on Search Console totals with sampled AI visibility; quarterly review with a
+  written plan.
+- Standard ("Get chosen"): £495/month plus website fee. 3 month minimum.
+  Everything in Basic plus the client's track, small site changes within the
+  month, and a monthly strategy call. Residential track: Google Business
+  Profile posts, reviews approach, local-intent pages. National track: mention
+  outreach each quarter — partner credits, LinkedIn tags, one trade-press
+  pitch.
+- Premium ("Keep improving it"): £595/month plus website fee. 3 month minimum.
+  Everything in Standard plus a second content piece each month, a
+  half-yearly site review against the day-one baseline, and on the
+  residential track Google Ads management (spend paid direct), or on the
+  national track mention outreach every month.
+- Not on the price list: enquiry management (in pilot); social posting, video
+  and SMS campaigns (not offered).
 - VAT: prices are not subject to VAT (TradeGrowth Marketing is not VAT
-  registered). Hosting from year two: £95/year, or the site can be moved
-  anywhere.
+  registered). Hosting from year two is passed on at cost, typically under
+  £100 a year, or the site can be moved anywhere.
+
+Each monthly package includes everything in the tier below it. Full
+comparison: https://tradegrowthseo.com/pricing/
 
 ## Guarantees
 
 Cover inputs and speed, never rankings, AI mentions or enquiry numbers.
 
-1. Every Foundations item scheduled for the first thirty days is live within
-   thirty days of receiving access, or the first instalment is refunded.
-2. A new site goes live within twenty-eight days of content sign-off, or the
-   final instalment is waived.
+1. Every package item scheduled for the first thirty days is live within
+   thirty days of receiving access, or the first month's package fee is
+   refunded.
+2. The website goes live within twenty-eight days of content sign-off, or the
+   balance due on launch is waived.
 3. If the free audit shows the practice is already described well, we say so
    and stop.
-4. The retainer is month to month; domain, site, reports and research belong
-   to the client.
+4. After the three-month minimum, a month's notice; domain, site, reports and
+   research belong to the client.
 5. Reports quote Search Console totals; anything not measurable is marked as
    such, never estimated.
 
 ## Scope and costs
 
-- The fee covers the listed scope. There is no separate setup fee.
+- The monthly fee covers the listed scope for the tier and track. There is no
+  separate setup fee.
 - Domain renewal from year two, ad spend, and any paid tool run on the
   client's behalf are itemised and agreed before activation.
-- Pages beyond the ten in a new site, photography, video and anything not on
-  the published lists are quoted separately.
+- Pages beyond those in the build, photography, video and anything not on the
+  published lists are agreed and quoted before they start.
 - Reporting depends on what can be measured: Search Console totals, sampled
   AI answers, and enquiries the client reports. Untracked calls and direct
   emails are not attributed to search.
-
-Full comparison: https://tradegrowthseo.com/pricing/
 
 ## Case study
 

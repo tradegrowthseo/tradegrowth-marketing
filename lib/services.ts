@@ -84,11 +84,11 @@ export const services: Service[] = [
   {
     slug: "google-meta-ads",
     label: "Google & Meta Ads",
-    short: "An add-on for residential-facing practices, where the search intent actually exists.",
-    tagline: "Paid acquisition — add-on",
+    short: "Included in Premium for residential-facing practices, where the search intent actually exists.",
+    tagline: "Paid acquisition — Premium, residential",
     title: "Google & Meta Ads — Only Where There's Something to Buy",
     intro:
-      "Search and AI visibility build over months. Ads reach people looking now — but only where people are looking. We offer this as an add-on to residential-facing practices, and we'll say so plainly if your market doesn't have the intent to make it worth running.",
+      "Search and AI visibility build over months. Ads reach people looking now — but only where people are looking. It's included in the Premium package for residential-facing practices, and we'll say so plainly if your market doesn't have the intent to make it worth running.",
     features: [
       "Google Search led, Meta where the work is visual",
       "Relevant landing pages and campaign management",
@@ -99,7 +99,7 @@ export const services: Service[] = [
       "Google Search is where someone types the thing they need — a structural engineer for a loft conversion, an architect for a rear extension, an interior designer for a hotel refurbishment. The intent is already there and already specific, which is why we usually start here. Campaigns are built around the services and project types you want more of, rather than broad terms that spend the budget on enquiries you would turn down.",
       "Meta earns its place when the work photographs well and the audience can be reached visually — completed interiors, finished schemes, before-and-after refurbishments. It also handles follow-up: reaching people who looked at your projects and didn't get in touch. Where a practice's work is largely technical rather than visual, we will say so rather than sell you campaigns that won't land.",
       "For a consultancy selling to developers, contractors and estates teams nationally, there is almost nothing to buy: a handful of searches a month, most of them from people who already know who they want. We don't offer ads to that market, because we'd be charging you to manage a budget that can't be spent well.",
-      "Management is a flat monthly add-on to the Visibility retainer. We don't take a percentage of ad spend and we don't route it through us — you pay Google and Meta directly and can see every penny in your own accounts. Tracking covers calls and enquiry forms, so you can see what an enquiry actually costs rather than what a click costs.",
+      "Management is included in the Premium package for residential-facing practices — no separate fee. We don't take a percentage of ad spend and we don't route it through us — you pay Google and Meta directly and can see every penny in your own accounts. Tracking covers calls and enquiry forms, so you can see what an enquiry actually costs rather than what a click costs.",
     ],
     deliverables: [
       { title: "Search campaigns", body: "Built around the services and project types you want more of, not the broadest terms available." },

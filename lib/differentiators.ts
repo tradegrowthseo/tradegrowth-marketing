@@ -40,7 +40,7 @@ export const differentiators: Differentiator[] = [
     title: "The project pages get written, because we write them",
     body: "The material that makes a practice credible is in your head and your project folders, not on your website — and nobody in a busy practice has time to write it up. So we don't ask you to. Each case study is drafted from a twenty-minute call, in your words, and you correct it before it goes anywhere.",
     points: [
-      "Up to four in Foundations, one a month after where warranted",
+      "Up to four in the website build, then one a month on every package",
       "The constraint, the engineering decision, the outcome",
       "Approved by you before it's published — never invented",
       "Fresh, specific pages are what assistants actually quote",
@@ -51,9 +51,9 @@ export const differentiators: Differentiator[] = [
     number: "03",
     label: "Published pricing",
     title: "Every price is on the website, and so are the guarantees",
-    body: "One fixed-price project, one monthly retainer, the add-ons, and what sits outside the fee — all published here. You scope a fee proposal before you send it; we think the same courtesy runs the other way, so there is nothing behind a \"book a call for a quote\".",
+    body: "The website, the three packages, what each one contains for your kind of practice, and what sits outside the fee — all published here. You scope a fee proposal before you send it; we think the same courtesy runs the other way, so there is nothing behind a \"book a call for a quote\".",
     points: [
-      "Ninety days at a fixed price, then month to month",
+      "Three packages, priced in public, content in every one",
       "Five guarantees on the things we control, in writing",
       "Costs that sit outside the fee, stated",
       "No setup fee, and no cut of your ad spend",

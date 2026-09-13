@@ -9,26 +9,29 @@ import ComparisonTable from "@/components/ui/ComparisonTable";
 import CTABand from "@/components/ui/CTABand";
 import FAQ from "@/components/ui/FAQ";
 import {
-  foundations,
-  retainer,
-  addOns,
+  tiers,
+  tracks,
+  websiteProduct,
+  websiteOptions,
   guarantees,
   capacity,
   commercials,
+  minimumLabel,
 } from "@/lib/pricing";
 import { pricingFaqs } from "@/lib/faqs";
 
 // Built from lib/pricing.ts rather than retyped, so the SERP description can't
 // quote a price the page no longer charges.
-const [onYourSite, withNewSite] = foundations.options;
+const [basic, standard, premium] = tiers;
 
 export const metadata: Metadata = {
   ...routeMeta("/pricing/"),
   title: "Pricing",
   description:
-    `Every price published in full. ${foundations.name}: ninety days at a fixed ` +
-    `${onYourSite.price} on your site or ${withNewSite.price} with a new one, then the ` +
-    `${retainer.name} retainer at ${retainer.monthly}/mo, month to month. Five guarantees, in writing.`,
+    `Every price published in full. A website you own outright at ` +
+    `${websiteOptions[0].price} or ${websiteOptions[1].price}, then ${basic.name} ` +
+    `${basic.monthly}/mo, ${standard.name} ${standard.monthly}/mo or ${premium.name} ` +
+    `${premium.monthly}/mo on top — with five guarantees in writing and a full comparison.`,
 };
 
 const Tick = () => (
@@ -55,105 +58,154 @@ export default function PricingPage() {
             Every price we charge, <span className="text-gradient">published</span>
           </>
         }
-        sub="No &ldquo;book a call for a bespoke quote&rdquo;. You scope a fee proposal before you send it, and you'd think twice about a client who wouldn't discuss a budget. Same principle, applied to us: one fixed-price project, one monthly retainer, and the guarantees in writing."
+        sub="No &ldquo;book a call for a bespoke quote&rdquo;. You scope a fee proposal before you send it, and you'd think twice about a client who wouldn't discuss a budget. Same principle, applied to us — and the guarantees are in writing too."
       />
 
-      {/* ─── STEP ONE: FOUNDATIONS ─────────────────────────────────────── */}
+      {/* ─── THE WEBSITE ──────────────────────────────────────────────── */}
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>Step one</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4">
-              {foundations.name}: ninety days, one fixed price
+              Start with the website
             </h2>
             <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
-              Everything a practice needs in place before any ongoing work is worth paying for,
-              done in ninety days and measured at both ends. Two versions, depending on whether
-              your site can carry the work. You can finish it and stop — nothing afterwards is
-              required.
+              It&apos;s the foundation everything else sits on, and it&apos;s a one-off. You can
+              buy it and stop there — there&apos;s no monthly commitment attached to it at all.
+              And if the site you have is sound, there&apos;s no website fee.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch mb-12">
-            {foundations.options.map((option, i) => (
-              <FadeIn key={option.id} delay={i * 0.1} className="h-full">
-                <PricingCard
-                  eyebrow={foundations.tagline}
-                  name={option.name}
-                  price={option.price}
-                  priceSuffix="fixed"
-                  meta="90 days · three monthly instalments"
-                  best={option.best}
-                  includesHeading="On top of everything below:"
-                  features={option.adds}
-                  featured={option.featured}
-                  badge={option.featured ? "Most practices" : undefined}
-                />
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn delay={0.08}>
+            <div className="rounded-2xl border border-[#e6e8f2] overflow-hidden">
+              <div className="grid md:grid-cols-[1fr_1.2fr]">
+                <div className="bg-gradient-brand-static p-8 md:p-10 text-white flex flex-col justify-center">
+                  <span className="text-white/70 text-xs font-bold tracking-widest uppercase mb-3">
+                    {websiteProduct.tagline}
+                  </span>
+                  <h3 className="text-white text-2xl font-bold mb-4">{websiteProduct.name}</h3>
+                  <div className="space-y-3 mb-5">
+                    {websiteOptions.map((option) => (
+                      <div
+                        key={option.id}
+                        className="rounded-xl bg-white/10 border border-white/20 px-4 py-3"
+                      >
+                        <div className="flex items-baseline justify-between gap-3">
+                          <span className="text-white font-semibold text-sm">{option.name}</span>
+                          <span className="text-white text-2xl font-extrabold tracking-tight">
+                            {option.price}
+                          </span>
+                        </div>
+                        <p className="text-white/70 text-xs leading-relaxed mt-1.5">{option.best}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-white/75 text-sm mb-6">{websiteProduct.terms}</p>
+                  <span className="inline-flex items-center gap-2 bg-white/15 border border-white/25 rounded-full px-4 py-1.5 text-xs font-semibold w-fit">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    {websiteProduct.commitment}
+                  </span>
+                </div>
 
-          <FadeIn delay={0.2}>
-            <div className="rounded-2xl border border-[#e6e8f2] bg-[#f6f7fc] p-8 md:p-10">
-              <h3 className="text-[#171a26] font-bold text-xl mb-2">
-                In every {foundations.name}, whichever version
-              </h3>
-              <p className="text-[#565c6b] text-sm mb-7 max-w-2xl">{foundations.terms}</p>
-              <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4">
-                {foundations.included.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[#565c6b] text-sm leading-relaxed">
-                    <Tick />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+                <div className="p-8 md:p-10 bg-white">
+                  <ul className="space-y-3.5 mb-8">
+                    {websiteProduct.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3 text-[#565c6b]">
+                        <Tick />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/audit"
+                    className="inline-flex items-center gap-2 bg-gradient-brand text-white font-semibold px-6 py-3.5 rounded-lg text-sm transition-all shadow-[0_8px_24px_rgba(61,76,245,0.28)]"
+                  >
+                    Start with the free audit
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* ─── STEP TWO: THE RETAINER ───────────────────────────────────── */}
+      {/* ─── MONTHLY PACKAGES ─────────────────────────────────────────── */}
       <section className="bg-[#f6f7fc] py-24 border-y border-[#e6e8f2]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <FadeIn>
-            <SectionLabel>Step two, if you want it</SectionLabel>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4">
-              {retainer.name}: one retainer, month to month
-            </h2>
-            <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
-              Keeps the visibility current and builds on it. One price. What it contains depends
-              on who you sell to, because a studio taking homeowner work and a consultancy
-              tendering nationally do not need the same things done.
-            </p>
+            <div className="text-center mb-16">
+              <SectionLabel center>Step two</SectionLabel>
+              <h2 className="text-3xl md:text-5xl font-bold text-[#171a26] mb-4">
+                Then pick one package on top
+              </h2>
+              <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
+                Each tier includes everything in the one below it. Every tier includes content,
+                because nothing moves without it. Start where the work you want needs you to,
+                and move up or down as the project pipeline changes.
+              </p>
+            </div>
           </FadeIn>
 
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-6 lg:gap-8 items-stretch">
-            <FadeIn className="h-full">
-              <PricingCard
-                eyebrow={retainer.tagline}
-                name={`${retainer.name} retainer`}
-                price={retainer.monthly}
-                priceSuffix="/ month"
-                meta={retainer.term}
-                best={retainer.best}
-                includesHeading="Every month, on either track:"
-                features={retainer.common}
-              />
-            </FadeIn>
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {tiers.map((tier, i) => (
+              <FadeIn key={tier.id} delay={i * 0.1} className="h-full">
+                <PricingCard
+                  eyebrow={tier.tagline}
+                  name={tier.name}
+                  price={tier.monthly}
+                  priceSuffix="/ month"
+                  meta={`+ website fee · ${minimumLabel(tier)}`}
+                  best={tier.best}
+                  includesHeading={tier.includesBelow}
+                  features={tier.features}
+                  featured={tier.featured}
+                  badge={tier.featured ? "Recommended" : undefined}
+                />
+              </FadeIn>
+            ))}
+          </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {retainer.tracks.map((track, i) => (
-                <FadeIn key={track.id} delay={0.1 + i * 0.08} className="h-full">
-                  <div className="h-full bg-white border border-[#e6e8f2] rounded-xl p-7">
-                    <span className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5]">
-                      Track
-                    </span>
-                    <h3 className="text-[#171a26] font-bold text-lg mt-2 mb-2">{track.name}</h3>
+          {/* ─── TRACKS ────────────────────────────────────────────────── */}
+          <FadeIn delay={0.2}>
+            <div className="mt-16">
+              <SectionLabel>Standard and Premium, by who you sell to</SectionLabel>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#171a26] mb-3">
+                Two tracks, because the levers aren&apos;t the same
+              </h3>
+              <p className="text-[#565c6b] text-base mb-8 max-w-2xl leading-relaxed">
+                A studio taking homeowner work has local search intent to capture. A consultancy
+                tendering nationally has almost none — and the published evidence says what
+                moves AI visibility for it is other people mentioning it. Basic is the same
+                for everyone; Standard and Premium follow your track.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                {tracks.map((track) => (
+                  <div key={track.id} className="bg-white border border-[#e6e8f2] rounded-xl p-7">
+                    <h4 className="text-[#171a26] font-bold text-lg mb-1.5">{track.name}</h4>
                     <p className="text-[#8a90a0] text-sm leading-relaxed mb-5 pb-5 border-b border-[#e6e8f2]">
                       {track.who}
                     </p>
-                    <ul className="space-y-3">
-                      {track.features.map((f) => (
+                    <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2.5">
+                      On {standard.name}
+                    </p>
+                    <ul className="space-y-2.5 mb-5">
+                      {track.standard.map((f) => (
+                        <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2.5">
+                      Added on {premium.name}
+                    </p>
+                    <ul className="space-y-2.5">
+                      {track.premium.map((f) => (
                         <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
                           <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
                           {f}
@@ -161,52 +213,10 @@ export default function PricingPage() {
                       ))}
                     </ul>
                   </div>
-                </FadeIn>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── ADD-ONS ──────────────────────────────────────────────────── */}
-      <section className="bg-white py-24 border-b border-[#e6e8f2]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <FadeIn>
-            <SectionLabel>Add-ons</SectionLabel>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4">
-              Priced, published, and only where they fit
-            </h2>
-            <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
-              None of these is bundled in to pad a tier. Each is taken when it makes sense for
-              your practice and declined when it doesn&apos;t.
-            </p>
           </FadeIn>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {addOns.map((addOn, i) => (
-              <FadeIn key={addOn.id} delay={i * 0.08} className="h-full">
-                <div
-                  className={`h-full rounded-xl border p-7 ${
-                    addOn.status === "pilot"
-                      ? "border-dashed border-[#c9cddd] bg-[#f6f7fc]"
-                      : "border-[#e6e8f2] bg-white"
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="text-[#171a26] font-bold text-lg">{addOn.name}</h3>
-                    {addOn.status === "pilot" && (
-                      <span className="flex-shrink-0 text-[10px] font-bold tracking-widest uppercase text-[#8a90a0] border border-[#c9cddd] rounded-full px-2.5 py-1">
-                        In pilot
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-[#3d4cf5] font-bold text-base mb-1">{addOn.price}</p>
-                  <p className="text-[#8a90a0] text-xs mb-4">{addOn.who}</p>
-                  <p className="text-[#565c6b] text-sm leading-relaxed">{addOn.body}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -274,11 +284,11 @@ export default function PricingPage() {
           <FadeIn>
             <SectionLabel>Line by line</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4">
-              The full comparison
+              The full feature comparison
             </h2>
             <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
-              Both {foundations.name} versions and the {retainer.name} retainer, side by side,
-              with the add-ons and the commercials at the bottom.
+              Everything in all four tiers, side by side. The Website is a one-off build; Basic,
+              Standard and Premium are monthly packages that sit on top of it.
             </p>
           </FadeIn>
 
@@ -293,12 +303,13 @@ export default function PricingPage() {
           <FadeIn delay={0.14}>
             <div className="mt-10 rounded-xl border border-[#e6e8f2] bg-[#f6f7fc] p-6 md:p-7">
               <h3 className="text-[#171a26] font-bold text-base mb-2">
-                What sits outside the fee
+                What sits outside the monthly fee
               </h3>
               <p className="text-[#565c6b] text-sm leading-relaxed mb-4 max-w-3xl">
-                The fee covers the scope listed above — there is no separate setup fee. Domain
-                renewal from year two, ad spend, pages beyond the ten in a new site, photography
-                and video are itemised and agreed before anything is started.
+                The fee covers the scope listed above for your tier and track — there is no
+                separate setup fee. Domain renewal from year two, ad spend, pages beyond those in
+                the build, photography and video are itemised and agreed before anything is
+                started.
               </p>
               <Link
                 href="/services#scope-and-costs"
