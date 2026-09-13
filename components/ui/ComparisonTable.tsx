@@ -1,29 +1,4 @@
-import {
-  comparison,
-  monthlyLabel,
-  tiers,
-  websitePriceLabel,
-  websiteProduct,
-  type Cell,
-  type ComparisonRow,
-} from "@/lib/pricing";
-
-// `key` is narrowed to the tier fields of ComparisonRow so `row[col.key]`
-// type-checks without a cast.
-const columns: {
-  key: Exclude<keyof ComparisonRow, "label">;
-  label: string;
-  price: string;
-  featured?: boolean;
-}[] = [
-  { key: "website", label: websiteProduct.name, price: websitePriceLabel },
-  ...tiers.map((tier) => ({
-    key: tier.id as Exclude<keyof ComparisonRow, "label">,
-    label: tier.name,
-    price: monthlyLabel(tier),
-    featured: tier.featured,
-  })),
-];
+import { comparison, comparisonColumns, type Cell } from "@/lib/pricing";
 
 function CellValue({ value }: { value: Cell }) {
   if (value === true) {
@@ -55,8 +30,9 @@ function CellValue({ value }: { value: Cell }) {
 }
 
 /**
- * Full feature matrix across all four tiers. The table scrolls horizontally
- * inside its own container on narrow screens rather than pushing the page wide.
+ * Full feature matrix across the two Foundations options and the retainer.
+ * The table scrolls horizontally inside its own container on narrow screens
+ * rather than pushing the page wide.
  *
  * Note: the row-label column is NOT sticky. Scrolled right on a narrow screen
  * the labels go out of view, leaving unlabelled columns of ticks — worth fixing,
@@ -64,38 +40,34 @@ function CellValue({ value }: { value: Cell }) {
  * showing through, so it isn't a one-liner.
  *
  * `contain-content` (contain: layout paint) on the scroller is load-bearing.
- * Without it Chromium propagates the 820px table's min-content width all the way
- * to documentElement.scrollWidth even though nothing visibly overflows, and
+ * Without it Chromium propagates the table's min-content width all the way to
+ * documentElement.scrollWidth even though nothing visibly overflows, and
  * mobile Chrome then sizes its layout viewport from that number — the page
- * renders 776px wide at 375px and the header CTA sits off-screen for the whole
- * visit. Measured: overflow-x:clip on the scroller, section, main, body and html
- * all fail; min-width:0, table-layout:fixed and a fixed width all fail; only
- * containment works. Don't remove it without re-measuring html.scrollWidth at
- * 375px.
+ * renders wider than 375px and the header CTA sits off-screen for the whole
+ * visit. Measured: overflow-x:clip on the scroller, section, main, body and
+ * html all fail; min-width:0, table-layout:fixed and a fixed width all fail;
+ * only containment works. Don't remove it without re-measuring
+ * html.scrollWidth at 375px.
  */
 export default function ComparisonTable() {
   return (
     <div className="contain-content overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
-      <table className="w-full min-w-[820px] border-collapse">
+      <table className="w-full min-w-[760px] border-collapse">
         <caption className="sr-only">
-          Feature comparison across The Website, Basic, Standard and Premium
+          Feature comparison across Foundations on your site, Foundations with a new site, and the
+          Visibility retainer
         </caption>
         <thead>
           <tr>
-            <th scope="col" className="w-[34%] text-left align-bottom pb-5 pr-4" />
-            {columns.map((col) => (
+            <th scope="col" className="w-[37%] text-left align-bottom pb-5 pr-4" />
+            {comparisonColumns.map((col) => (
               <th
                 key={col.key}
                 scope="col"
-                className={`w-[16.5%] align-bottom pb-5 px-3 text-center ${
+                className={`w-[21%] align-bottom pb-5 px-3 text-center ${
                   col.featured ? "bg-[#f6f7fc] rounded-t-xl" : ""
                 }`}
               >
-                {col.featured && (
-                  <span className="block mx-auto mb-2 w-fit bg-gradient-brand-static text-white text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full">
-                    Most popular
-                  </span>
-                )}
                 <span className="block text-[#171a26] font-bold text-base">{col.label}</span>
                 <span className="block text-[#8a90a0] text-xs font-medium mt-1">{col.price}</span>
               </th>
@@ -108,7 +80,7 @@ export default function ComparisonTable() {
             <tr>
               <th
                 scope="colgroup"
-                colSpan={5}
+                colSpan={4}
                 className="text-left text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] pt-8 pb-3"
               >
                 {group.group}
@@ -122,7 +94,7 @@ export default function ComparisonTable() {
                 >
                   {row.label}
                 </th>
-                {columns.map((col) => (
+                {comparisonColumns.map((col) => (
                   <td
                     key={col.key}
                     className={`text-center py-3.5 px-3 ${col.featured ? "bg-[#f6f7fc]" : ""}`}

@@ -1,212 +1,269 @@
 // Pricing is published in full and in public — it's a deliberate
 // differentiator, so nothing here is hidden behind a "request a quote".
 //
-// Structure: everyone buys The Website once (one-off, at one of two fixed
-// prices), then chooses one of three monthly packages that sit on top of it.
-// Each package includes everything in the tier below it.
+// Structure (13 Sep 2026): one fixed-price 90-day project, Foundations, in two
+// versions depending on whether the practice keeps its site; then one
+// month-to-month retainer, Visibility, whose contents depend on who the
+// practice sells to. Ads and extra pages are priced add-ons. Enquiry
+// management is in pilot and not sold.
+//
+// This replaced the Website + Basic/Standard/Premium ladder. That ladder priced
+// each step at £100 while the labour roughly doubled at each step, sold a CRM
+// that had not been built, and carried local-services levers (GBP for national
+// consultancies, citation counts, social posting) that the evidence base does
+// not support for this audience. The offer audit of 13 Sep 2026 in the vault
+// has the detail.
+//
+// Every figure marked BRAD TO CONFIRM is a business decision set here as a
+// defensible default, not a verified one. Change it here and everything on the
+// site follows — except public/llms.txt, which is a static file and must be
+// edited by hand.
 
-export interface Tier {
-  id: "basic" | "standard" | "premium";
-  name: string;
-  tagline: string;
-  monthly: string;
-  minimumMonths: number;
-  best: string;
-  includesBelow?: string;
-  featured?: boolean; // Standard is the "most popular" tier
-  features: string[];
-}
+// ─── Foundations — the 90-day project ─────────────────────────────────
 
-/**
- * The website build, sold as two fixed-price options rather than an open
- * "from" figure.
- *
- * An estimate undercuts the whole "every price published in full" position —
- * if the real number needs a conversation, the price isn't published. Two named
- * options let a practice place itself without asking, and the figure they see
- * is the figure they pay.
- */
-export interface WebsiteOption {
-  id: "practice" | "multi-sector";
+export interface FoundationsOption {
+  id: "existing-site" | "new-site";
   name: string;
   price: string;
   /** Who this one is for, so the buyer self-selects. */
   best: string;
+  /** What this version adds beyond the work every Foundations includes. */
+  adds: string[];
+  featured?: boolean;
 }
 
-export const websiteOptions: WebsiteOption[] = [
-  {
-    id: "practice",
-    name: "Practice site",
-    price: "£1,200",
-    best: "One discipline and one core set of services — most architectural, structural and interior design practices",
-  },
-  {
-    id: "multi-sector",
-    name: "Multi-sector site",
-    price: "£1,500",
-    best: "Several disciplines or sectors needing their own pages — MEP consultancies, multi-service firms and contractors",
-  },
-];
-
-/** The one-off website build. Sold separately from the monthly packages. */
-export const websiteProduct = {
-  name: "The Website",
-  /** The entry figure, for sentences like "websites start at X". */
-  from: websiteOptions[0].price,
-  terms:
-    "Fixed price, not an estimate · one-off · 50% deposit, 50% on launch",
-  tagline: "The foundation everything else sits on",
-  commitment: "No monthly commitment",
-  features: [
-    "Mobile-first website",
-    "AEO-ready from day one — schema, FAQ structure, llms.txt",
-    "Domain registered in your name",
-    "Hosting and SSL included for the first year",
-    "Built around your projects, not just to look tidy",
-    "No monthly commitment required",
+export const foundations = {
+  name: "Foundations",
+  tagline: "Ninety days, fixed price",
+  duration: "90 days",
+  terms: "Fixed price, not an estimate · three equal monthly instalments · no retainer required afterwards",
+  /** Work every Foundations includes, whichever site option is chosen. */
+  included: [
+    "Technical baseline measured on day one and day ninety — page weight, canonicals, sitemap, structured data, what Google has actually indexed",
+    "Structured data describing your services, sectors and credentials",
+    "Up to four project case studies, drafted by us from a twenty-minute call each and approved by you before anything is published",
+    "Service and sector pages rebuilt around the questions buyers actually ask, answer first",
+    "Business details made consistent across the trade bodies and sources that matter for your discipline",
+    "Google Business Profile set up or repaired where local intent exists for your work",
+    "Search and AI-visibility baseline in month one, repeated at day ninety, on Search Console totals",
+    "Three monthly reports and a day-ninety review with a written plan for what comes next",
   ],
+  options: [
+    {
+      id: "existing-site",
+      name: "Foundations on your site",
+      price: "£2,950", // BRAD TO CONFIRM
+      best: "Practices with a site that's sound underneath and needs the work above done to it. Send us the URL and we'll say honestly which version you need.",
+      adds: [
+        "Technical fixes made directly to your existing site",
+        "Content restructured in place — nothing rebuilt for the sake of it",
+      ],
+    },
+    {
+      id: "new-site",
+      name: "Foundations with a new site",
+      price: "£4,750", // BRAD TO CONFIRM
+      best: "Practices whose site can't carry the work — slow, not mobile, no project pages, or on a platform you don't control.",
+      adds: [
+        "Mobile-first site of up to ten pages, built around your projects",
+        "Domain registered in your name, hosting and SSL for the first year",
+        "A launch date in writing, backed by the guarantee below",
+      ],
+      featured: true,
+    },
+  ] as FoundationsOption[],
 };
 
-export const tiers: Tier[] = [
+// ─── Visibility — the month-to-month retainer ─────────────────────────
+
+export interface RetainerTrack {
+  id: "residential" | "national";
+  name: string;
+  who: string;
+  features: string[];
+}
+
+export const retainer = {
+  name: "Visibility",
+  tagline: "Month to month",
+  monthly: "£695", // BRAD TO CONFIRM
+  term: "No minimum term · 30 days' notice · billed monthly in advance",
+  best: "Practices that have finished Foundations and want the visibility kept current and built on, without a long contract.",
+  /** Included whichever track applies. */
+  common: [
+    "Monthly report on Search Console totals, with sampled AI-assistant visibility",
+    "One new case study or question-led page a month when there's a real question to answer — and none when there isn't",
+    "Small site changes within the month: copy, credentials, team, projects",
+    "Quarterly review call with a written plan",
+  ],
+  /**
+   * The retainer's contents depend on who the practice sells to, because the
+   * levers are different. A studio taking homeowner work has local intent to
+   * capture; a consultancy tendering nationally has almost none, and the
+   * evidence points at third-party mentions instead.
+   */
+  tracks: [
+    {
+      id: "residential",
+      name: "Residential-facing practices",
+      who: "Architects, structural engineers and interior designers taking homeowner and small-developer work within a region",
+      features: [
+        "Google Business Profile kept current, with a reviews approach that fits a practice",
+        "Local-intent pages for the work and the area you actually want",
+        "Google Ads available as an add-on, because intent exists here",
+      ],
+    },
+    {
+      id: "national",
+      name: "National consultancies",
+      who: "MEP, structural, civil and specialist consultancies selling to developers, contractors, architects and estates teams",
+      features: [
+        "Mention outreach each quarter — partner credits, LinkedIn tags, one trade-press pitch",
+        "Sector case studies that cover the questions around your specialism",
+        "No Google Business Profile emphasis and no ads, because the intent isn't there",
+      ],
+    },
+  ] as RetainerTrack[],
+};
+
+// ─── Add-ons — priced, published, taken only where they fit ───────────
+
+export interface AddOn {
+  id: string;
+  name: string;
+  price: string;
+  who: string;
+  body: string;
+  /** Rendered as "not yet sold" rather than with a price. */
+  status?: "pilot";
+}
+
+export const addOns: AddOn[] = [
   {
-    id: "basic",
-    name: "Basic",
-    tagline: "Get found",
-    monthly: "£395",
-    minimumMonths: 3,
-    best: "Practices and consultancies that need to be findable — in search and in AI-assisted search",
-    features: [
-      "Google Business Profile management",
-      "AEO foundations active",
-      "AI visibility tracking",
-      "Local SEO reports",
-      "5 directory citations",
-      "CRM workspace with client access",
-      "Contact records + one project-enquiry pipeline",
-      "One website enquiry form connected",
-      "Internal notification of new enquiries",
-      "One handover session",
-    ],
+    id: "ads",
+    name: "Google Ads management",
+    price: "£350 / month + your ad spend", // BRAD TO CONFIRM
+    who: "Residential-facing practices on the Visibility retainer",
+    body: "Search campaigns around the project types you want more of. Meta where the work is visual. You pay the platforms directly; we never take a percentage. Not offered to national consultancies, where there is almost nothing to buy.",
   },
   {
-    id: "standard",
-    name: "Standard",
-    tagline: "Get chosen",
-    monthly: "£495",
-    minimumMonths: 3,
-    best: "Firms that want a steadier flow of relevant project enquiries, and the follow-up to support it",
-    includesBelow: "Everything in Basic, plus:",
-    featured: true,
-    features: [
-      "Google & Meta ads management",
-      "Ad creative refresh",
-      "1 AEO page + 1 SEO post every month",
-      "One consultation-booking calendar connected",
-      "Up to 3 agreed standard workflows",
-      "Simple pipeline-stage tailoring",
-      "Source + outcome reporting, where captured",
-      "Monthly strategy call",
-      "15+ directory citations",
-    ],
+    id: "pages",
+    name: "Additional site pages",
+    price: "£150 per page", // BRAD TO CONFIRM
+    who: "Foundations with a new site, beyond the ten included",
+    body: "Extra sector or service pages, agreed and priced before the build starts. A multi-discipline consultancy usually needs three or four.",
   },
   {
-    id: "premium",
-    name: "Premium",
-    tagline: "Keep improving it",
-    monthly: "£595",
-    minimumMonths: 6,
-    best: "Established practices that want the enquiry pipeline reviewed and refined month by month",
-    includesBelow: "Everything in Standard, plus:",
-    features: [
-      "Monthly review of recorded enquiry + proposal activity",
-      "Reporting on recorded sources, stages and outcomes",
-      "One minor workflow adjustment per month — copy, timing or a condition",
-      "Social posting, 3 posts per week",
-      "Monthly video + email/SMS campaigns",
-      "Bi-weekly check-ins + quarterly reviews",
-    ],
+    id: "crm",
+    name: "Enquiry management & follow-up",
+    price: "Not yet sold",
+    who: "In pilot with one client",
+    body: "A pipeline for project enquiries, proposals and follow-up, built for this sector. It will be priced when it works — not before.",
+    status: "pilot",
   },
 ];
 
-// ─── Display formatting ───────────────────────────────────────────────
-// Every price and term shown anywhere on the site is formatted here, from the
-// data above. Nothing downstream should hardcode a figure: the pricing cards,
-// the comparison table, its column headers and the /pricing meta description
-// all read through these.
-//
-// The ONE copy that can't derive from this file is public/llms.txt, which is a
-// static file rather than a build artifact. If you change a price, change it
-// there too — it is the only place that won't follow automatically.
+// ─── Guarantees — inputs and speed, never rankings ────────────────────
+// Nobody controls what Google ranks or what an assistant says, so nothing
+// here promises either. Each one is something we control and can be held to.
 
-const byId = (id: Tier["id"]): Tier => {
-  const tier = tiers.find((t) => t.id === id);
-  if (!tier) throw new Error(`Unknown tier: ${id}`);
-  return tier;
+export interface Guarantee {
+  title: string;
+  body: string;
+}
+
+export const guarantees: Guarantee[] = [
+  {
+    title: "Month one, or it's free",
+    body: "Every Foundations item scheduled for the first thirty days is live within thirty days of us receiving access, or the first instalment is refunded.",
+  },
+  {
+    title: "A launch date in writing",
+    body: "On a new site, the site goes live within twenty-eight days of your content sign-off, or the final instalment is waived.",
+  },
+  {
+    title: "An honest no",
+    body: "If the free audit shows you're already described well, we say so and stop. There is no pitch when the answer is that you don't need us.",
+  },
+  {
+    title: "Leave with everything",
+    body: "The retainer is month to month on thirty days' notice. Domain, site, reports and research are yours whenever you go.",
+  },
+  {
+    title: "Numbers you can check",
+    body: "Reports quote Search Console totals, never a sum of query rows. Anything that can't be measured is marked as such rather than estimated.",
+  },
+];
+
+// ─── Capacity and commercials ─────────────────────────────────────────
+
+/** One person does the work, so the intake is small and it is stated. */
+export const capacity = {
+  perQuarter: 3, // BRAD TO CONFIRM
+  body: "TradeGrowth is one person doing the work rather than a team selling it, so we take on three new practices a quarter. When a quarter is full, the audit still runs and you're offered the next start date.",
 };
 
-/** A tier's monthly price, formatted for display. */
-export const monthlyLabel = (tier: Tier) => `${tier.monthly} / mo`;
-
-/** The minimum term, phrased for the pricing cards. */
-export const minimumLabel = (tier: Tier) => `${tier.minimumMonths} month minimum`;
-
-/** The minimum term, phrased for the comparison table. */
-export const termLabel = (tier: Tier) => `${tier.minimumMonths} months`;
-
-/** The website build price, formatted for display. Names both options. */
-export const websitePriceLabel = websiteOptions.map((o) => o.price).join(" or ");
+export const commercials = [
+  {
+    title: "VAT",
+    body: "Prices are not subject to VAT. TradeGrowth Marketing is not VAT registered.", // BRAD TO CONFIRM
+  },
+  {
+    title: "Paying for Foundations",
+    body: "Three equal monthly instalments: on start, at day thirty and at day sixty. No deposit beyond the first instalment.",
+  },
+  {
+    title: "Hosting after year one",
+    body: "£95 a year from year two, covering domain renewal, hosting and SSL. Or move the site anywhere — it's yours.", // BRAD TO CONFIRM
+  },
+  {
+    title: "Ad spend",
+    body: "Paid by you directly to Google and Meta. We never take a cut of it or route it through us.",
+  },
+];
 
 // ─── What is included, and what is charged separately ─────────────────
-// Rendered on /pricing and /services. The point of these is that the package
-// price covers configuration and management of the listed scope — not every
-// third-party cost a system can incur. Anything metered or licensed is agreed
-// before it is switched on, never assumed.
+// Rendered on /pricing and /services. The point of these is that the fee
+// covers the listed scope — not every third-party cost. Anything metered or
+// licensed is agreed before it is switched on, never assumed.
 
 export const scopeNotes: { title: string; body: string }[] = [
   {
-    title: "What the monthly fee covers",
-    body: "Configuration and ongoing management of the scope listed for your tier. That is the work, and it is the whole of the work — there is no separate setup fee.",
+    title: "What the fee covers",
+    body: "Foundations covers the listed work over ninety days. The retainer covers the listed scope each month. That is the work, and it is the whole of the work — there is no separate setup fee.",
   },
   {
     title: "Costs that sit outside it",
-    body: "Software licences, messaging, telephone and third-party integration or usage charges are itemised and agreed with you before anything is activated. We don't include unlimited messaging and we don't pretend every software cost is absorbed.",
+    body: "Domain renewal from year two, any paid tool a client asks us to run on their behalf, and ad spend are itemised and agreed with you before anything is activated.",
   },
   {
     title: "Work that is scoped separately",
-    body: "Data migrations, custom integrations, additional pipelines and substantial workflow builds are quoted on their own. The packages are a defined standard scope, not unlimited bespoke development.",
+    body: "Pages beyond the ten in a new site, photography, video, and anything that isn't on the lists above is quoted on its own. The packages are a defined scope, not unlimited bespoke work.",
   },
   {
-    title: "What counts as a minor adjustment",
-    body: "On Premium, the monthly workflow adjustment means changing copy, timing or an existing condition on a workflow you already have. A new integration or custom development is a separate piece of work, scoped and quoted on its own.",
-  },
-  {
-    title: "If you already have a CRM",
-    body: "We assess what you're running before suggesting anything replaces it. Plenty of practices already have a system that works, and moving off it is often the wrong call.",
+    title: "What a case study needs from you",
+    body: "Twenty minutes on a call and a yes or no on the draft. We write it; you correct it. Where a client can't be named, we say so on the page rather than invent detail.",
   },
   {
     title: "What reporting depends on",
-    body: "Reports are built from what the system actually records. That means connected sources and your team logging outcomes — if an enquiry arrives by a route we aren't connected to, or a result never gets recorded, it won't appear.",
+    body: "Reports are built from what can be measured: Search Console totals, sampled AI answers, and enquiries you tell us about. A call to an untracked number cannot be attributed to search, and we won't report it as though it can.",
   },
   {
-    title: "Access and leaving",
-    body: "CRM access, who carries the ongoing software costs, and how your data is exported if you cancel are all agreed during onboarding. The underlying software is licensed, not owned — your data is yours, the platform isn't.",
+    title: "Enquiry management",
+    body: "In pilot with one client and not sold. When it is, it will be priced here first. Nothing on the site is a commitment to a system that isn't finished.",
   },
 ];
 
-// ─── Full feature comparison ──────────────────────────────────────────
+// ─── Full comparison ──────────────────────────────────────────────────
 // `true` renders a tick, `false` renders a dash, a string renders as-is.
-// The Website column is the one-off build; a dash there means "that's part of
-// a monthly package, not the build" — and vice versa.
 
 export type Cell = boolean | string;
 
 export interface ComparisonRow {
   label: string;
-  website: Cell;
-  basic: Cell;
-  standard: Cell;
-  premium: Cell;
+  existing: Cell;
+  newSite: Cell;
+  retainer: Cell;
 }
 
 export interface ComparisonGroup {
@@ -214,78 +271,71 @@ export interface ComparisonGroup {
   rows: ComparisonRow[];
 }
 
+export const comparisonColumns: {
+  key: Exclude<keyof ComparisonRow, "label">;
+  label: string;
+  price: string;
+  featured?: boolean;
+}[] = [
+  { key: "existing", label: foundations.options[0].name, price: `${foundations.options[0].price} · 90 days` },
+  { key: "newSite", label: foundations.options[1].name, price: `${foundations.options[1].price} · 90 days`, featured: true },
+  { key: "retainer", label: `${retainer.name} retainer`, price: `${retainer.monthly} / mo` },
+];
+
 export const comparison: ComparisonGroup[] = [
   {
-    group: "The website",
+    group: "The site",
     rows: [
-      { label: "10-page, mobile-first website", website: true, basic: false, standard: false, premium: false },
-      { label: "AEO-ready build (schema, FAQ structure, llms.txt)", website: true, basic: false, standard: false, premium: false },
-      { label: "Domain registered in your name", website: true, basic: false, standard: false, premium: false },
-      { label: "Hosting + SSL, first year", website: true, basic: false, standard: false, premium: false },
+      { label: "Mobile-first site, up to ten pages", existing: false, newSite: true, retainer: false },
+      { label: "Domain registered in your name", existing: false, newSite: true, retainer: false },
+      { label: "Hosting and SSL, first year", existing: false, newSite: true, retainer: false },
+      { label: "Technical fixes to your existing site", existing: true, newSite: false, retainer: "Small changes" },
     ],
   },
   {
-    group: "Get found",
+    group: "Foundations work",
     rows: [
-      { label: "Google Business Profile management", website: false, basic: true, standard: true, premium: true },
-      { label: "AEO foundations active", website: false, basic: true, standard: true, premium: true },
-      { label: "AI visibility tracking", website: false, basic: true, standard: true, premium: true },
-      { label: "Local SEO reports", website: false, basic: true, standard: true, premium: true },
-      { label: "Directory citations", website: false, basic: "5", standard: "15+", premium: "15+" },
-      { label: "New AEO page + SEO post each month", website: false, basic: false, standard: "1 + 1", premium: "1 + 1" },
+      { label: "Technical baseline, measured day one and day ninety", existing: true, newSite: true, retainer: false },
+      { label: "Structured data — services, sectors, credentials", existing: true, newSite: true, retainer: "Maintained" },
+      { label: "Case studies drafted from a call", existing: "Up to 4", newSite: "Up to 4", retainer: "1 / month where warranted" },
+      { label: "Question-led service and sector pages", existing: true, newSite: true, retainer: "When there's a real question" },
+      { label: "Business details consistent across trade bodies", existing: true, newSite: true, retainer: "Maintained" },
+      { label: "Google Business Profile, where local intent exists", existing: true, newSite: true, retainer: "Residential track" },
+      { label: "Search and AI-visibility baseline", existing: "Day 1 and day 90", newSite: "Day 1 and day 90", retainer: false },
     ],
   },
   {
-    group: "Enquiry management & follow-up",
+    group: "Ongoing",
     rows: [
-      { label: "Scope at this tier", website: false, basic: "Enquiry tracking foundations", standard: "Enquiry management and follow-up", premium: "Ongoing pipeline improvement" },
-      { label: "CRM workspace with client access", website: false, basic: true, standard: true, premium: true },
-      { label: "Contact and company records", website: false, basic: true, standard: true, premium: true },
-      { label: "Project-enquiry pipeline", website: false, basic: "1", standard: "1, stage-tailored", premium: "1, stage-tailored" },
-      { label: "Website enquiry forms connected", website: false, basic: "1", standard: "1", premium: "1" },
-      { label: "Internal notification of new enquiries", website: false, basic: true, standard: true, premium: true },
-      { label: "Handover session", website: false, basic: "1", standard: "1", premium: "1" },
-      { label: "Consultation-booking calendar connected", website: false, basic: false, standard: "1", premium: "1" },
-      { label: "Agreed standard workflows", website: false, basic: false, standard: "Up to 3", premium: "Up to 3" },
-      { label: "Automated proposal-follow-up sequence", website: false, basic: false, standard: "Within agreed workflows", premium: "Within agreed workflows" },
-      { label: "Source and outcome reporting, where captured", website: false, basic: false, standard: "Basic", premium: true },
-      { label: "Monthly review of recorded activity", website: false, basic: false, standard: false, premium: true },
-      { label: "Minor adjustment to an existing workflow — copy, timing or an existing condition", website: false, basic: false, standard: false, premium: "1 / month" },
+      { label: "Monthly report on Search Console totals", existing: "3", newSite: "3", retainer: true },
+      { label: "Review call with a written plan", existing: "Day 90", newSite: "Day 90", retainer: "Quarterly" },
+      { label: "Mention outreach — partner credits, LinkedIn tags, trade press", existing: false, newSite: false, retainer: "National track" },
+      { label: "Local-intent pages and reviews approach", existing: false, newSite: false, retainer: "Residential track" },
     ],
   },
   {
-    group: "Paid ads & content",
+    group: "Add-ons",
     rows: [
-      { label: "Google & Meta ads management", website: false, basic: false, standard: true, premium: true },
-      { label: "Ad creative refresh", website: false, basic: false, standard: true, premium: true },
-      { label: "Social posting", website: false, basic: false, standard: false, premium: "3 / week" },
-      { label: "Monthly video + email/SMS campaigns", website: false, basic: false, standard: false, premium: true },
-    ],
-  },
-  {
-    group: "Reporting & support",
-    rows: [
-      { label: "Monthly strategy call", website: false, basic: false, standard: true, premium: true },
-      { label: "Bi-weekly check-ins + quarterly reviews", website: false, basic: false, standard: false, premium: true },
+      { label: "Google Ads management", existing: false, newSite: false, retainer: addOns[0].price },
+      { label: "Additional site pages", existing: false, newSite: addOns[1].price, retainer: addOns[1].price },
+      { label: "Enquiry management & follow-up", existing: "Not yet sold", newSite: "Not yet sold", retainer: "Not yet sold" },
     ],
   },
   {
     group: "The commercials",
     rows: [
-      {
-        label: "Price",
-        website: websitePriceLabel,
-        basic: `${monthlyLabel(byId("basic"))} + website`,
-        standard: `${monthlyLabel(byId("standard"))} + website`,
-        premium: `${monthlyLabel(byId("premium"))} + website`,
-      },
-      {
-        label: "Minimum term",
-        website: "None",
-        basic: termLabel(byId("basic")),
-        standard: termLabel(byId("standard")),
-        premium: termLabel(byId("premium")),
-      },
+      { label: "Price", existing: foundations.options[0].price, newSite: foundations.options[1].price, retainer: `${retainer.monthly} / mo` },
+      { label: "Term", existing: "90 days", newSite: "90 days", retainer: "None · 30 days' notice" },
+      { label: "Payment", existing: "3 instalments", newSite: "3 instalments", retainer: "Monthly in advance" },
+      { label: "VAT", existing: "Not charged", newSite: "Not charged", retainer: "Not charged" },
     ],
   },
 ];
+
+// ─── Display helpers ──────────────────────────────────────────────────
+
+/** "£2,950 or £4,750" — for sentences that name both Foundations prices. */
+export const foundationsPriceLabel = foundations.options.map((o) => o.price).join(" or ");
+
+/** "£695 / mo" */
+export const retainerMonthlyLabel = `${retainer.monthly} / mo`;

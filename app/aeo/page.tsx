@@ -40,14 +40,14 @@ const levers = [
   {
     icon: <BadgeCheck className="w-6 h-6" strokeWidth={1.8} />,
     number: "03",
-    title: "Trusted citations",
-    body: "Consistent details across the directories, professional bodies and industry sources these models were trained on and still draw from. Consistency matters more than volume: one wrong phone number across four listings does real damage.",
+    title: "Third-party mentions",
+    body: "Consistent details across the trade bodies and industry sources these models draw on — and your practice mentioned on other people's sites: partner credits, project write-ups, trade press. Across 75,000 brands, mentions correlated with AI visibility roughly three times more strongly than backlinks did. One wrong phone number across four listings still does real damage.",
   },
   {
     icon: <FileText className="w-6 h-6" strokeWidth={1.8} />,
     number: "04",
-    title: "llms.txt",
-    body: "A plain-text file at the root of your site giving language models a clean summary of who you are, what you do and where you work. It costs almost nothing and few UK consultancy websites have one — though on its own it is a small piece, not a route into AI answers.",
+    title: "Fresh, specific case studies",
+    body: "AI assistants cite content measurably newer than what ranks organically, and they lift specific paragraphs — the constraint, the decision, the outcome. A project page with real detail is worth more to them than a page of services, which is why we draft case studies from a call with you rather than wait for you to write them.",
   },
   {
     icon: <LineChart className="w-6 h-6" strokeWidth={1.8} />,

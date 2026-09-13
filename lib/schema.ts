@@ -32,7 +32,7 @@ const organisation: ProfessionalService = {
   name: "TradeGrowth Marketing",
   url: SITE_URL,
   description:
-    "Marketing for UK construction, engineering and design businesses — websites, SEO, AI-search visibility, targeted advertising and enquiry management.",
+    "Marketing for UK construction, engineering and design businesses — websites, SEO, AI-search visibility and targeted advertising where it fits.",
   logo: `${SITE_URL}/images/tradegrowth-marketing-logo.png`,
   image: `${SITE_URL}/images/tradegrowth-marketing-logo.png`,
   email: "contact@tradegrowthseo.com",

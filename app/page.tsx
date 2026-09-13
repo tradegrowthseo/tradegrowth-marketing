@@ -9,8 +9,8 @@ import StatsRow from "@/components/ui/StatsRow";
 import PricingCard from "@/components/ui/PricingCard";
 import AudienceCards from "@/components/ui/AudienceCards";
 import CTABand from "@/components/ui/CTABand";
-import { services } from "@/lib/services";
-import { tiers, websiteOptions } from "@/lib/pricing";
+import { soldServices } from "@/lib/services";
+import { foundations, retainer, guarantees, capacity } from "@/lib/pricing";
 import { differentiators } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
@@ -27,11 +27,13 @@ const iconMap: Record<string, React.ReactNode> = {
   "trade-crm": <Inbox className="w-7 h-7" strokeWidth={1.8} />,
 };
 
+// Facts about the offer, not counts of the site's own structure. Each one
+// derives from lib/pricing.ts so it can't drift from the price list.
 const stats = [
-  { value: "4", label: "Disciplines we specialise in" },
-  { value: "5", label: "AI assistants we optimise for" },
-  { value: String(services.length), label: "Services, from website to follow-up" },
-  { value: String(tiers.length), label: "Packages, priced in public" },
+  { value: foundations.duration, label: `${foundations.name}, fixed price, then month to month` },
+  { value: String(capacity.perQuarter), label: "New practices taken on each quarter" },
+  { value: String(guarantees.length), label: "Guarantees, in writing" },
+  { value: "£0", label: "Setup fee, cut of ad spend, or charge for the audit" },
 ];
 
 export default function HomePage() {
@@ -72,8 +74,7 @@ export default function HomePage() {
               <FadeIn delay={0.2}>
                 <p className="text-white/75 text-lg md:text-xl leading-relaxed mb-9 max-w-xl">
                   We help architects, engineers, interior designers and construction specialists
-                  strengthen their online presence through websites, SEO, AI-search visibility,
-                  targeted advertising and enquiry management.
+                  strengthen their online presence through websites, SEO, AI-search visibility and, where the intent exists, targeted advertising.
                 </p>
               </FadeIn>
 
@@ -99,7 +100,7 @@ export default function HomePage() {
 
               <FadeIn delay={0.36}>
                 <p className="text-white/45 text-xs mt-8 font-medium tracking-wide uppercase">
-Every price published in full · No setup fee
+Every price published in full · Five guarantees in writing · No setup fee
                 </p>
               </FadeIn>
             </div>
@@ -193,21 +194,21 @@ Every price published in full · No setup fee
           <FadeIn>
             <SectionLabel>What we do</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-[#171a26] mb-4 max-w-2xl">
-              Four services, one connected system
+              Three services, built in the right order
             </h2>
             <p className="text-[#565c6b] text-lg mb-14 max-w-2xl leading-relaxed">
               Take the piece you need or the whole thing. Every build ships ready for search and
-              AI-assisted search — structured data, question-led content and llms.txt included,
+              AI-assisted search — structured data, question-led content and case studies included,
               rather than sold back to you as an upgrade six months later.
             </p>
           </FadeIn>
 
-          {/* Four services, so a balanced 2×2 on desktop rather than a 4-wide
-              row — the cards carry three bullets each and read better with the
-              extra width. Stacks to one column on mobile. */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {services.map((s, i) => (
-              <FadeIn key={s.slug} delay={(i % 2) * 0.07}>
+          {/* Three sold services. The enquiry-management pilot is deliberately
+              absent here — it's described on /services with its status, not
+              sold from the home page. Stacks to one column on mobile. */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {soldServices.map((s, i) => (
+              <FadeIn key={s.slug} delay={(i % 3) * 0.07}>
                 <ServiceCard
                   title={s.label}
                   description={s.short}
@@ -377,20 +378,43 @@ Every price published in full · No setup fee
                 No &ldquo;book a call for a quote&rdquo;
               </h2>
               <p className="text-[#565c6b] text-lg max-w-2xl mx-auto leading-relaxed">
-                A website you own outright at {websiteOptions[0].price} or{" "}
-                {websiteOptions[1].price}, then one monthly package
-                on top. Every price we charge is published — you scope a fee proposal before you
+                Ninety days of {foundations.name} at a fixed {foundations.options[0].price} or{" "}
+                {foundations.options[1].price}, then one retainer at {retainer.monthly} a month,
+                month to month. Every price we charge is published — you scope a fee proposal before you
                 send it, and we think the same courtesy runs both ways.
               </p>
             </div>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-            {tiers.map((tier, i) => (
-              <FadeIn key={tier.id} delay={i * 0.1} className="h-full">
-                <PricingCard tier={tier} />
+            {foundations.options.map((option, i) => (
+              <FadeIn key={option.id} delay={i * 0.1} className="h-full">
+                <PricingCard
+                  eyebrow={foundations.tagline}
+                  name={option.name}
+                  price={option.price}
+                  priceSuffix="fixed"
+                  meta="90 days · three monthly instalments"
+                  best={option.best}
+                  includesHeading="On top of the full Foundations scope:"
+                  features={option.adds}
+                  featured={option.featured}
+                  badge={option.featured ? "Most practices" : undefined}
+                />
               </FadeIn>
             ))}
+            <FadeIn delay={0.2} className="h-full">
+              <PricingCard
+                eyebrow={retainer.tagline}
+                name={`${retainer.name} retainer`}
+                price={retainer.monthly}
+                priceSuffix="/ month"
+                meta={retainer.term}
+                best={retainer.best}
+                includesHeading="Every month:"
+                features={retainer.common}
+              />
+            </FadeIn>
           </div>
 
           <FadeIn delay={0.2}>

@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   ...routeMeta("/audit/"),
   title: "Free AI-Search Audit",
   description:
-    "A free check of how your practice is described inside ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",
+    "A free check of how your practice is described inside ChatGPT, Perplexity, Gemini, Claude and Google AI Overviews, benchmarked against a competitor — delivered as a 5-page PDF report.",
 };
 
 const whatYouGet = [
   {
     number: "01",
     title: "Your AI visibility scan",
-    body: "We ask ChatGPT, Perplexity, Gemini and Google AI Overviews the questions your prospective clients actually ask — and record, word for word, whether your practice gets named and how it is described.",
+    body: "We ask ChatGPT, Perplexity, Gemini, Claude and Google AI Overviews the questions your prospective clients actually ask — and record, word for word, whether your practice gets named and how it is described.",
   },
   {
     number: "02",
@@ -26,7 +26,7 @@ const whatYouGet = [
   {
     number: "03",
     title: "A 5-page PDF report",
-    body: "The findings, the specific gaps in your structured data, content, listings and llms.txt, and a prioritised list of what to address first. Yours to keep either way.",
+    body: "The findings, the specific gaps in your structured data, content, listings and third-party mentions, and a prioritised list of what to address first. Yours to keep either way.",
   },
 ];
 
@@ -34,7 +34,7 @@ const reportContents = [
   "Screenshots of the actual AI answers for your services and project types",
   "Which of the five answer engines name you, and which don't",
   "Your structured data coverage and what's missing",
-  "Whether your site has an llms.txt file",
+  "Which third-party sources mention you — trade bodies, partners, press — and which don't",
   "Consistency of your business information across trusted sources",
   "A prioritised list of what to address first",
 ];
@@ -51,7 +51,7 @@ export default function AuditPage() {
             <span className="text-gradient">right now</span>
           </>
         }
-        sub="We'll check how your practice is described across ChatGPT, Perplexity, Gemini and Google AI Overviews, benchmark you against a competitor, and send you a 5-page report. Free, no card details, no obligation."
+        sub="We'll check how your practice is described across ChatGPT, Perplexity, Gemini, Claude and Google AI Overviews, benchmark you against a competitor, and send you a 5-page report. Free, no card details, no obligation."
       >
         <div className="flex flex-wrap gap-3 mt-8">
           {["Completely free", "No card details", "Back within days", "Yours to keep"].map((p) => (
@@ -188,7 +188,7 @@ export default function AuditPage() {
               },
               {
                 step: "After that",
-                body: "One follow-up to ask if you'd like to talk it through. If you say no, that's the end of it.",
+                body: "One follow-up to ask if you'd like to talk it through. If you say no, that's the end of it. And if the report says you're already in good shape, we say so — that's a written guarantee, not a courtesy.",
               },
             ].map((s, i) => (
               <FadeIn key={s.step} delay={i * 0.08}>

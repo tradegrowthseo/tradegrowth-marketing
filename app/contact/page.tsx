@@ -237,7 +237,7 @@ export default function ContactPage() {
               </h3>
               <p className="text-[#565c6b] mb-6 max-w-xl mx-auto">
                 Start with the free AI-search audit instead. It shows how ChatGPT, Perplexity,
-                Gemini and Google AI Overviews describe your practice today — no call required.
+                Gemini, Claude and Google AI Overviews describe your practice today — no call required.
               </p>
               <Link
                 href="/audit"

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ...routeMeta("/services/"),
   title: "Services",
   description:
-    "Four services for UK construction, engineering and design businesses: website design, SEO and AI-search visibility, Google & Meta ads, and enquiry management and follow-up.",
+    "Three services for UK construction, engineering and design businesses: website design, SEO and AI-search visibility, and Google & Meta ads as an add-on — plus the enquiry-management pilot, described honestly.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -46,10 +46,10 @@ export default function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            Four services. One <span className="text-gradient">connected system.</span>
+            Three services. <span className="text-gradient">Built in the right order.</span>
           </>
         }
-        sub="Take the piece you need or the whole thing. Either way, every build ships ready for search and AI-assisted search — structured data, question-led content and llms.txt included, never sold back to you later as an upgrade."
+        sub="Foundations first, then the retainer if you want it. Every build ships ready for search and AI-assisted search — structured data, question-led content and case studies included, never sold back to you later as an upgrade."
       />
 
       {/* ─── JUMP NAV ─────────────────────────────────────────────────── */}
@@ -102,6 +102,11 @@ export default function ServicesPage() {
                     {service.headline && (
                       <span className="ml-auto bg-gradient-brand-static text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
                         Headline service
+                      </span>
+                    )}
+                    {service.status === "pilot" && (
+                      <span className="ml-auto border border-[#c9cddd] text-[#8a90a0] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full whitespace-nowrap">
+                        In pilot · not yet sold
                       </span>
                     )}
                   </div>
@@ -171,12 +176,12 @@ export default function ServicesPage() {
           <FadeIn>
             <SectionLabel>An example pipeline</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4 max-w-2xl">
-              What a project-enquiry pipeline looks like
+              What the enquiry pipeline in pilot looks like
             </h2>
             <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
-              An illustration, not a fixed process — stages and timings are agreed with you. A
-              studio taking residential work and a consultancy tendering on frameworks do not
-              want the same pipeline.
+              What&apos;s being piloted now, not a product on the price list. Stages and timings are
+              agreed with each practice — a studio taking residential work and a consultancy
+              tendering on frameworks do not want the same pipeline.
             </p>
           </FadeIn>
 
@@ -328,7 +333,7 @@ export default function ServicesPage() {
               <p className="text-white/60 leading-relaxed mb-6">
                 The common pattern is to build a site, then return six months later to sell
                 &ldquo;AI optimisation&rdquo; as a separate line item. That is charging twice for
-                the same groundwork. Structured data, question-led content and llms.txt are part
+                the same groundwork. Structured data, question-led content and case studies are part
                 of the build, whichever services you take — none of it a guarantee that an
                 assistant will name you, all of it the work that makes it possible.
               </p>
@@ -348,7 +353,7 @@ export default function ServicesPage() {
                 {[
                   "JSON-LD structured data",
                   "Question-led content structure",
-                  "llms.txt for AI crawlers",
+                  "Case studies, drafted from a call",
                   "Consistent listings and citations",
                   "Entity-consistent business data",
                   "Monthly AI visibility reporting",
