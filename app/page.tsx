@@ -10,7 +10,7 @@ import PricingCard from "@/components/ui/PricingCard";
 import AudienceCards from "@/components/ui/AudienceCards";
 import CTABand from "@/components/ui/CTABand";
 import { soldServices } from "@/lib/services";
-import { tiers, websiteOptions, guarantees, capacity, minimumLabel } from "@/lib/pricing";
+import { tiers, tierById, websiteOptions, guarantees, capacity, minimumLabel } from "@/lib/pricing";
 import { differentiators } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ const stats = [
   { value: "£0", label: "Setup fee, cut of ad spend, or charge for the audit" },
   { value: String(guarantees.length), label: "Guarantees, in writing" },
   { value: String(capacity.perQuarter), label: "New practices taken on each quarter" },
-  { value: `${tiers[0].minimumMonths} mo`, label: "Minimum term on every package, then month to month" },
+  { value: `${tierById("basic").minimumMonths} mo`, label: "Minimum term on every package, then month to month" },
 ];
 
 export default function HomePage() {
