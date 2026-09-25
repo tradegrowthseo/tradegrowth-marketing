@@ -2,9 +2,9 @@ import Link from "next/link";
 
 /**
  * A package card. Used for the three monthly tiers on /pricing and in the
- * home-page teaser. The featured card is
- * wrapped in a gradient hairline via `.border-gradient-brand` — the wrapper
- * supplies the 1px border, the inner div repaints the middle white.
+ * home-page teaser. The featured card is wrapped in a gradient hairline via
+ * `.border-gradient-brand` — the wrapper supplies the 1px border, the inner
+ * div repaints the middle white.
  */
 export interface PricingCardProps {
   eyebrow: string;
@@ -14,9 +14,13 @@ export interface PricingCardProps {
   priceSuffix?: string;
   /** Term and payment line under the price. */
   meta: string;
+  /** One more line under the meta, e.g. the annual option. */
+  note?: string;
   best: string;
   includesHeading?: string;
   features: string[];
+  /** Named extras. Rendered under the features with their own heading. */
+  bonuses?: string[];
   ctaLabel?: string;
   ctaHref?: string;
   featured?: boolean;
@@ -24,15 +28,30 @@ export interface PricingCardProps {
   badge?: string;
 }
 
+const Tick = () => (
+  <svg
+    className="w-4 h-4 text-[#3d4cf5] flex-shrink-0 mt-0.5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2.5}
+    aria-hidden="true"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+  </svg>
+);
+
 export default function PricingCard({
   eyebrow,
   name,
   price,
   priceSuffix,
   meta,
+  note,
   best,
   includesHeading,
   features,
+  bonuses,
   ctaLabel = "Start with the audit",
   ctaHref = "/audit",
   featured = false,
@@ -65,7 +84,8 @@ export default function PricingCard({
           <span className="text-[#8a90a0] text-sm font-medium">{priceSuffix}</span>
         )}
       </div>
-      <p className="text-[#8a90a0] text-sm mb-5">{meta}</p>
+      <p className={`text-[#8a90a0] text-sm ${note ? "mb-1.5" : "mb-5"}`}>{meta}</p>
+      {note && <p className="text-[#3d4cf5] text-sm font-semibold mb-5">{note}</p>}
 
       <p className="text-[#565c6b] text-sm leading-relaxed mb-6 pb-6 border-b border-[#e6e8f2]">
         {best}
@@ -75,22 +95,30 @@ export default function PricingCard({
         <p className="text-[#171a26] text-sm font-semibold mb-4">{includesHeading}</p>
       )}
 
-      <ul className="space-y-3 mb-8 flex-1">
+      <ul className="space-y-3 mb-6">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
-            <svg
-              className="w-4 h-4 text-[#3d4cf5] flex-shrink-0 mt-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
+            <Tick />
             {f}
           </li>
         ))}
       </ul>
+
+      {bonuses && bonuses.length > 0 && (
+        <div className="mb-8 rounded-lg bg-[#f6f7fc] border border-[#e6e8f2] p-4">
+          <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2.5">
+            Included extras
+          </p>
+          <ul className="space-y-2.5">
+            {bonuses.map((b) => (
+              <li key={b} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
+                <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
+                {b}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <Link
         href={ctaHref}

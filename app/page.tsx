@@ -395,9 +395,11 @@ Every price published in full · Five guarantees in writing · No setup fee
                   price={tier.monthly}
                   priceSuffix="/ month"
                   meta={`+ website fee · ${minimumLabel(tier)}`}
+                  note={tier.note}
                   best={tier.best}
                   includesHeading={tier.includesBelow}
                   features={tier.features}
+                  bonuses={tier.bonuses}
                   featured={tier.featured}
                   badge={tier.featured ? "Recommended" : undefined}
                 />

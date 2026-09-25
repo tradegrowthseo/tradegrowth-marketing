@@ -17,12 +17,16 @@ import {
   capacity,
   commercials,
   minimumLabel,
+  tierById,
+  annual,
 } from "@/lib/pricing";
 import { pricingFaqs } from "@/lib/faqs";
 
 // Built from lib/pricing.ts rather than retyped, so the SERP description can't
 // quote a price the page no longer charges.
-const [basic, standard, premium] = tiers;
+const basic = tierById("basic");
+const standard = tierById("standard");
+const premium = tierById("premium");
 
 export const metadata: Metadata = {
   ...routeMeta("/pricing/"),
@@ -160,9 +164,11 @@ export default function PricingPage() {
                   price={tier.monthly}
                   priceSuffix="/ month"
                   meta={`+ website fee · ${minimumLabel(tier)}`}
+                  note={tier.note}
                   best={tier.best}
                   includesHeading={tier.includesBelow}
                   features={tier.features}
+                  bonuses={tier.bonuses}
                   featured={tier.featured}
                   badge={tier.featured ? "Recommended" : undefined}
                 />

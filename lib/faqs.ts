@@ -5,9 +5,11 @@
 // Claims discipline: nothing here promises a ranking, a citation or an AI
 // recommendation. Where a question invites that promise, the answer says no.
 
-import { capacity, tiers, websiteOptions } from "./pricing";
+import { annual, capacity, tierById, websiteOptions } from "./pricing";
 
-const [basic, standard, premium] = tiers;
+const basic = tierById("basic");
+const standard = tierById("standard");
+const premium = tierById("premium");
 
 export interface Faq {
   q: string;
@@ -59,6 +61,10 @@ export const pricingFaqs: Faq[] = [
     a: `${basic.name}, ${standard.name} and ${premium.name} all have a ${basic.minimumMonths}-month minimum. After that you're month to month on a month's notice. The website itself has no monthly commitment at all.`,
   },
   {
+    q: "Is there an annual option?",
+    a: `Yes, on ${standard.name}. ${annual.body} ${annual.exit}`,
+  },
+  {
     q: "What am I committing to up front?",
     a: `The one-off website fee if you need the build, and then the ${basic.minimumMonths}-month minimum on whichever package you choose. There is nothing else: no setup fee, no percentage of your ad spend, and no charge for the audit.`,
   },
@@ -69,6 +75,10 @@ export const pricingFaqs: Faq[] = [
   {
     q: "Why is there content in every tier?",
     a: "Because nothing moves without it. A package that maintains listings and sends a report, but never adds a case study or answers a question buyers actually ask, will show you the same numbers every month. So even Basic includes one piece a month, drafted by us from a twenty-minute call — and if there's genuinely nothing worth adding that month, we say so rather than publish filler.",
+  },
+  {
+    q: "What are the included extras?",
+    a: `Named pieces of work that come with a tier rather than a discount off it. ${standard.name} includes the Rule-Out Checklist: the ten things a referral's contact checks before they call, scored against your site. ${premium.name} adds a Credentials Audit — every accreditation and membership you hold, checked against what the site shows — and the Ask Script, which is how to ask a finished project's client for a review and a partner credit, in your words.`,
   },
   {
     q: "What do the guarantees actually cover?",

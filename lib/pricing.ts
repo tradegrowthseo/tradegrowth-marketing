@@ -6,16 +6,12 @@
 // monthly packages that sit on top of it. Each package includes everything in
 // the tier below it.
 //
-// The price points are Brad's and unchanged. What changed on 13 Sep 2026 is
-// what each tier contains. The previous contents stepped the labour up far
-// faster than the £100 price steps (ads management, thirteen social posts a
-// month, video, SMS campaigns), sold an enquiry-management system that had
-// not been built, and carried local-services levers the evidence base does
-// not support for this audience. Now: content is in every tier because
-// nothing moves without it; Standard and Premium differ by who the practice
-// sells to, not by piling on labour; ads sit in Premium for residential
-// practices only; social, video and SMS are gone; enquiry management is
-// shown as in pilot.
+// 25 Sep 2026: Brad widened the ladder on the offer-design advice (the
+// £100 steps read as one product with more bullets; the top tier's job is to
+// make the middle one look sensible). Basic held at £395 as the known entry
+// figure; Standard £595 is the target tier; Premium £895 carries the named
+// bonuses. Tiers are ORDERED Premium → Standard → Basic so the page anchors
+// high. Look tiers up by id, never by index.
 //
 // Figures marked BRAD TO CONFIRM are business decisions set here as
 // defensible defaults. Change them here and everything follows — except
@@ -31,6 +27,10 @@ export interface Tier {
   includesBelow?: string;
   featured?: boolean; // Standard is the featured tier
   features: string[];
+  /** Named extras that come with the tier. Bonuses replace discounts. */
+  bonuses?: string[];
+  /** One extra line under the price, e.g. the annual option. */
+  note?: string;
 }
 
 /**
@@ -83,7 +83,61 @@ export const websiteProduct = {
   ],
 };
 
+/**
+ * The annual option on Standard. Cash up front, and the practice site comes
+ * with it rather than a discount coming off it — a bonus, not a price cut.
+ */
+export const annual = {
+  tierId: "standard" as const,
+  price: "£7,140",
+  months: 12,
+  includes: `${websiteOptions[0].name} (${websiteOptions[0].price}) included`,
+  body: `Twelve months of Standard paid up front, and the ${websiteOptions[0].name} build is included. Need the multi-sector site instead? Pay the £300 difference.`,
+  // BRAD TO CONFIRM — the early-exit rule.
+  exit: "If you leave before the twelve months are up, unused whole months are refunded less the website's list price.",
+};
+
 export const tiers: Tier[] = [
+  {
+    id: "premium",
+    name: "Premium",
+    tagline: "Keep improving it",
+    monthly: "£895",
+    minimumMonths: 3,
+    best: "Established practices that want more of the work compounding each month, with the extras that make the site easier to keep current",
+    includesBelow: "Everything in Standard, plus:",
+    features: [
+      "A second content piece each month — a case study and a question-led page",
+      "Residential: Google Ads management, with the spend paid by you direct to Google",
+      "National: mention outreach every month rather than every quarter",
+      "Half-yearly review of the whole site against the day-one baseline",
+    ],
+    bonuses: [
+      "Credentials Audit — every accreditation and membership you hold, checked against what the site actually shows",
+      "The Ask Script — how to ask a finished project's client for a review and a partner credit, in your words",
+    ],
+  },
+  {
+    id: "standard",
+    name: "Standard",
+    tagline: "Get chosen",
+    monthly: "£595",
+    minimumMonths: 3,
+    best: "Firms that want the work aimed at the people who actually commission projects, with a call each month to steer it",
+    includesBelow: "Everything in Basic, plus:",
+    featured: true,
+    features: [
+      "Your track — residential or national — with the work that suits it (see below)",
+      "Small site changes within the month: copy, credentials, team, projects",
+      "Monthly strategy call",
+      "Residential: Google Business Profile posts, a reviews approach, local-intent pages",
+      "National: mention outreach each quarter — partner credits, LinkedIn tags, one trade-press pitch",
+    ],
+    bonuses: [
+      "The Rule-Out Checklist — the ten things a referral's contact checks before calling, scored on your site",
+    ],
+    note: `Or ${annual.price} for the year, paid up front, with the ${websiteOptions[0].name} included`,
+  },
   {
     id: "basic",
     name: "Basic",
@@ -101,39 +155,14 @@ export const tiers: Tier[] = [
       "Quarterly review with a written plan",
     ],
   },
-  {
-    id: "standard",
-    name: "Standard",
-    tagline: "Get chosen",
-    monthly: "£495",
-    minimumMonths: 3,
-    best: "Firms that want the work aimed at the people who actually commission projects, with a call each month to steer it",
-    includesBelow: "Everything in Basic, plus:",
-    featured: true,
-    features: [
-      "Your track — residential or national — with the work that suits it (see below)",
-      "Small site changes within the month: copy, credentials, team, projects",
-      "Monthly strategy call",
-      "Residential: Google Business Profile posts, a reviews approach, local-intent pages",
-      "National: mention outreach each quarter — partner credits, LinkedIn tags, one trade-press pitch",
-    ],
-  },
-  {
-    id: "premium",
-    name: "Premium",
-    tagline: "Keep improving it",
-    monthly: "£595",
-    minimumMonths: 3,
-    best: "Established practices that want more of the work compounding each month",
-    includesBelow: "Everything in Standard, plus:",
-    features: [
-      "A second content piece each month — a case study and a question-led page",
-      "Residential: Google Ads management, with the spend paid by you direct to Google",
-      "National: mention outreach every month rather than every quarter",
-      "Half-yearly review of the whole site against the day-one baseline",
-    ],
-  },
 ];
+
+/** Look a tier up by id. Never index `tiers` — the array is ordered for display. */
+export const tierById = (id: Tier["id"]): Tier => {
+  const tier = tiers.find((t) => t.id === id);
+  if (!tier) throw new Error(`Unknown tier: ${id}`);
+  return tier;
+};
 
 // ─── The two tracks ───────────────────────────────────────────────────
 // Standard and Premium contain different work depending on who the practice
@@ -178,6 +207,11 @@ export const tracks: Track[] = [
 // ─── Guarantees — inputs and speed, never rankings ────────────────────
 // Nobody controls what Google ranks or what an assistant says, so nothing
 // here promises either. Each one is something we control and can be held to.
+//
+// A sixth, Premium-only guarantee (named-query accuracy across four AI
+// assistants within 90 days, or we keep working free) is designed in the
+// vault offer note and deliberately NOT published until it has been tested
+// against EV Design and this site. Do not add it here before that test.
 
 export interface Guarantee {
   title: string;
@@ -269,7 +303,8 @@ export const scopeNotes: { title: string; body: string }[] = [
 // ─── Full feature comparison ──────────────────────────────────────────
 // `true` renders a tick, `false` renders a dash, a string renders as-is.
 // The Website column is the one-off build; a dash there means "that's part of
-// a monthly package, not the build" — and vice versa.
+// a monthly package, not the build" — and vice versa. Columns follow the
+// display order of `tiers` (Premium first), so the table anchors high too.
 
 export type Cell = boolean | string;
 
@@ -285,12 +320,6 @@ export interface ComparisonGroup {
   group: string;
   rows: ComparisonRow[];
 }
-
-const byId = (id: Tier["id"]): Tier => {
-  const tier = tiers.find((t) => t.id === id);
-  if (!tier) throw new Error(`Unknown tier: ${id}`);
-  return tier;
-};
 
 /** A tier's monthly price, formatted for display. */
 export const monthlyLabel = (tier: Tier) => `${tier.monthly} / mo`;
@@ -358,6 +387,14 @@ export const comparison: ComparisonGroup[] = [
     ],
   },
   {
+    group: "Included extras",
+    rows: [
+      { label: "The Rule-Out Checklist — what a referral's contact checks, scored on your site", website: false, basic: false, standard: true, premium: true },
+      { label: "Credentials Audit — accreditations held versus shown", website: false, basic: false, standard: false, premium: true },
+      { label: "The Ask Script — reviews and partner credits, in your words", website: false, basic: false, standard: false, premium: true },
+    ],
+  },
+  {
     group: "Not on the price list",
     rows: [
       { label: "Enquiry management & follow-up", website: "In pilot", basic: "Not yet sold", standard: "Not yet sold", premium: "Not yet sold" },
@@ -370,16 +407,23 @@ export const comparison: ComparisonGroup[] = [
       {
         label: "Price",
         website: websitePriceLabel,
-        basic: `${monthlyLabel(byId("basic"))} + website`,
-        standard: `${monthlyLabel(byId("standard"))} + website`,
-        premium: `${monthlyLabel(byId("premium"))} + website`,
+        basic: `${monthlyLabel(tierById("basic"))} + website`,
+        standard: `${monthlyLabel(tierById("standard"))} + website`,
+        premium: `${monthlyLabel(tierById("premium"))} + website`,
+      },
+      {
+        label: "Annual option, paid up front",
+        website: false,
+        basic: false,
+        standard: `${annual.price} · ${annual.includes}`,
+        premium: false,
       },
       {
         label: "Minimum term",
         website: "None",
-        basic: termLabel(byId("basic")),
-        standard: termLabel(byId("standard")),
-        premium: termLabel(byId("premium")),
+        basic: termLabel(tierById("basic")),
+        standard: termLabel(tierById("standard")),
+        premium: termLabel(tierById("premium")),
       },
       { label: "Payment", website: "50% deposit, 50% on launch", basic: "Monthly in advance", standard: "Monthly in advance", premium: "Monthly in advance" },
       { label: "VAT", website: "Not charged", basic: "Not charged", standard: "Not charged", premium: "Not charged" },
