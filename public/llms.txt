@@ -117,6 +117,18 @@ Cover inputs and speed, never rankings, AI mentions or enquiry numbers.
   AI answers, and enquiries the client reports. Untracked calls and direct
   emails are not attributed to search.
 
+## Websites we have built
+
+- EV Design — https://ev-design.co.uk/ — EV charging infrastructure design
+  consultancy, Burnley, Lancashire. Seven project pages, technical insights,
+  structured data with the chartered engineer's credentials.
+- JBSE Consulting Engineers — https://www.jbseconsulting.co.uk/ — mechanical
+  and electrical design consultants, Burnley, Lancashire. Services, sectors,
+  about and contact for a professional buyer.
+- LND Architecture + Design — https://lndarchitecture.co.uk/ — architecture
+  and design practice, Lancashire, private homes and commercial schemes.
+  Projects-led, a page per service.
+
 ## Case study
 
 EV Design — an electrical design consultancy based in Burnley, Lancashire,
@@ -133,6 +145,7 @@ enquiry or revenue figures are attributed to them.
 - What is AEO: https://tradegrowthseo.com/aeo/
 - Pricing: https://tradegrowthseo.com/pricing/
 - Results / case study: https://tradegrowthseo.com/results/
+- Websites we've built: https://tradegrowthseo.com/websites/
 - About: https://tradegrowthseo.com/about/
 - Free AI-search audit: https://tradegrowthseo.com/audit/
 - Contact: https://tradegrowthseo.com/contact/

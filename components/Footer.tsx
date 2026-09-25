@@ -26,6 +26,7 @@ const socials = [
 const company = [
   { label: "What is AEO?", href: "/aeo" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Websites we've built", href: "/websites" },
   { label: "Results", href: "/results" },
   { label: "About", href: "/about" },
   { label: "Free AI-Search Audit", href: "/audit" },

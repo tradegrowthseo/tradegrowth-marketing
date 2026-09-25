@@ -21,6 +21,7 @@ const navLinks: {
   { label: "Services", href: "/services", hasDropdown: true },
   { label: "What is AEO", mobileLabel: "AEO", href: "/aeo" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Websites", href: "/websites" },
   { label: "Results", href: "/results" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

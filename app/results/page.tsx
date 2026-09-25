@@ -119,6 +119,13 @@ export default function ResultsPage() {
               <p className="text-[#565c6b] mb-5">
                 Want to know where you&apos;d be starting from?
               </p>
+              <p className="text-[#8a90a0] text-sm mb-6">
+                Or see the other sites we&apos;ve built for practices like this on the{" "}
+                <Link href="/websites" className="text-[#3d4cf5] font-semibold hover:underline">
+                  websites page
+                </Link>
+                .
+              </p>
               <Link
                 href="/audit"
                 className="inline-flex items-center gap-2 bg-gradient-brand text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-[0_8px_30px_rgba(61,76,245,0.3)]"

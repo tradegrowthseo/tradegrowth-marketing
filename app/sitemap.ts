@@ -31,6 +31,7 @@ const routes: { path: string; priority: number }[] = [
   { path: "/aeo", priority: 0.9 },
   { path: "/pricing", priority: 0.9 },
   { path: "/audit", priority: 0.9 },
+  { path: "/websites", priority: 0.8 },
   { path: "/results", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/contact", priority: 0.8 },

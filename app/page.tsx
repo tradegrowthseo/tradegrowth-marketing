@@ -90,10 +90,10 @@ export default function HomePage() {
                     </svg>
                   </Link>
                   <Link
-                    href="/results"
+                    href="/websites"
                     className="inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white/50 bg-white/5 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
                   >
-                    View our work
+                    See the websites we've built
                   </Link>
                 </div>
               </FadeIn>

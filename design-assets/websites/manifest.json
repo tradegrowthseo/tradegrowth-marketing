@@ -1,0 +1,32 @@
+[
+  {
+    "out": "ev-design-website.webp",
+    "width": 1200,
+    "height": 688,
+    "beforeKB": 2755,
+    "lossyKB": 128,
+    "losslessKB": 460,
+    "kept": "q95",
+    "afterKB": 128
+  },
+  {
+    "out": "jbse-consulting-website.webp",
+    "width": 1200,
+    "height": 694,
+    "beforeKB": 3238,
+    "lossyKB": 168,
+    "losslessKB": 586,
+    "kept": "q95",
+    "afterKB": 168
+  },
+  {
+    "out": "lnd-architecture-design-website.webp",
+    "width": 1200,
+    "height": 702,
+    "beforeKB": 4591,
+    "lossyKB": 267,
+    "losslessKB": 793,
+    "kept": "q95",
+    "afterKB": 267
+  }
+]
