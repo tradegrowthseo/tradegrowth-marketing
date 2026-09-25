@@ -1,8 +1,9 @@
 // The websites we have built, shown on /websites. Every fact here is verified
 // against the live site or its source: the URL from the browser bar in the
-// screenshot, the routes from the project's app/ directory, the location from
-// its own business data. Do not add outcomes (rankings, enquiries) to this
-// file — those live on /results with their caveats, and only for EV Design.
+// screenshot, the routes from the project's app/ directory, the schema types
+// from its structured-data component, the location from its own business
+// data. Do not add outcomes (rankings, enquiries) to this file — those live on
+// /results with their caveats, and only for EV Design.
 //
 // Screenshots are graphics (text, hard edges), converted to WebP at 1200px
 // per image-weight-optimisation: q95 beat lossless three to one, and a 1:1
@@ -23,8 +24,8 @@ export interface BuiltWebsite {
   location: string;
   /** What was built. Structure and facts only, no outcome claims. */
   built: string;
-  /** Pages the site has, as a short list for the reader and for the schema. */
-  pages: string[];
+  /** How the site is optimised for search and AI-assisted search. Facts only. */
+  seo: string;
   image: { src: string; width: number; height: number; alt: string };
   /** Where on this site the story continues, if anywhere. */
   more?: { label: string; href: string };
@@ -36,11 +37,12 @@ export const builtWebsites: BuiltWebsite[] = [
     name: "EV Design",
     url: "https://ev-design.co.uk/",
     host: "ev-design.co.uk",
-    who: "Independent electrical design consultancy for EV charging infrastructure — commercial, fleet, public-sector and high-power charging across the UK.",
+    who: "EV Design is an independent electrical design consultancy for EV charging infrastructure, based in Burnley, Lancashire and working on commercial, fleet, public-sector and high-power charging schemes across the UK.",
     location: "Burnley, Lancashire",
     built:
-      "A mobile-first site organised around the work: seven individual project pages, a service page for each kind of charging scheme, and technical insight articles written by the chartered engineer. Structured data carries his credentials. The enquiry route is WhatsApp, tracked as a key event behind consent. First-paint weight was cut from 4 MB to 0.6 MB by converting every image to WebP.",
-    pages: ["Services by charging type", "Seven project pages", "Technical insights", "About", "Contact"],
+      "We built a mobile-first site organised around the work rather than a list of services: a page for each kind of charging scheme, seven individual project pages, technical insight articles written by the chartered engineer, and a WhatsApp enquiry route alongside the form.",
+    seo:
+      "Structured data describes the consultancy, its services and the engineer's credentials, with article markup on each insight so the expertise is legible to search engines and AI assistants. Every image was converted to WebP with sized variants, which cut first-paint weight from 4 MB to 0.6 MB. The sitemap carries real change dates from version history rather than the build time, analytics runs only after consent, and visibility is reported monthly on Search Console totals.",
     image: {
       src: "/images/websites/ev-design-website.webp",
       width: 1200,
@@ -53,12 +55,13 @@ export const builtWebsites: BuiltWebsite[] = [
     slug: "jbse-consulting-engineers",
     name: "JBSE Consulting Engineers",
     url: "https://www.jbseconsulting.co.uk/",
-    host: "jbseconsulting.co.uk",
-    who: "Mechanical and electrical design consultants — building-services engineering for commercial, industrial and residential projects across the UK. EV Design is the practice's specialist EV brand.",
+    host: "www.jbseconsulting.co.uk",
+    who: "JBSE Consulting Engineers are mechanical and electrical design consultants in Burnley, providing building-services engineering for commercial, industrial and residential projects across the UK. EV Design is the practice's specialist EV brand.",
     location: "Burnley, Lancashire",
     built:
-      "A focused five-page site for the architects, contractors and developers who appoint an M&E consultant: services and sectors set out plainly, the chartered credentials placed where a professional buyer looks for them, and the statutory company details in the footer. Structured data describes the services and sectors so the practice is legible to search and to AI assistants.",
-    pages: ["Services", "Sectors", "About", "Contact", "Privacy"],
+      "A focused five-page site for the architects, contractors and developers who appoint an M&E consultant: services and sectors set out plainly, the chartered credentials placed where a professional buyer looks for them, a contact form with consent, and the statutory company details in the footer.",
+    seo:
+      "Organisation structured data identifies the company and its location for search engines and AI assistants, every page has its own title, description and canonical, and an XML sitemap and robots file are in place so the whole site is crawlable. Images are served as WebP so the pages load quickly on a phone, which is where much of this audience reads.",
     image: {
       src: "/images/websites/jbse-consulting-website.webp",
       width: 1200,
@@ -71,11 +74,12 @@ export const builtWebsites: BuiltWebsite[] = [
     name: "LND Architecture + Design",
     url: "https://lndarchitecture.co.uk/",
     host: "lndarchitecture.co.uk",
-    who: "Architecture and design practice working on private homes and commercial schemes, with projects across East Lancashire and the Ribble Valley.",
+    who: "LND Architecture + Design is an architecture and design practice in Lancashire working on private homes and commercial schemes, with completed projects across East Lancashire and the Ribble Valley.",
     location: "Lancashire",
     built:
-      "A projects-led site for a residential-facing practice: a projects page with the completed homes and interiors, a page for each service, and about and contact. The photography and short films were prepared for the web so the work loads quickly on a phone, which is where most of this practice's prospective clients first look.",
-    pages: ["Projects", "A page per service", "About", "Contact"],
+      "A projects-led site for a residential-facing practice: a projects page with the completed homes and interiors, a page for each service, and about and contact. The photography and short films were prepared for the web so the work loads quickly on a phone.",
+    seo:
+      "Local-business structured data describes the practice, its services and the area it serves, so it can appear for the local searches a homeowner makes. Each service has its own page owning its own term, images are WebP, social preview images are set so a shared link shows the work, and the sitemap carries real change dates from version history so search engines can trust when a page last moved.",
     image: {
       src: "/images/websites/lnd-architecture-design-website.webp",
       width: 1200,
@@ -85,10 +89,10 @@ export const builtWebsites: BuiltWebsite[] = [
   },
 ];
 
-/** Lines a buyer or an assistant can lift, shown near the top of the page. */
+/** Lines a buyer or an assistant can lift, shown under the intro. */
 export const websitesTakeaways: string[] = [
   "Three live websites, all for construction, engineering and design businesses in Lancashire working across the UK.",
-  "Every site is mobile-first, statically rendered and ships with structured data describing the practice's services, sectors and credentials.",
+  "Every site is mobile-first, statically rendered and ships with structured data describing the practice.",
   `Fixed price: ${websiteOptions[0].price} for a practice site or ${websiteOptions[1].price} for a multi-sector site. Domain in the client's name.`,
   "Project pages and case studies are drafted by us from a call with the practice, then approved before publishing.",
 ];
