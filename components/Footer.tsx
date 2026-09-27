@@ -175,6 +175,10 @@ export default function Footer() {
             <Link href="/privacy/" className="hover:text-white/60 transition-colors underline">
               Privacy
             </Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/terms/" className="hover:text-white/60 transition-colors underline">
+              Terms
+            </Link>
           </p>
           <p className="text-white/30 text-xs">
             tradegrowthseo.com · Marketing for UK construction, engineering &amp; design businesses

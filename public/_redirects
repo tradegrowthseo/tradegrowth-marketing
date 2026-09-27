@@ -22,3 +22,9 @@
 # WordPress leftovers (/feed/, /wp-*) are meant to 404 rather than be funnelled
 # somewhere generic.
 /services/restaurants-takeaways.html    /services/    301
+
+# Google Cloud OAuth branding and the Google Ads API preflight look for the
+# privacy policy at /privacy-policy. Ours lives at /privacy; send both spellings
+# there rather than duplicate the page.
+/privacy-policy/    /privacy/    301
+/privacy-policy     /privacy/    301
