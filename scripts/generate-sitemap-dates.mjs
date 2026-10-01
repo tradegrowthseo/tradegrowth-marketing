@@ -22,6 +22,7 @@ const CONTENT = {
   "/pricing": ["app/pricing/page.tsx", "lib/pricing.ts", "lib/faqs.ts", "components/ui/ComparisonTable.tsx"],
   "/audit": ["app/audit/page.tsx", "components/AuditForm.tsx"],
   "/websites": ["app/websites/page.tsx", "lib/websites.ts"],
+  "/north-west": ["app/north-west/page.tsx", "lib/north-west.ts", "lib/pricing.ts", "lib/websites.ts"],
   "/results": ["app/results/page.tsx"],
   "/about": ["app/about/page.tsx", "lib/faqs.ts", "lib/audiences.ts"],
   "/contact": ["app/contact/page.tsx", "components/ContactForm.tsx", "lib/audiences.ts"],

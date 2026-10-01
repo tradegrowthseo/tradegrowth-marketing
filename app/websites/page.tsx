@@ -130,7 +130,11 @@ export default function WebsitesPage() {
                 <Link href="/pricing" className="text-[#3d4cf5] font-semibold hover:underline">
                   pricing page
                 </Link>{" "}
-                has every figure.
+                has every figure. All three are in the North West; our{" "}
+                <Link href="/north-west" className="text-[#3d4cf5] font-semibold hover:underline">
+                  North West page
+                </Link>{" "}
+                covers how we work with practices across the region.
               </p>
             </div>
             <ul className="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3">
