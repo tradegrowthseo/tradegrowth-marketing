@@ -9,7 +9,8 @@
 // 25 Sep 2026: Brad widened the ladder on the offer-design advice (the
 // £100 steps read as one product with more bullets; the top tier's job is to
 // make the middle one look sensible). 28 Sep 2026: Brad raised the entry to
-// £495 and the same ratios were reapplied — Standard about 1.5× Basic, Premium
+// £495 and the same ratios were reapplied; 1 Oct 2026: he put the entry back
+// to £395 and the ratios were reapplied again — Standard about 1.5× Basic, Premium
 // about 2.2× Basic, the annual option twelve months of Standard with the
 // practice site included. Tiers are ORDERED Premium → Standard → Basic so the
 // page anchors high. Look tiers up by id, never by index.
@@ -90,7 +91,7 @@ export const websiteProduct = {
  */
 export const annual = {
   tierId: "standard" as const,
-  price: "£8,940",
+  price: "£7,140",
   months: 12,
   includes: `${websiteOptions[0].name} (${websiteOptions[0].price}) included`,
   body: `Twelve months of Standard paid up front, and the ${websiteOptions[0].name} build is included. Need the multi-sector site instead? Pay the £300 difference.`,
@@ -103,7 +104,7 @@ export const tiers: Tier[] = [
     id: "premium",
     name: "Premium",
     tagline: "Keep improving it",
-    monthly: "£1,095",
+    monthly: "£895",
     minimumMonths: 3,
     best: "Established practices that want more of the work compounding each month, with the extras that make the site easier to keep current",
     includesBelow: "Everything in Standard, plus:",
@@ -122,7 +123,7 @@ export const tiers: Tier[] = [
     id: "standard",
     name: "Standard",
     tagline: "Get chosen",
-    monthly: "£745",
+    monthly: "£595",
     minimumMonths: 3,
     best: "Firms that want the work aimed at the people who actually commission projects, with a call each month to steer it",
     includesBelow: "Everything in Basic, plus:",
@@ -143,7 +144,7 @@ export const tiers: Tier[] = [
     id: "basic",
     name: "Basic",
     tagline: "Get found",
-    monthly: "£495",
+    monthly: "£395",
     minimumMonths: 3,
     best: "Practices and consultancies that need to be findable — in search and in AI-assisted search — and want that measured honestly",
     features: [
