@@ -13,7 +13,7 @@
 // page.
 
 import { execSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 const CONTENT = {
   "/": ["app/page.tsx", "lib/services.ts", "lib/differentiators.ts", "lib/pricing.ts", "lib/audiences.ts"],
@@ -29,6 +29,15 @@ const CONTENT = {
   "/privacy": ["app/privacy/page.tsx"],
   "/terms": ["app/terms/page.tsx", "lib/pricing.ts"],
 };
+
+// One route per sector. The slugs are read out of lib/sectors.ts rather than
+// listed again here, so adding a sector cannot leave the sitemap without a
+// date for it. All sector pages share one template and one data file, so they
+// move together, which is true: there is no per-sector source to date apart.
+CONTENT["/sectors"] = ["app/sectors/page.tsx", "lib/sectors.ts"];
+for (const [, slug] of readFileSync("lib/sectors.ts", "utf8").matchAll(/^    slug: "([a-z0-9-]+)",$/gm)) {
+  CONTENT[`/sectors/${slug}`] = ["app/sectors/[slug]/page.tsx", "lib/sectors.ts", "lib/pricing.ts"];
+}
 
 const lastCommit = (file) => {
   const out = execSync(`git log -1 --format=%cI -- "${file}"`, { encoding: "utf8" }).trim();
@@ -46,4 +55,4 @@ for (const [route, files] of Object.entries(CONTENT)) {
 
 writeFileSync("lib/sitemap-dates.json", JSON.stringify(dates, null, 2) + "\n");
 console.log("Wrote lib/sitemap-dates.json");
-for (const [route, date] of Object.entries(dates)) console.log(`  ${route.padEnd(12)} ${date}`);
+for (const [route, date] of Object.entries(dates)) console.log(`  ${route.padEnd(46)} ${date}`);

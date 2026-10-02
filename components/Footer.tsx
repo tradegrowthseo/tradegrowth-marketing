@@ -28,6 +28,7 @@ const company = [
   { label: "Pricing", href: "/pricing" },
   { label: "Websites we've built", href: "/websites" },
   { label: "Results", href: "/results" },
+  { label: "Sectors we work with", href: "/sectors" },
   { label: "North West practices", href: "/north-west" },
   { label: "About", href: "/about" },
   { label: "Free AI-Search Audit", href: "/audit" },

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import sitemapDates from "@/lib/sitemap-dates.json";
+import { sectors } from "@/lib/sectors";
 
 // Required for `output: 'export'` — forces Next.js to statically generate
 // the sitemap at build time and emit it to the exported `out/` folder.
@@ -33,6 +34,8 @@ const routes: { path: string; priority: number }[] = [
   { path: "/audit", priority: 0.9 },
   { path: "/websites", priority: 0.8 },
   { path: "/north-west", priority: 0.8 },
+  { path: "/sectors", priority: 0.8 },
+  ...sectors.map((s) => ({ path: `/sectors/${s.slug}`, priority: 0.8 })),
   { path: "/results", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/contact", priority: 0.8 },

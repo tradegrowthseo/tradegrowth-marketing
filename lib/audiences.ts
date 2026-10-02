@@ -3,8 +3,12 @@
 // Four primary disciplines lead and get their own cards, each with a specific
 // reason that discipline would want this work done. The related professions sit
 // beneath them in a single list rather than being repeated across the site —
-// and deliberately do not get their own thin sector pages, because one strong
-// page beats eight shallow ones for both readers and search.
+// and, until 2 Oct 2026, deliberately had no sector pages of their own.
+// Brad then asked for a page per discipline; they live in lib/sectors.ts and
+// /sectors/[slug]/. The original worry still stands as the rule there: a
+// discipline only gets a page if its content is written for that discipline.
+// `relatedAudiences` below is kept for the FAQ and llms.txt wording; the
+// visible list on the site now renders from lib/sectors.ts.
 //
 // Umbrella phrase throughout the site: "construction, engineering and design
 // businesses". "Built environment" is used sparingly, where it reads naturally.
