@@ -30,7 +30,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!sector) return {};
   return {
     ...routeMeta(`/sectors/${sector.slug}/`),
-    title: sector.metaTitle,
+    // Absolute, with a short brand suffix: the layout template's full
+    // suffix pushes these past sixty characters.
+    title: { absolute: `${sector.metaTitle} | TradeGrowth` },
     description: sector.metaDescription,
   };
 }

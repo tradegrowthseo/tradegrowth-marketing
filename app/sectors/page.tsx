@@ -13,9 +13,9 @@ const PATH = "/sectors/";
 
 export const metadata: Metadata = {
   ...routeMeta(PATH),
-  title: "Sectors: Marketing for Architecture, Engineering & Construction",
+  title: { absolute: "Architecture, Engineering & Construction Marketing | Sectors" },
   description:
-    "The disciplines we work with across architecture, engineering and construction, from architects and MEP engineers to surveyors, planning consultants and contractors, with a page for each.",
+    "The disciplines we work with across architecture, engineering and construction, from architects and MEP engineers to surveyors and contractors.",
 };
 
 const pageSchema: Graph = {

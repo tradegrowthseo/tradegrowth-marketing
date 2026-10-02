@@ -63,9 +63,9 @@ export const sectors: Sector[] = [
     singular: "an architect",
     group: "Design",
     summary: "Practices working on residential, commercial or mixed-use schemes",
-    metaTitle: "Marketing for Architects: Websites, SEO & AI Search",
+    metaTitle: "Marketing for Architects: Websites & SEO",
     metaDescription:
-      "Websites, SEO and AI-search visibility for architecture practices. Project-led sites, local search for residential work and credibility for commercial clients. Prices published.",
+      "Websites, SEO and AI-search visibility for architecture practices: project-led sites, local search for residential work, credibility for commercial clients.",
     heroSub:
       "For an architecture practice the website is the portfolio a prospective client studies before the first call. We build it around the projects, then make it findable for the work and the places you want.",
     answer: [
@@ -131,7 +131,7 @@ export const sectors: Sector[] = [
     summary: "Interior design and interior architecture studios, residential and commercial",
     metaTitle: "Marketing for Interior Designers: Websites & SEO",
     metaDescription:
-      "Websites, SEO and AI-search visibility for interior design studios. Portfolios that show scope and budget as well as style, for residential and commercial clients.",
+      "Websites, SEO and AI-search visibility for interior design studios: portfolios that show scope and budget as well as style, residential and commercial.",
     heroSub:
       "An interior design studio is judged on images first and on fit second. We build the site so the photographs do their job and the words tell a client whether their brief and budget suit the way you work.",
     answer: [
@@ -191,9 +191,9 @@ export const sectors: Sector[] = [
     singular: "a landscape architect",
     group: "Design",
     summary: "Landscape architecture, public realm and urban design practices",
-    metaTitle: "Marketing for Landscape Architects: Websites & SEO",
+    metaTitle: "Marketing for Landscape Architects",
     metaDescription:
-      "Websites, SEO and AI-search visibility for landscape architecture practices: public realm, development landscapes, LVIA and private gardens, shown as written case studies.",
+      "Websites, SEO and AI-search visibility for landscape architects: public realm, development landscapes, LVIA and gardens shown as written case studies.",
     heroSub:
       "Landscape practices do work that photographs well years after the appointment ended. We build the site so each scheme is written up, dated and findable, for the planners, architects and developers who appoint you.",
     answer: [
@@ -257,7 +257,7 @@ export const sectors: Sector[] = [
     summary: "Mechanical, electrical and public health design consultancies",
     metaTitle: "Marketing for MEP & Building Services Engineers",
     metaDescription:
-      "Websites, SEO and AI-search visibility for MEP and building services consultancies. Sector case studies and chartered credentials set out for the architects and contractors who appoint you.",
+      "Websites, SEO and AI-search visibility for MEP and building services consultancies: sector case studies and chartered credentials for those who appoint you.",
     heroSub:
       "An M&E consultancy is appointed by other professionals who compare it against a shortlist. We set out your sectors, your projects and your chartered engineers so that comparison goes your way.",
     answer: [
@@ -321,9 +321,9 @@ export const sectors: Sector[] = [
     singular: "a structural engineer",
     group: "Engineering",
     summary: "From domestic alterations to full frame design",
-    metaTitle: "Marketing for Structural Engineers: Websites & SEO",
+    metaTitle: "Marketing for Structural Engineers",
     metaDescription:
-      "Websites, SEO and AI-search visibility for structural engineering consultancies: findable locally for homeowner work, credible on lookup for architects and contractors.",
+      "Websites, SEO and AI-search visibility for structural engineers: found locally for homeowner work, credible on lookup for architects and contractors.",
     heroSub:
       "Structural engineers serve two buyers at once: a homeowner who needs calculations for a wall, and an architect who needs a frame designed. We build one site that speaks to both without confusing either.",
     answer: [
@@ -388,7 +388,7 @@ export const sectors: Sector[] = [
     summary: "Drainage, highways, flood risk and infrastructure design consultancies",
     metaTitle: "Marketing for Civil Engineering Consultancies",
     metaDescription:
-      "Websites, SEO and AI-search visibility for civil engineering consultancies: drainage strategies, flood risk assessments and highways design explained for the developers who need them.",
+      "Websites, SEO and AI-search visibility for civil engineering consultancies: flood risk, drainage and highways services explained for developers.",
     heroSub:
       "Civil engineering consultancies are appointed to unlock a site: drainage, flood risk, access. We set out those services in the terms a developer or planning consultant searches for, with the schemes that prove them.",
     answer: [
@@ -448,9 +448,9 @@ export const sectors: Sector[] = [
     singular: "an electrical design consultant",
     group: "Engineering",
     summary: "Specialist electrical design and EV charging infrastructure consultancies",
-    metaTitle: "Marketing for Electrical & EV Charging Design Consultants",
+    metaTitle: "Marketing for EV & Electrical Design Consultants",
     metaDescription:
-      "Websites, SEO and AI-search visibility for electrical and EV infrastructure design consultancies. Built from our work with EV Design: project pages, credentials and technical articles.",
+      "Websites, SEO and AI-search visibility for electrical and EV charging design consultancies, built from our published work with EV Design.",
     heroSub:
       "Specialist electrical and EV charging design is a small, technical market sold on credibility. This is the sector where we have the most to show, because we built the site and the search presence for one.",
     answer: [
@@ -514,9 +514,9 @@ export const sectors: Sector[] = [
     singular: "a fire engineer",
     group: "Engineering",
     summary: "Fire engineering and fire safety consultancies",
-    metaTitle: "Marketing for Fire Engineers & Fire Safety Consultants",
+    metaTitle: "Marketing for Fire Engineers & Consultants",
     metaDescription:
-      "Websites, SEO and AI-search visibility for fire engineering consultancies: fire strategies, Building Safety Act work and competence set out for architects, developers and building owners.",
+      "Websites, SEO and AI-search visibility for fire engineering consultancies: fire strategies and Building Safety Act work explained, competence shown.",
     heroSub:
       "Since the Building Safety Act, more clients need a fire engineer and fewer know how to choose one. We set out your competence, your services and your schemes so that the choice is easier to make.",
     answer: [
@@ -581,9 +581,9 @@ export const sectors: Sector[] = [
     singular: "a building surveyor",
     group: "Surveying & consultancy",
     summary: "Chartered building surveyors and building consultancies",
-    metaTitle: "Marketing for Building Surveyors: Websites & SEO",
+    metaTitle: "Marketing for Building Surveyors",
     metaDescription:
-      "Websites, SEO and AI-search visibility for chartered building surveyors: local search for home surveys and party wall work, credibility for commercial and project instructions.",
+      "Websites, SEO and AI-search visibility for chartered building surveyors: local search for home surveys and party wall, credibility for commercial work.",
     heroSub:
       "Building surveyors have two very different customers: a home buyer who needs a survey this month, and a property professional instructing on dilapidations or a refurbishment. We build for both.",
     answer: [
@@ -643,9 +643,9 @@ export const sectors: Sector[] = [
     singular: "a quantity surveyor",
     group: "Surveying & consultancy",
     summary: "Independent quantity surveying and cost consultancy practices",
-    metaTitle: "Marketing for Quantity Surveyors & Cost Consultants",
+    metaTitle: "Marketing for Quantity Surveyors",
     metaDescription:
-      "Websites, SEO and AI-search visibility for quantity surveyors and cost consultants: services explained for developers and self-builders, with schemes and outcomes shown.",
+      "Websites, SEO and AI-search visibility for quantity surveyors and cost consultants: services explained for developers and self-builders, schemes shown.",
     heroSub:
       "A quantity surveyor is hired to control risk and cost on someone else's money. We set out what you do at each stage and the schemes you have done it on, for the developers and clients who appoint you.",
     answer: [
@@ -705,9 +705,9 @@ export const sectors: Sector[] = [
     singular: "a planning consultant",
     group: "Surveying & consultancy",
     summary: "Chartered town planning consultancies",
-    metaTitle: "Marketing for Planning Consultants: Websites & SEO",
+    metaTitle: "Marketing for Planning Consultants",
     metaDescription:
-      "Websites, SEO and AI-search visibility for town planning consultancies: approvals shown as case studies, services explained for homeowners, landowners and developers.",
+      "Websites, SEO and AI-search visibility for planning consultancies: approvals shown as case studies, services explained for homeowners and developers.",
     heroSub:
       "A planning consultancy's record is public but scattered across council websites. We bring it onto your own site as case studies, and explain your services to the three very different clients who need them.",
     answer: [
@@ -769,7 +769,7 @@ export const sectors: Sector[] = [
     summary: "SAP, SBEM, Part L, overheating and sustainability assessment consultancies",
     metaTitle: "Marketing for Energy & Sustainability Consultants",
     metaDescription:
-      "Websites, SEO and AI-search visibility for energy and sustainability consultancies: SAP, SBEM, Part L and BREEAM services explained, with the schemes behind them shown.",
+      "Websites, SEO and AI-search visibility for energy and sustainability consultancies: SAP, SBEM, Part L and BREEAM explained, with real schemes shown.",
     heroSub:
       "Energy assessors are found by people searching for an acronym they have just been told they need. We give each service a page that answers the question, and show the schemes behind it.",
     answer: [
@@ -832,9 +832,9 @@ export const sectors: Sector[] = [
     singular: "an acoustic consultant",
     group: "Surveying & consultancy",
     summary: "Noise assessment, sound insulation testing and acoustic design consultancies",
-    metaTitle: "Marketing for Acoustic Consultants: Websites & SEO",
+    metaTitle: "Marketing for Acoustic Consultants",
     metaDescription:
-      "Websites, SEO and AI-search visibility for acoustic consultancies: noise assessments for planning, sound insulation testing and acoustic design explained for the clients who need them.",
+      "Websites, SEO and AI-search visibility for acoustic consultancies: noise assessments, sound insulation testing and acoustic design clearly explained.",
     heroSub:
       "Most clients meet acoustics for the first time when a planning officer or building control asks for a report. We make your consultancy the clear answer to that request.",
     answer: [
@@ -897,9 +897,9 @@ export const sectors: Sector[] = [
     singular: "a construction project manager",
     group: "Surveying & consultancy",
     summary: "Client-side project management, employer's agent and construction consultancy",
-    metaTitle: "Marketing for Construction Project Managers & Consultancies",
+    metaTitle: "Marketing for Construction Project Managers",
     metaDescription:
-      "Websites, SEO and AI-search visibility for construction project management consultancies: case studies and sector experience set out for the clients and funders who appoint you.",
+      "Websites, SEO and AI-search visibility for construction project managers: case studies and sector experience for the clients and funders who appoint you.",
     heroSub:
       "A project management consultancy sells judgement, and judgement is hard to photograph. We show it through the schemes you have delivered, the problems you solved on them and the clients who came back.",
     answer: [
@@ -964,9 +964,9 @@ export const sectors: Sector[] = [
     singular: "a main contractor",
     group: "Construction",
     summary: "Regional main contractors and design-and-build businesses",
-    metaTitle: "Marketing for Main Contractors & Design-and-Build Firms",
+    metaTitle: "Marketing for Main Contractors & Design-and-Build",
     metaDescription:
-      "Websites, SEO and AI-search visibility for main contractors and design-and-build firms: completed projects, accreditations and sector experience set out for clients and tender panels.",
+      "Websites, SEO and AI-search visibility for main contractors and design-and-build firms: projects and accreditations set out for clients and tender panels.",
     heroSub:
       "A contractor's website is read by clients, consultants and tender panels deciding whether you make the list. We make sure it shows the projects, the accreditations and the people they are looking for.",
     answer: [
@@ -1029,9 +1029,9 @@ export const sectors: Sector[] = [
     singular: "a specialist contractor",
     group: "Construction",
     summary: "Fit-out, façade, steel, joinery and other specialist construction contractors",
-    metaTitle: "Marketing for Specialist Construction Contractors",
+    metaTitle: "Marketing for Specialist Contractors",
     metaDescription:
-      "Websites, SEO and AI-search visibility for specialist contractors: fit-out, façades, steelwork and more, with projects and accreditations shown for main contractors and direct clients.",
+      "Websites, SEO and AI-search visibility for specialist contractors: fit-out, façades, steelwork and more, with projects and accreditations shown.",
     heroSub:
       "A specialist contractor sells to two buyers: the main contractor's commercial team and the end client. We show each the projects and accreditations they look for, in the specialism you want to be known for.",
     answer: [
