@@ -252,7 +252,12 @@ export default function AeoPage() {
           <FadeIn delay={0.2}>
             <p className="text-[#8a90a0] text-sm text-center mt-8 max-w-2xl mx-auto">
               Illustrative example, not a client result. Your free audit shows the real version —
-              the actual answers each assistant gives for the kind of work you do, right now.
+              the actual answers each assistant gives for the kind of work you do, right now. For a
+              real one, see{" "}
+              <Link href="/results" className="text-[#3d4cf5] font-semibold hover:underline">
+                what live searches show for EV Design
+              </Link>
+              .
             </p>
           </FadeIn>
         </div>
@@ -269,7 +274,16 @@ export default function AeoPage() {
             <p className="text-[#565c6b] text-lg mb-14 max-w-2xl leading-relaxed">
               None of these is a secret and none is a guarantee. They are the groundwork that
               makes it possible for an assistant to describe you accurately — worth doing partly
-              because few UK consultancies have done any of it yet.
+              because few UK consultancies have done any of it yet. How we deliver it is set out
+              under{" "}
+              <Link href="/services#seo-aeo" className="text-[#3d4cf5] font-semibold hover:underline">
+                SEO and AI-search visibility
+              </Link>
+              , and what it means for your discipline is on the{" "}
+              <Link href="/sectors" className="text-[#3d4cf5] font-semibold hover:underline">
+                sector pages
+              </Link>
+              .
             </p>
           </FadeIn>
 

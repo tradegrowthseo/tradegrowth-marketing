@@ -124,6 +124,25 @@ export default function AboutPage() {
                   in both kinds of search, and put a system behind it so the enquiries that follow
                   are organised and easy for your team to keep on top of.
                 </p>
+                <p>
+                  You can see it in{" "}
+                  <Link href="/websites" className="text-[#3d4cf5] font-semibold hover:underline">
+                    the websites we&apos;ve built
+                  </Link>
+                  , in{" "}
+                  <Link href="/results" className="text-[#3d4cf5] font-semibold hover:underline">
+                    what happened in search for one of them
+                  </Link>
+                  , and in{" "}
+                  <Link href="/services" className="text-[#3d4cf5] font-semibold hover:underline">
+                    what each service involves
+                  </Link>
+                  . We&apos;re based in Preston; our{" "}
+                  <Link href="/north-west" className="text-[#3d4cf5] font-semibold hover:underline">
+                    North West page
+                  </Link>{" "}
+                  covers work in the region.
+                </p>
               </div>
             </FadeIn>
           </div>

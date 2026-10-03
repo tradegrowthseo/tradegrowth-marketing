@@ -142,8 +142,26 @@ export default function NorthWestPage() {
               </h2>
               <div className="space-y-4 text-[#565c6b] text-lg leading-relaxed">
                 <p>
-                  TradeGrowth Marketing helps architects, structural and MEP engineers, interior
-                  designers and construction specialists in the North West of England get more of
+                  TradeGrowth Marketing helps{" "}
+                  <Link href="/sectors/architects" className={LINK}>
+                    architects
+                  </Link>
+                  ,{" "}
+                  <Link href="/sectors/structural-engineers" className={LINK}>
+                    structural
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/sectors/mep-engineers" className={LINK}>
+                    MEP engineers
+                  </Link>
+                  ,{" "}
+                  <Link href="/sectors/interior-designers" className={LINK}>
+                    interior designers
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/sectors" className={LINK}>
+                    construction specialists
+                  </Link> in the North West of England get more of
                   the right project enquiries. We do it by building the practice a website
                   organised around its projects, making it findable in search and in AI-assisted
                   search, and keeping that current month by month.
@@ -152,7 +170,12 @@ export default function NorthWestPage() {
                   We work across {counties.slice(0, -1).join(", ")} and{" "}
                   {counties[counties.length - 1]}, remotely, from {base.town}. The same service is
                   available anywhere in the UK; this page exists because the North West is where
-                  we are and where our work so far is.
+                  we are and where our work so far is. More on who we
+                  are is on the{" "}
+                  <Link href="/about" className={LINK}>
+                    about page
+                  </Link>
+                  .
                 </p>
               </div>
               <ul className="flex flex-wrap gap-2 mt-7">

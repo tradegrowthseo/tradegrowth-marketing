@@ -98,7 +98,10 @@ export default function SectorsIndexPage() {
           <FadeIn>
             <div className="space-y-4 text-[#565c6b] text-lg leading-relaxed">
               <p>
-                TradeGrowth Marketing builds websites and does search and AI-search visibility
+                <Link href="/about" className="text-[#3d4cf5] font-semibold hover:underline">
+                  TradeGrowth Marketing
+                </Link>{" "}
+                builds websites and does search and AI-search visibility
                 work for architecture, engineering and construction businesses, and nobody else.
                 The sector is usually described as one industry, but an architect, a fire
                 engineer and a main contractor are appointed by different people for different
@@ -112,7 +115,16 @@ export default function SectorsIndexPage() {
                 <Link href="/contact" className="text-[#3d4cf5] font-semibold hover:underline">
                   ask us
                 </Link>
-                ; if we do not think we can help, we will say so.
+                ; if we do not think we can help, we will say so. The sites we have built so far
+                are on the{" "}
+                <Link href="/websites" className="text-[#3d4cf5] font-semibold hover:underline">
+                  websites page
+                </Link>
+                , and practices in the region may want the{" "}
+                <Link href="/north-west" className="text-[#3d4cf5] font-semibold hover:underline">
+                  North West page
+                </Link>
+                .
               </p>
             </div>
           </FadeIn>

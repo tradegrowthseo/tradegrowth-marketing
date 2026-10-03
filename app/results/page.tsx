@@ -124,6 +124,14 @@ export default function ResultsPage() {
                 <Link href="/websites" className="text-[#3d4cf5] font-semibold hover:underline">
                   websites page
                 </Link>
+                , and how we approach this kind of consultancy on the page for{" "}
+                <Link href="/sectors/ev-electrical-design-consultants" className="text-[#3d4cf5] font-semibold hover:underline">
+                  electrical and EV design consultants
+                </Link>
+                . Based nearby? See our{" "}
+                <Link href="/north-west" className="text-[#3d4cf5] font-semibold hover:underline">
+                  North West page
+                </Link>
                 .
               </p>
               <Link

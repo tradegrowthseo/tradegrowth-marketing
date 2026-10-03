@@ -14,6 +14,13 @@ import { websiteOptions } from "@/lib/pricing";
 const SITE_URL = "https://tradegrowthseo.com";
 const PATH = "/websites/";
 
+// Each site we built belongs to a discipline that has its own page.
+const sectorFor: Record<string, { label: string; slug: string }> = {
+  "ev-design": { label: "Marketing for electrical and EV design consultants", slug: "ev-electrical-design-consultants" },
+  "jbse-consulting-engineers": { label: "Marketing for MEP and building services engineers", slug: "mep-engineers" },
+  "lnd-architecture-design": { label: "Marketing for architects", slug: "architects" },
+};
+
 export const metadata: Metadata = {
   ...routeMeta(PATH),
   title: "Websites We've Built for Architects & Engineers",
@@ -203,6 +210,28 @@ export default function WebsitesPage() {
                       {site.seo}
                     </p>
                   </div>
+
+                  {sectorFor[site.slug] && (
+
+                    <p className="mt-5">
+
+                      <Link
+
+                        href={`/sectors/${sectorFor[site.slug].slug}`}
+
+                        className="inline-flex items-center gap-2 text-[#3d4cf5] font-semibold text-sm hover:gap-3 transition-all"
+
+                      >
+
+                        {sectorFor[site.slug].label}
+
+                        <Arrow />
+
+                      </Link>
+
+                    </p>
+
+                  )}
 
                   {site.more && (
                     <p className="mt-5">

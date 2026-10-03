@@ -131,6 +131,13 @@ export default function PricingPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Link>
+                  <p className="text-[#8a90a0] text-sm mt-5">
+                    Want to see finished ones first?{" "}
+                    <Link href="/websites" className="text-[#3d4cf5] font-semibold hover:underline">
+                      The websites we&apos;ve built
+                    </Link>{" "}
+                    are all live.
+                  </p>
                 </div>
               </div>
             </div>
@@ -187,7 +194,11 @@ export default function PricingPage() {
                 A studio taking homeowner work has local search intent to capture. A consultancy
                 tendering nationally has almost none — and the published evidence says what
                 moves AI visibility for it is other people mentioning it. Basic is the same
-                for everyone; Standard and Premium follow your track.
+                for everyone; Standard and Premium follow your track. Each{" "}
+                <Link href="/sectors" className="text-[#3d4cf5] font-semibold hover:underline">
+                  sector page
+                </Link>{" "}
+                says which track fits that discipline.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 {tracks.map((track) => (
@@ -325,6 +336,12 @@ export default function PricingPage() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
+              </Link>
+              <Link
+                href="/terms"
+                className="ml-6 inline-flex items-center gap-2 text-[#3d4cf5] font-semibold text-sm hover:underline"
+              >
+                Read the terms
               </Link>
             </div>
           </FadeIn>

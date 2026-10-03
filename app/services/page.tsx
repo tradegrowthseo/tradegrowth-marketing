@@ -38,6 +38,22 @@ const legacyAnchors: Record<string, string[]> = {
   "trade-crm": ["done-for-you-sales"],
 };
 
+// Where a reader of each service section would want to go next. Kept short:
+// these are the pages that show the service done, not every page on the site.
+const seeAlso: Record<string, { label: string; href: string }[]> = {
+  "website-design": [
+    { label: "The websites we've built", href: "/websites" },
+    { label: "What a website needs to show, by discipline", href: "/sectors" },
+    { label: "What a build costs", href: "/pricing" },
+  ],
+  "seo-aeo": [
+    { label: "What live searches show for EV Design", href: "/results" },
+    { label: "How the work differs by sector", href: "/sectors" },
+    { label: "Practices in the North West", href: "/north-west" },
+  ],
+  "google-meta-ads": [{ label: "Where ads sit in the packages", href: "/pricing" }],
+};
+
 export default function ServicesPage() {
   return (
     <>
@@ -162,6 +178,21 @@ export default function ServicesPage() {
                         ))}
                       </ul>
                     </div>
+
+                    {seeAlso[service.slug] && (
+                      <div className="rounded-xl border border-[#e6e8f2] bg-white p-6">
+                        <h3 className="text-[#171a26] font-bold text-sm mb-3">See it in practice</h3>
+                        <ul className="space-y-2">
+                          {seeAlso[service.slug].map((l) => (
+                            <li key={l.href}>
+                              <Link href={l.href} className="text-sm text-[#3d4cf5] font-semibold hover:underline">
+                                {l.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </FadeIn>
               </div>

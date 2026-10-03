@@ -180,7 +180,15 @@ Every price published in full · Five guarantees in writing · No setup fee
             </h2>
             <p className="text-[#565c6b] text-lg mb-14 max-w-2xl leading-relaxed">
               Four disciplines make up most of what we do. What each one needs from a website
-              and from search is genuinely different, so we don&apos;t pretend otherwise.
+              and from search is genuinely different, so we don&apos;t pretend otherwise. There is{" "}
+              <Link href="/sectors" className="text-[#3d4cf5] font-semibold hover:underline">
+                a page for each sector
+              </Link>
+              , and one for{" "}
+              <Link href="/north-west" className="text-[#3d4cf5] font-semibold hover:underline">
+                practices in the North West
+              </Link>
+              .
             </p>
           </FadeIn>
 

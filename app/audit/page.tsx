@@ -3,6 +3,7 @@ import { routeMeta } from "@/lib/seo";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PageHero from "@/components/ui/PageHero";
+import Link from "next/link";
 import AuditForm from "@/components/AuditForm";
 
 export const metadata: Metadata = {
@@ -144,6 +145,22 @@ export default function AuditPage() {
                     Because most practice owners have genuinely never seen what an AI assistant
                     says about their business, and it&apos;s usually the moment the penny drops.
                     We&apos;d rather show you than talk at you.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-[#e6e8f2] rounded-xl p-5 mt-4">
+                  <h3 className="text-[#171a26] font-bold text-sm mb-2">
+                    Want the background first?
+                  </h3>
+                  <p className="text-[#565c6b] text-sm leading-relaxed">
+                    <Link href="/aeo" className="text-[#3d4cf5] font-semibold hover:underline">
+                      What AEO is and how it works
+                    </Link>{" "}
+                    explains the idea, and our{" "}
+                    <Link href="/results" className="text-[#3d4cf5] font-semibold hover:underline">
+                      results page
+                    </Link>{" "}
+                    shows real AI answers for one client.
                   </p>
                 </div>
               </FadeIn>

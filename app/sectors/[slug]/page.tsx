@@ -311,6 +311,10 @@ export default async function SectorPage({ params }: Params) {
                 <Link href="/pricing" className={LINK}>
                   pricing page
                 </Link>
+                . What AI-search visibility means is explained on our{" "}
+                <Link href="/aeo" className={LINK}>
+                  AEO page
+                </Link>
                 .
               </p>
             </FadeIn>
@@ -485,6 +489,13 @@ export default async function SectorPage({ params }: Params) {
                 All sectors we work with
                 <Arrow />
               </Link>
+            </p>
+            <p className="mt-3 text-sm text-[#8a90a0]">
+              Based in the North West?{" "}
+              <Link href="/north-west" className={LINK}>
+                See how we work with practices across the region
+              </Link>
+              .
             </p>
           </FadeIn>
         </div>
