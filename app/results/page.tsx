@@ -40,11 +40,15 @@ const evDesignShots = [
     alt: "Google results for “ev design”, with EV Design's website ev-design.co.uk as the top organic result, titled “EV Design | EV Charging Infrastructure & Site Design”.",
   },
   {
-    src: "/images/case-studies/ev-design-chatgpt.png",
-    width: 2532,
-    height: 1464,
+    // Replaced 3 Oct 2026 with a capture cropped to the answer itself. The
+    // earlier one showed the ChatGPT sidebar, with Brad's name and unrelated
+    // chat titles, on a public page. WebP at its native 1261px; the PNG master
+    // is in design-assets/case-studies/.
+    src: "/images/case-studies/ev-design-chatgpt.webp",
+    width: 1261,
+    height: 958,
     caption: "Described accurately in ChatGPT",
-    alt: "A ChatGPT conversation answering “EV Design Burnley” by identifying EV Design as a Burnley, Lancashire electrical design consultancy for EV charging infrastructure, followed by its contact details.",
+    alt: "A ChatGPT answer to the prompt “Ev design Burnley”: three images of EV charging design work, then text identifying EV Design as based in Burnley, Lancashire and specialising in electrical design consultancy for EV charging infrastructure, followed by its contact details.",
   },
 ];
 
