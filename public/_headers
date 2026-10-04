@@ -5,3 +5,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Images for social posts are fetched by Instagram and Facebook. Keep them out of search.
+/social/*
+  X-Robots-Tag: noindex
