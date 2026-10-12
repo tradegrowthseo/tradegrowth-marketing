@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { submitToWeb3Forms } from "@/lib/forms";
+import { sendToCrm, submitToWeb3Forms } from "@/lib/forms";
 
 interface FormState {
   name: string;
@@ -71,6 +71,12 @@ export default function AuditForm() {
         subject: "Free AEO audit request — tradegrowthseo.com",
         botcheck,
         ...form,
+      });
+
+      sendToCrm("audit", {
+        name: form.name, email: form.email, phone: form.phone, company: form.business,
+        service: "Free AI-search audit",
+        message: ["Trade: " + form.trade, "Area: " + form.area, "Website: " + form.website, "Competitor: " + form.competitor].join(". "),
       });
 
       setForm({

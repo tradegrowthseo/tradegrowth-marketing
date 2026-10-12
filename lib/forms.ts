@@ -45,3 +45,55 @@ export async function submitToWeb3Forms(payload: Web3FormsPayload): Promise<void
     throw new Error(data.message ?? "Web3Forms rejected the submission");
   }
 }
+
+// ─── CRM capture ──────────────────────────────────────────────────────
+// After Web3Forms has delivered the email, the same enquiry is also sent to
+// the agency's own CRM so it becomes a contact and an opportunity with its
+// source recorded. The form key only identifies the form; it is public, like
+// the Web3Forms key above. This send never blocks or fails the visitor's
+// submission: if the CRM is unreachable the email has already gone.
+
+const CRM_CAPTURE = "https://crm.tradegrowthseo.com/api/capture";
+
+const CRM_FUNNELS = {
+  audit: { key: "audit-621871bd", formKey: "80248291ba84414784e9a3ca5329042c44958b7acfcd4cf8abbb59050f6722d5" },
+  contact: { key: "contact-4648744d", formKey: "bdfc6ce94a9f470493b9979d43931b7f7bcbc2acd99040a6b060578aad069c91" },
+} as const;
+
+/** The campaign tags the visitor arrived with, kept for the whole visit. */
+export function captureAttribution(): Record<string, string> {
+  try {
+    const p = new URLSearchParams(window.location.search);
+    const stored = JSON.parse(sessionStorage.getItem("tg_attr") ?? "{}") as Record<string, string>;
+    const now: Record<string, string> = { ...stored };
+    for (const k of ["utm_source", "utm_medium", "utm_campaign"]) {
+      const v = p.get(k);
+      if (v) now[k] = v.slice(0, 100);
+    }
+    if (!now.referrer && document.referrer && !document.referrer.includes(location.hostname)) {
+      now.referrer = document.referrer.slice(0, 500);
+    }
+    sessionStorage.setItem("tg_attr", JSON.stringify(now));
+    return now;
+  } catch {
+    return {};
+  }
+}
+
+export function sendToCrm(
+  funnel: keyof typeof CRM_FUNNELS,
+  fields: { name: string; email: string; phone?: string; company?: string; message?: string; service?: string },
+): void {
+  const f = CRM_FUNNELS[funnel];
+  try {
+    fetch(`${CRM_CAPTURE}/${f.key}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-capture-key": f.formKey },
+      body: JSON.stringify({ ...fields, ...captureAttribution() }),
+      keepalive: true,
+      signal: AbortSignal.timeout(8000),
+    }).catch(() => undefined);
+  } catch {
+    /* never let the CRM affect the visitor */
+  }
+}

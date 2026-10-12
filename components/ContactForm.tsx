@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { submitToWeb3Forms, WEB3FORMS_ENDPOINT, WEB3FORMS_ACCESS_KEY } from "@/lib/forms";
+import { sendToCrm, submitToWeb3Forms, WEB3FORMS_ENDPOINT, WEB3FORMS_ACCESS_KEY } from "@/lib/forms";
 
 interface FormState {
   name: string;
@@ -82,6 +82,11 @@ export default function ContactForm() {
         phone: form.phone || undefined,
         trade: form.trade || undefined,
         message: form.message,
+      });
+
+      sendToCrm("contact", {
+        name: form.name, email: form.email, phone: form.phone, company: form.business,
+        service: form.trade, message: form.message,
       });
 
       setForm({ name: "", business: "", email: "", phone: "", trade: "", message: "" });
