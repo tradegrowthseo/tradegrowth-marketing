@@ -110,8 +110,8 @@ export const tiers: Tier[] = [
     includesBelow: "Everything in Standard, plus:",
     features: [
       "A second content piece each month — a case study and a question-led page",
-      "Residential: Google Ads management, with the spend paid by you direct to Google",
-      "National: mention outreach every month rather than every quarter",
+      "Local Practice: Google Search ads managed, with the spend paid by you direct to Google",
+      "Referral-Ready Practice: mention outreach every month rather than every quarter. No ads",
       "Half-yearly review of the whole site against the day-one baseline",
     ],
     bonuses: [
@@ -129,11 +129,11 @@ export const tiers: Tier[] = [
     includesBelow: "Everything in Basic, plus:",
     featured: true,
     features: [
-      "Your track — residential or national — with the work that suits it (see below)",
+      "Your programme — the Local Practice or the Referral-Ready Practice — with the work that suits it (see below)",
       "Small site changes within the month: copy, credentials, team, projects",
       "Monthly strategy call",
-      "Residential: Google Business Profile posts, a reviews approach, local-intent pages",
-      "National: mention outreach each quarter — partner credits, LinkedIn tags, one trade-press pitch",
+      "Local Practice: Google Business Profile posts, a reviews approach, local-intent pages",
+      "Referral-Ready Practice: four project stories, credentials placed where buyers look, mention outreach each quarter",
     ],
     bonuses: [
       "The Rule-Out Checklist — the ten things a referral's contact checks before calling, scored on your site",
@@ -166,45 +166,79 @@ export const tierById = (id: Tier["id"]): Tier => {
   return tier;
 };
 
-// ─── The two tracks ───────────────────────────────────────────────────
-// Standard and Premium contain different work depending on who the practice
-// sells to, because the levers are different. A studio taking homeowner work
-// has local intent to capture; a consultancy tendering nationally has almost
-// none, and the published evidence points at third-party mentions instead.
-// Basic is the same for everyone.
+// ─── The two programmes ───────────────────────────────────────────────
+// The niche is two markets that look like one, split by who the practice's
+// customer is. A practice whose buyer is a homeowner has local search demand
+// to capture, so the work (and, on Premium, Google Ads) goes after it. A
+// consultancy whose buyer is a developer, contractor or architect is referred
+// and then checked, so the work makes that check go well, and ads are never
+// sold to it. Same website, same three tiers, same guarantees; different front
+// door and different Standard and Premium contents. 13 Oct 2026, from the
+// vault note "offer v2 - two programmes". The ids stay "residential" and
+// "national" because lib/sectors.ts keys off them.
 
-export interface Track {
+export interface Programme {
   id: "residential" | "national";
+  /** The programme's name, used as a heading. */
   name: string;
+  /** Who it is for, in one line. */
   who: string;
+  /** The promise, in the buyer's words. Nothing in it is a ranking or a number of enquiries. */
+  promise: string;
+  /** The free first step. */
+  frontDoor: { name: string; href: string; body: string };
+  /** What Standard adds over Basic, on this programme. */
   standard: string[];
+  /** What Premium adds over Standard, on this programme. */
   premium: string[];
+  /** The ads position, said in words so nobody has to infer it. */
+  ads: string;
 }
 
-export const tracks: Track[] = [
+export const programmes: Programme[] = [
   {
     id: "residential",
-    name: "Residential-facing practices",
-    who: "Architects, structural engineers and interior designers taking homeowner and small-developer work within a region",
+    name: "The Local Practice",
+    who: "Architects doing extensions and new homes, structural engineers doing beams and lofts, building and party-wall surveyors, planning consultants and domestic design-and-build — practices whose client is a homeowner",
+    promise:
+      "When a homeowner in your area searches for what you do, they find you, see your work, read your reviews and enquire.",
+    frontDoor: {
+      name: "The Local Search Check",
+      href: "/local-search-check",
+      body: "What a homeowner in your area sees when they search for your service: the map results, the reviews, your own listing and two competitors. Five pages, free.",
+    },
     standard: [
       "Google Business Profile kept current, with a reviews approach that fits a practice",
-      "Local-intent pages for the work and the area you actually want",
+      "Local-intent pages for the work and the area you actually want, only where the demand is real",
     ],
     premium: [
-      "Google Ads management — search campaigns around the project types you want more of, spend paid direct to Google",
+      "Google Search ads managed — campaigns around the project types you want more of, spend paid direct to Google, with a tracked number so a call from an ad is counted rather than guessed",
     ],
+    ads: "Google Search only, on Premium. No Meta, no display, no LinkedIn.",
   },
   {
     id: "national",
-    name: "National consultancies",
-    who: "MEP, structural, civil and specialist consultancies selling to developers, contractors, architects and estates teams",
+    name: "The Referral-Ready Practice",
+    who: "MEP, structural, civil, fire and specialist consultancies selling to developers, contractors, architects and estates teams — practices that are referred, then checked",
+    promise:
+      "Every referral that checks you out finds a practice worth calling: on your site, in search, and in the AI assistants they ask.",
+    frontDoor: {
+      name: "The Referral Check",
+      href: "/audit",
+      body: "How ChatGPT, Gemini, Perplexity, Claude and Google describe your practice today, against one competitor. Five pages, free.",
+    },
     standard: [
+      "Four project stories written from twenty-minute calls, and your credentials placed where a referral's contact actually looks",
       "Mention outreach each quarter — partner credits, LinkedIn tags, one trade-press pitch",
-      "No Google Business Profile emphasis and no ads, because the intent isn't there",
     ],
     premium: ["Mention outreach every month, with a trade-press pitch each quarter"],
+    ads: "No ads. Your buyers are not searching, so we would be charging you to manage a budget that cannot be spent well.",
   },
 ];
+
+/** @deprecated Older pages import `tracks`; it is the same list under the old name. */
+export const tracks = programmes;
+export type Track = Programme;
 
 // ─── Guarantees — inputs and speed, never rankings ────────────────────
 // Nobody controls what Google ranks or what an assistant says, so nothing
@@ -278,7 +312,7 @@ export const commercials = [
 export const scopeNotes: { title: string; body: string }[] = [
   {
     title: "What the monthly fee covers",
-    body: "The scope listed for your tier and track, each month. That is the work, and it is the whole of the work — there is no separate setup fee.",
+    body: "The scope listed for your tier and programme, each month. That is the work, and it is the whole of the work — there is no separate setup fee.",
   },
   {
     title: "Costs that sit outside it",
@@ -381,11 +415,13 @@ export const comparison: ComparisonGroup[] = [
     ],
   },
   {
-    group: "Get chosen — by track",
+    group: "Get chosen — by programme",
     rows: [
-      { label: "Residential: GBP posts, reviews approach, local-intent pages", website: false, basic: false, standard: true, premium: true },
-      { label: "Residential: Google Ads management (spend paid direct)", website: false, basic: false, standard: false, premium: true },
-      { label: "National: mention outreach — partner credits, LinkedIn tags, trade press", website: false, basic: false, standard: "Quarterly", premium: "Monthly" },
+      { label: "Local Practice: GBP posts, reviews approach, local-intent pages", website: false, basic: false, standard: true, premium: true },
+      { label: "Local Practice: Google Search ads management (spend paid direct)", website: false, basic: false, standard: false, premium: true },
+      { label: "Referral-Ready Practice: four project stories and credentials placed where buyers look", website: false, basic: false, standard: true, premium: true },
+      { label: "Referral-Ready Practice: mention outreach — partner credits, LinkedIn tags, trade press", website: false, basic: false, standard: "Quarterly", premium: "Monthly" },
+      { label: "Referral-Ready Practice: ads", website: false, basic: "Never", standard: "Never", premium: "Never" },
     ],
   },
   {

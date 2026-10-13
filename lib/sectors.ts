@@ -95,7 +95,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Most practices sit on the residential track, where local search demand is real. Practices working mainly for developers, education or healthcare clients sit on the national track, where case studies and mentions do the work.",
+      "Most practices sit on the Local Practice programme, where local search demand is real. Practices working mainly for developers, education or healthcare clients sit on the Referral-Ready Practice programme, where case studies and mentions do the work.",
     questions: [
       "Do I need an architect for a rear extension?",
       "How much does an architect charge for a house extension?",
@@ -161,7 +161,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Residential studios sit on the residential track, with local search and a Google Business Profile. Studios selling to developers, operators and workplace clients sit on the national track.",
+      "Residential studios sit on the Local Practice programme, with local search and a Google Business Profile. Studios selling to developers, operators and workplace clients sit on the Referral-Ready Practice programme.",
     questions: [
       "How much does an interior designer cost for a whole house?",
       "What is the difference between an interior designer and an interior architect?",
@@ -223,7 +223,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Practices working for developers, architects and authorities sit on the national track. Garden design for private clients sits on the residential track.",
+      "Practices working for developers, architects and authorities sit on the Referral-Ready Practice programme. Garden design for private clients sits on the Local Practice programme.",
     questions: [
       "When does a planning application need a landscape and visual impact assessment?",
       "What does a landscape architect do on a housing development?",
@@ -287,7 +287,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track: case studies, mentions from architects and contractors, and no ads, because there is almost no search demand to buy.",
+      "The Referral-Ready Practice programme: case studies, mentions from architects and contractors, and no ads, because there is almost no search demand to buy.",
     questions: [
       "Which M&E consultants have experience of school refurbishments?",
       "What does a building services engineer do on a residential scheme?",
@@ -353,7 +353,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Practices with a strong domestic workload sit on the residential track, where a Google Business Profile and reviews matter. Practices working mainly for architects and contractors sit on the national track.",
+      "Practices with a strong domestic workload sit on the Local Practice programme, where a Google Business Profile and reviews matter. Practices working mainly for architects and contractors sit on the Referral-Ready Practice programme.",
     questions: [
       "Do I need a structural engineer to remove a load-bearing wall?",
       "How much do structural calculations for a loft conversion cost?",
@@ -418,7 +418,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track, with service pages written around the reports planning authorities ask for. That question-led content is where civil engineering differs from other consultancies.",
+      "The Referral-Ready Practice programme, with service pages written around the reports planning authorities ask for. That question-led content is where civil engineering differs from other consultancies.",
     questions: [
       "When is a flood risk assessment required for planning?",
       "What is a SuDS drainage strategy and who can produce one?",
@@ -480,7 +480,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track. There is no town-level demand in this niche, so no area pages and no ads; the levers are project pages, technical articles and mentions from partners.",
+      "The Referral-Ready Practice programme. There is no town-level demand in this niche, so no area pages and no ads; the levers are project pages, technical articles and mentions from partners.",
     questions: [
       "Who designs EV charging infrastructure for a commercial depot?",
       "What does an EV charging consultant do?",
@@ -546,7 +546,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track. The buyers are professionals and building owners across the country, and the lever is explanatory content and case studies rather than local search.",
+      "The Referral-Ready Practice programme. The buyers are professionals and building owners across the country, and the lever is explanatory content and case studies rather than local search.",
     questions: [
       "When does a building need a fire strategy?",
       "What is a higher-risk building under the Building Safety Act?",
@@ -613,7 +613,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Practices with home survey and party wall work sit on the residential track. Practices working mainly on commercial instructions and projects sit on the national track.",
+      "Practices with home survey and party wall work sit on the Local Practice programme. Practices working mainly on commercial instructions and projects sit on the Referral-Ready Practice programme.",
     questions: [
       "What is the difference between a Level 2 and a Level 3 survey?",
       "How much does a building survey cost?",
@@ -675,7 +675,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track, with question-led service pages. A practice with a meaningful self-build workload can add local visibility for that audience.",
+      "The Referral-Ready Practice programme, with question-led service pages. A practice with a meaningful self-build workload can add local visibility for that audience.",
     questions: [
       "What does a quantity surveyor do on a residential development?",
       "How much does a cost plan cost?",
@@ -737,7 +737,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Consultancies with householder and rural clients sit on the residential track, where local search demand is real. Consultancies working for developers and land promoters sit on the national track.",
+      "Consultancies with householder and rural clients sit on the Local Practice programme, where local search demand is real. Consultancies working for developers and land promoters sit on the Referral-Ready Practice programme.",
     questions: [
       "What can I do if my planning application is refused?",
       "Do I need a planning consultant for a barn conversion?",
@@ -799,7 +799,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track, built around question-led service pages. This is the sector where clear explanatory pages earn the most.",
+      "The Referral-Ready Practice programme, built around question-led service pages. This is the sector where clear explanatory pages earn the most.",
     questions: [
       "What is a SAP calculation and when do I need one?",
       "Do I need an overheating assessment for a new house?",
@@ -864,7 +864,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track with question-led service pages. Sound testing can also be found locally, so the areas covered should be stated.",
+      "The Referral-Ready Practice programme with question-led service pages. Sound testing can also be found locally, so the areas covered should be stated.",
     questions: [
       "When is a noise impact assessment required for planning?",
       "What is pre-completion sound insulation testing?",
@@ -929,7 +929,7 @@ export const sectors: Sector[] = [
     ],
     track: "national",
     trackNote:
-      "The national track: case studies and mentions from the architects, cost consultants and clients the consultancy works alongside.",
+      "The Referral-Ready Practice programme: case studies and mentions from the architects, cost consultants and clients the consultancy works alongside.",
     questions: [
       "What does an employer's agent do on a design-and-build contract?",
       "Do I need a project manager for a school building project?",
@@ -996,7 +996,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Regional contractors with private clients benefit from the residential track's local visibility; contractors working mainly through tenders and frameworks sit on the national track.",
+      "Regional contractors with private clients benefit from the Local Practice programme's local visibility; contractors working mainly through tenders and frameworks sit on the Referral-Ready Practice programme.",
     questions: [
       "Which contractors build industrial units in my region?",
       "What is a design-and-build contract?",
@@ -1061,7 +1061,7 @@ export const sectors: Sector[] = [
     ],
     track: "both",
     trackNote:
-      "Specialists selling direct to occupiers and private clients benefit from the residential track's regional visibility and, on Premium, Google Ads. Those working mainly for main contractors sit on the national track.",
+      "Specialists selling direct to occupiers and private clients benefit from the Local Practice programme's regional visibility and, on Premium, Google Ads. Those working mainly for main contractors sit on the Referral-Ready Practice programme.",
     questions: [
       "Which fit-out contractors work on offices in my region?",
       "Who installs rainscreen cladding on residential buildings?",

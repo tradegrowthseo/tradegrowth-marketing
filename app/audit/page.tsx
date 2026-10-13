@@ -45,7 +45,7 @@ export default function AuditPage() {
     <>
       <PageHero
         patternId="audit-grid"
-        eyebrow="Free AI-search audit"
+        eyebrow="The Referral Check · free AI-search audit"
         title={
           <>
             Find out what the AI says about you{" "}

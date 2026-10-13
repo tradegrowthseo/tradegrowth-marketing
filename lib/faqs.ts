@@ -69,8 +69,16 @@ export const pricingFaqs: Faq[] = [
     a: `The one-off website fee if you need the build, and then the ${basic.minimumMonths}-month minimum on whichever package you choose. There is nothing else: no setup fee, no percentage of your ad spend, and no charge for the audit.`,
   },
   {
-    q: "What's the difference between the residential and national tracks?",
-    a: `Who you sell to. A practice taking homeowner work has local search intent to capture, so ${standard.name} and ${premium.name} put the work into Google Business Profile, reviews, local-intent pages and, on ${premium.name}, Google Ads. A consultancy selling to developers and contractors nationally has almost no search volume to buy, so the same tiers put the work into getting your practice mentioned — partner credits, LinkedIn tags, trade press — which is what the published evidence says moves AI visibility. ${basic.name} is the same for everyone.`,
+    q: "What's the difference between the two programmes?",
+    a: `Who you sell to. The Local Practice is for practices whose client is a homeowner: there is local search intent to capture, so ${standard.name} and ${premium.name} put the work into Google Business Profile, reviews, local-intent pages and, on ${premium.name}, Google Search ads. The Referral-Ready Practice is for consultancies selling to developers, contractors, architects and estates teams: they are referred and then checked, so the same tiers put the work into project stories, credentials, and getting your practice mentioned — partner credits, LinkedIn tags, trade press — which is what the published evidence says moves AI visibility. ${basic.name} is the same on both.`,
+  },
+  {
+    q: "Which programme am I?",
+    a: "Ask who pays your invoices. If it is mostly homeowners, you are the Local Practice. If it is mostly developers, contractors, architects, housing associations or estates teams, you are the Referral-Ready Practice. Some practices are both; we pick the side that brings most of the work, and say which on the proposal.",
+  },
+  {
+    q: "Will you run ads for my consultancy?",
+    a: "No, and we would rather say so here than take the fee. A consultancy's buyers are not typing its service into Google tonight; they are being given its name. There is almost nothing to buy, so an ads retainer would be charging you to manage a budget that cannot be spent well. The money goes into the work that affects the moment you are checked out.",
   },
   {
     q: "Why is there content in every tier?",

@@ -10,14 +10,14 @@ import PricingCard from "@/components/ui/PricingCard";
 import AudienceCards from "@/components/ui/AudienceCards";
 import CTABand from "@/components/ui/CTABand";
 import { soldServices } from "@/lib/services";
-import { tiers, tierById, websiteOptions, guarantees, capacity, minimumLabel } from "@/lib/pricing";
+import { tiers, tierById, websiteOptions, guarantees, capacity, minimumLabel, programmes } from "@/lib/pricing";
 import { differentiators } from "@/lib/differentiators";
 
 export const metadata: Metadata = {
   ...routeMeta("/"),
   title: "TradeGrowth Marketing | Marketing for Construction, Engineering & Design",
   description:
-    "Websites, SEO, AI-search visibility and targeted advertising for architects, engineers, interior designers and construction specialists across the UK. Every price published in full.",
+    "Websites, search and AI visibility for architecture, engineering and construction practices, and Google Ads for the ones whose clients are homeowners. Every price published in full.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -73,8 +73,8 @@ export default function HomePage() {
 
               <FadeIn delay={0.2}>
                 <p className="text-white/75 text-lg md:text-xl leading-relaxed mb-9 max-w-xl">
-                  We help architects, engineers, interior designers and construction specialists
-                  strengthen their online presence through websites, SEO, AI-search visibility and, where the intent exists, targeted advertising.
+                  Websites, search and AI visibility for architecture, engineering and construction
+                  practices, and Google Ads for the ones whose clients are homeowners.
                 </p>
               </FadeIn>
 
@@ -193,6 +193,55 @@ Every price published in full · Five guarantees in writing · No setup fee
           </FadeIn>
 
           <AudienceCards alt />
+        </div>
+      </section>
+
+      {/* ─── TWO PROGRAMMES ───────────────────────────────────────────── */}
+      <section className="bg-white py-24 border-b border-[#e6e8f2]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel>Two programmes</SectionLabel>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#171a26] mb-4 max-w-3xl">
+              Who pays your invoices decides the work
+            </h2>
+            <p className="text-[#565c6b] text-lg mb-14 max-w-2xl leading-relaxed">
+              A practice whose client is a homeowner is found by search. A consultancy whose
+              client is a developer or a contractor is referred, then checked. The same website
+              and the same packages serve both, but the free first step and the work inside
+              Standard and Premium are different, and ads are only ever sold to the first.
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-6">
+            {programmes.map((p, i) => (
+              <FadeIn key={p.id} delay={i * 0.08} className="h-full">
+                <div className="h-full bg-[#f6f7fc] border border-[#e6e8f2] rounded-2xl p-8 flex flex-col">
+                  <h3 className="text-[#171a26] font-bold text-2xl mb-2">{p.name}</h3>
+                  <p className="text-[#8a90a0] text-sm leading-relaxed mb-5">{p.who}</p>
+                  <p className="text-[#171a26] text-base leading-relaxed mb-6 font-medium">
+                    &ldquo;{p.promise}&rdquo;
+                  </p>
+                  <p className="text-sm text-[#565c6b] leading-relaxed mb-6">
+                    <span className="font-semibold text-[#171a26]">Ads: </span>
+                    {p.ads}
+                  </p>
+                  <div className="mt-auto flex flex-wrap items-center gap-4">
+                    <Link
+                      href={p.frontDoor.href}
+                      className="inline-flex items-center gap-2 bg-gradient-brand text-white font-semibold px-5 py-3 rounded-lg text-sm transition-all shadow-[0_8px_24px_rgba(61,76,245,0.28)]"
+                    >
+                      {p.frontDoor.name}, free
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                    <Link href="/pricing" className="text-[#3d4cf5] font-semibold text-sm hover:underline">
+                      What each package adds
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 

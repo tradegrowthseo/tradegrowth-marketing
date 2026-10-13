@@ -21,6 +21,7 @@ const CONTENT = {
   "/aeo": ["app/aeo/page.tsx", "lib/faqs.ts"],
   "/pricing": ["app/pricing/page.tsx", "lib/pricing.ts", "lib/faqs.ts", "components/ui/ComparisonTable.tsx"],
   "/audit": ["app/audit/page.tsx", "components/AuditForm.tsx"],
+  "/local-search-check": ["app/local-search-check/page.tsx", "components/LocalCheckForm.tsx"],
   "/websites": ["app/websites/page.tsx", "lib/websites.ts"],
   "/north-west": ["app/north-west/page.tsx", "lib/north-west.ts", "lib/pricing.ts", "lib/websites.ts"],
   "/results": ["app/results/page.tsx"],

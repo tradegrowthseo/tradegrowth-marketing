@@ -10,7 +10,7 @@ import CTABand from "@/components/ui/CTABand";
 import FAQ from "@/components/ui/FAQ";
 import {
   tiers,
-  tracks,
+  programmes,
   websiteProduct,
   websiteOptions,
   guarantees,
@@ -64,6 +64,79 @@ export default function PricingPage() {
         }
         sub="No &ldquo;book a call for a bespoke quote&rdquo;. You scope a fee proposal before you send it, and you'd think twice about a client who wouldn't discuss a budget. Same principle, applied to us — and the guarantees are in writing too."
       />
+
+      {/* ─── TWO PROGRAMMES ───────────────────────────────────────────── */}
+      <section className="bg-white py-24 border-b border-[#e6e8f2]">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel>Start here</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#171a26] mb-4">
+              Two kinds of practice, two programmes
+            </h2>
+            <p className="text-[#565c6b] text-lg mb-12 max-w-2xl leading-relaxed">
+              Ask who pays your invoices. If it is mostly homeowners, you are the Local Practice. If
+              it is mostly developers, contractors, architects or estates teams, you are the
+              Referral-Ready Practice. Same website, same three packages, same guarantees. What
+              differs is the free first step and where the work goes.
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-6">
+            {programmes.map((p, i) => (
+              <FadeIn key={p.id} delay={i * 0.08} className="h-full">
+                <div className="h-full bg-[#f6f7fc] border border-[#e6e8f2] rounded-2xl p-8 flex flex-col">
+                  <h3 className="text-[#171a26] font-bold text-2xl mb-2">{p.name}</h3>
+                  <p className="text-[#8a90a0] text-sm leading-relaxed mb-5">{p.who}</p>
+                  <p className="text-[#171a26] text-base leading-relaxed mb-6 font-medium">
+                    &ldquo;{p.promise}&rdquo;
+                  </p>
+                  <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2">
+                    Added on {standard.name}
+                  </p>
+                  <ul className="space-y-2 mb-5">
+                    {p.standard.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2">
+                    Added on {premium.name}
+                  </p>
+                  <ul className="space-y-2 mb-5">
+                    {p.premium.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-[#565c6b] leading-relaxed mb-6">
+                    <span className="font-semibold text-[#171a26]">Ads: </span>
+                    {p.ads}
+                  </p>
+                  <div className="mt-auto bg-white border border-[#e6e8f2] rounded-xl p-5">
+                    <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-1.5">
+                      Free first step
+                    </p>
+                    <h4 className="text-[#171a26] font-bold text-base mb-1.5">{p.frontDoor.name}</h4>
+                    <p className="text-[#565c6b] text-sm leading-relaxed mb-4">{p.frontDoor.body}</p>
+                    <Link
+                      href={p.frontDoor.href}
+                      className="inline-flex items-center gap-2 bg-gradient-brand text-white font-semibold px-5 py-3 rounded-lg text-sm transition-all shadow-[0_8px_24px_rgba(61,76,245,0.28)]"
+                    >
+                      Get {p.frontDoor.name.replace(/^The /, "the ")}
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ─── THE WEBSITE ──────────────────────────────────────────────── */}
       <section className="bg-white py-24">
@@ -183,56 +256,15 @@ export default function PricingPage() {
             ))}
           </div>
 
-          {/* ─── TRACKS ────────────────────────────────────────────────── */}
           <FadeIn delay={0.2}>
-            <div className="mt-16">
-              <SectionLabel>Standard and Premium, by who you sell to</SectionLabel>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#171a26] mb-3">
-                Two tracks, because the levers aren&apos;t the same
-              </h3>
-              <p className="text-[#565c6b] text-base mb-8 max-w-2xl leading-relaxed">
-                A studio taking homeowner work has local search intent to capture. A consultancy
-                tendering nationally has almost none — and the published evidence says what
-                moves AI visibility for it is other people mentioning it. Basic is the same
-                for everyone; Standard and Premium follow your track. Each{" "}
-                <Link href="/sectors" className="text-[#3d4cf5] font-semibold hover:underline">
-                  sector page
-                </Link>{" "}
-                says which track fits that discipline.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                {tracks.map((track) => (
-                  <div key={track.id} className="bg-white border border-[#e6e8f2] rounded-xl p-7">
-                    <h4 className="text-[#171a26] font-bold text-lg mb-1.5">{track.name}</h4>
-                    <p className="text-[#8a90a0] text-sm leading-relaxed mb-5 pb-5 border-b border-[#e6e8f2]">
-                      {track.who}
-                    </p>
-                    <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2.5">
-                      On {standard.name}
-                    </p>
-                    <ul className="space-y-2.5 mb-5">
-                      {track.standard.map((f) => (
-                        <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-[11px] font-bold tracking-widest uppercase text-[#3d4cf5] mb-2.5">
-                      Added on {premium.name}
-                    </p>
-                    <ul className="space-y-2.5">
-                      {track.premium.map((f) => (
-                        <li key={f} className="flex items-start gap-2.5 text-sm text-[#565c6b]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gradient-brand-static flex-shrink-0 mt-2" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="text-[#565c6b] text-base mt-12 max-w-2xl leading-relaxed">
+              Basic is the same on both programmes. Standard and Premium follow your programme,
+              as set out at the top of this page, and each{" "}
+              <Link href="/sectors" className="text-[#3d4cf5] font-semibold hover:underline">
+                sector page
+              </Link>{" "}
+              says which programme fits that discipline.
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -323,7 +355,7 @@ export default function PricingPage() {
                 What sits outside the monthly fee
               </h3>
               <p className="text-[#565c6b] text-sm leading-relaxed mb-4 max-w-3xl">
-                The fee covers the scope listed above for your tier and track — there is no
+                The fee covers the scope listed above for your tier and programme — there is no
                 separate setup fee. Domain renewal from year two, ad spend, pages beyond those in
                 the build, photography and video are itemised and agreed before anything is
                 started.
@@ -365,7 +397,7 @@ export default function PricingPage() {
 
       <CTABand
         heading="Still weighing it up?"
-        sub="Get the free AI-search audit first. It costs nothing, it shows how your practice is described in AI answers today, and if you're already in good shape it says so — that's the third guarantee."
+        sub="Start with the free first step for your programme: the Local Search Check if your clients are homeowners, the Referral Check if they are developers, contractors or architects. If you're already in good shape it says so — that's the third guarantee."
         secondaryLabel="Talk to us"
         secondaryHref="/contact"
       />
