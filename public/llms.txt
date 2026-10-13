@@ -79,10 +79,10 @@ consultancies selling to developers, contractors, architects and estates teams.
   and third-party mentions. No ranking, citation or AI recommendation is
   guaranteed; monthly reporting quotes Search Console totals and sampled
   AI-assistant answers.
-- **Google & Meta ads** — included in the Premium package for residential-
-  facing practices only, where search intent exists. Not offered to national
-  consultancies. Ad spend is paid by the client directly to the platforms.
-  LinkedIn Ads management is not offered.
+- **Google Ads** — Google Search campaigns, included in the Premium package on
+  the Local Practice programme only, where a homeowner is searching. Never
+  offered to consultancies. Ad spend is paid by the client directly to Google.
+  Meta and LinkedIn Ads management are not offered.
 - **Enquiry management & follow-up** — in pilot with one client. Not sold. It
   will be priced when the pilot shows it works. It will not chase proposals,
   qualify opportunities, close sales, send SMS or run campaigns.

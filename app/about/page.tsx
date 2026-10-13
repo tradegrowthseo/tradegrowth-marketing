@@ -22,7 +22,7 @@ const values = [
   {
     icon: <Eye className="w-6 h-6" strokeWidth={1.8} />,
     title: "Transparent by default",
-    body: "Every price is published on this website. Ad spend goes straight from you to Google and Meta so we can't skim it. Reports show what happened, including the months where the honest answer is \"not much yet\".",
+    body: "Every price is published on this website. Ad spend goes straight from you to Google so we can't skim it. Reports show what happened, including the months where the honest answer is \"not much yet\".",
   },
   {
     icon: <Target className="w-6 h-6" strokeWidth={1.8} />,

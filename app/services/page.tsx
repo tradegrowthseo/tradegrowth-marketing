@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ...routeMeta("/services/"),
   title: "Services",
   description:
-    "Three services for UK construction, engineering and design businesses: website design, SEO and AI-search visibility, and Google & Meta ads as an add-on — plus the enquiry-management pilot, described honestly.",
+    "Three services for UK construction, engineering and design businesses: website design, SEO and AI-search visibility, and Google Ads for practices whose clients are homeowners — plus the enquiry-management pilot, described honestly.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {
