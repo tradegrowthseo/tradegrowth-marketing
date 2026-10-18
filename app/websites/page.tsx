@@ -16,6 +16,7 @@ const PATH = "/websites/";
 
 // Each site we built belongs to a discipline that has its own page.
 const sectorFor: Record<string, { label: string; slug: string }> = {
+  "nutter-design-group": { label: "Marketing for architects", slug: "architects" },
   "ev-design": { label: "Marketing for electrical and EV design consultants", slug: "ev-electrical-design-consultants" },
   "jbse-consulting-engineers": { label: "Marketing for MEP and building services engineers", slug: "mep-engineers" },
   "lnd-architecture-design": { label: "Marketing for architects", slug: "architects" },
@@ -25,10 +26,10 @@ export const metadata: Metadata = {
   ...routeMeta(PATH),
   title: "Websites We've Built for Architects & Engineers",
   description:
-    "Work completed by TradeGrowth Marketing: websites for EV Design, JBSE Consulting Engineers and LND Architecture + Design, and how each is optimised for search and AI.",
+    "Work completed by TradeGrowth Marketing: websites for Nutter Design Group, EV Design, JBSE Consulting Engineers and LND Architecture + Design, and how each is optimised for search and AI.",
 };
 
-// CollectionPage + ItemList so the three sites are one machine-readable set,
+// CollectionPage + ItemList so the sites are one machine-readable set,
 // plus BreadcrumbList for the page's place in the site. FAQPage is emitted by
 // the FAQ component. No street addresses anywhere: every practice listed is a
 // service-area business.
@@ -97,7 +98,7 @@ export default function WebsitesPage() {
             <span className="text-gradient">design practices</span>
           </>
         }
-        sub="This is work completed by TradeGrowth Marketing: websites designed, built and optimised for search and AI-assisted search for practices across Lancashire that take on projects across the UK. Each one is live — click through and see it for yourself."
+        sub="This is work completed by TradeGrowth Marketing: websites designed, built and optimised for search and AI-assisted search for practices across the North West that take on projects across the UK. Each one is live — click through and see it for yourself."
       >
         <nav aria-label="Breadcrumb" className="mt-8">
           <ol className="flex items-center gap-2 text-xs text-white/50">
@@ -121,8 +122,9 @@ export default function WebsitesPage() {
             <div className="space-y-4 text-[#565c6b] text-lg leading-relaxed">
               <p>
                 Below are some of the projects TradeGrowth Marketing has worked on and completed:
-                an EV charging design consultancy, a mechanical and electrical engineering
-                consultancy and an architecture practice. Each site is fast, mobile-first and
+                a development-focused architecture and planning consultancy, an EV charging design
+                consultancy, a mechanical and electrical engineering consultancy and a residential
+                architecture practice. Each site is fast, mobile-first and
                 organised around the projects the practice has actually delivered, because that
                 is what a prospective client checks before they get in touch.
               </p>
@@ -137,7 +139,7 @@ export default function WebsitesPage() {
                 <Link href="/pricing" className="text-[#3d4cf5] font-semibold hover:underline">
                   pricing page
                 </Link>{" "}
-                has every figure. All three are in the North West; our{" "}
+                has every figure. All four are in the North West; our{" "}
                 <Link href="/north-west" className="text-[#3d4cf5] font-semibold hover:underline">
                   North West page
                 </Link>{" "}

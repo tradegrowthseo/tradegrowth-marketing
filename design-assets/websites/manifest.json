@@ -28,5 +28,15 @@
     "losslessKB": 793,
     "kept": "q95",
     "afterKB": 267
+  },
+  {
+    "out": "nutter-design-group-website.webp",
+    "width": 1200,
+    "height": 694,
+    "beforeKB": 3177,
+    "lossyKB": 139,
+    "losslessKB": 572,
+    "kept": "q95",
+    "afterKB": 139
   }
 ]

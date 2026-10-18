@@ -33,6 +33,24 @@ export interface BuiltWebsite {
 
 export const builtWebsites: BuiltWebsite[] = [
   {
+    slug: "nutter-design-group",
+    name: "Nutter Design Group",
+    url: "https://nutterdesigngroup.com/",
+    host: "nutterdesigngroup.com",
+    who: "Nutter Design Group is a development-focused architecture, planning and development consultancy in Manchester, working nationwide for developers, operators and specialist care providers on roadside and commercial schemes, supported living and care, residential development, and sports and leisure.",
+    location: "Manchester",
+    built:
+      "A projects-led site organised around the schemes the practice has delivered: twelve project pages, a page for each of the four sectors and eight services, and a page written for the operators and brands rolling out an estate site after site. The homepage opens on the practice's own site plans resolving into visualisations, the films were prepared so they play lightly on a phone, and the contact form records consent.",
+    seo:
+      "Professional-service structured data describes the practice, its location and the area it serves, with service markup on the sector and service pages and breadcrumbs throughout, so the work is legible to search engines and AI assistants. Every page has its own title, description and canonical. The sitemap is generated from the same route list as the navigation, so a page cannot be linked and left out, and its change dates come from version history. Analytics loads only after consent, and the preview copy is kept out of search so only the real domain is indexed.",
+    image: {
+      src: "/images/websites/nutter-design-group-website.webp",
+      width: 1200,
+      height: 694,
+      alt: "Homepage of nutterdesigngroup.com: the NDG logo, a navigation with For operators, Sectors, Services, Projects and a green Book a consultation button, over an aerial site plan of a proposed roadside services scheme outlined in red, with the headline Designing Places. Unlocking Potential.",
+    },
+  },
+  {
     slug: "ev-design",
     name: "EV Design",
     url: "https://ev-design.co.uk/",
@@ -91,7 +109,7 @@ export const builtWebsites: BuiltWebsite[] = [
 
 /** Lines a buyer or an assistant can lift, shown under the intro. */
 export const websitesTakeaways: string[] = [
-  "Three live websites, all for construction, engineering and design businesses in Lancashire working across the UK.",
+  "Four live websites, all for construction, engineering and design businesses in the North West working across the UK.",
   "Every site is mobile-first, statically rendered and ships with structured data describing the practice.",
   `Fixed price: ${websiteOptions[0].price} for a practice site or ${websiteOptions[1].price} for a multi-sector site. Domain in the client's name.`,
   "Project pages and case studies are drafted by us from a call with the practice, then approved before publishing.",

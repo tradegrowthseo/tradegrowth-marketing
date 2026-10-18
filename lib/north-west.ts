@@ -40,7 +40,7 @@ export const base = {
 
 export const northWestTakeaways: string[] = [
   "TradeGrowth Marketing is based in Preston and works only with architecture, engineering and construction businesses.",
-  "Three websites we built for North West practices are live: an EV charging design consultancy and an M&E consultancy in Burnley, and an architecture practice in Lancashire.",
+  "Four websites we built for North West practices are live: a development-focused architecture and planning consultancy in Manchester, an EV charging design consultancy and an M&E consultancy in Burnley, and an architecture practice in Lancashire.",
   `Prices are fixed and published: a website at ${websiteOptions[0].price} or ${websiteOptions[1].price}, then monthly packages from ${tierById("basic").monthly}.`,
   "We do not promise rankings, AI mentions or a number of enquiries. We guarantee what we control, in writing.",
 ];

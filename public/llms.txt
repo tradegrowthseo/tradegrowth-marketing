@@ -155,6 +155,11 @@ Cover inputs and speed, never rankings, AI mentions or enquiry numbers.
 
 ## Websites we have built
 
+- Nutter Design Group — https://nutterdesigngroup.com/ — development-focused
+  architecture, planning and development consultancy, Manchester, working
+  nationwide on roadside and commercial, supported living and care, residential
+  and sports and leisure schemes. Twelve project pages, four sectors, eight
+  services, a page for operators rolling out an estate.
 - EV Design — https://ev-design.co.uk/ — EV charging infrastructure design
   consultancy, Burnley, Lancashire. Seven project pages, technical insights,
   structured data with the chartered engineer's credentials.

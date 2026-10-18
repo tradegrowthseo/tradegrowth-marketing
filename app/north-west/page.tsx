@@ -99,7 +99,7 @@ export default function NorthWestPage() {
             <span className="text-gradient">North West</span>
           </>
         }
-        sub={`We're based in ${base.town} and work only with this sector: websites, SEO and AI-search visibility that give a referred client the evidence to pick up the phone. Three of our sites are live for practices in ${base.county} today.`}
+        sub={`We're based in ${base.town} and work only with this sector: websites, SEO and AI-search visibility that give a referred client the evidence to pick up the phone. Four of our sites are live for practices across the North West today.`}
       >
         <nav aria-label="Breadcrumb" className="mt-8">
           <ol className="flex items-center gap-2 text-xs text-white/50">
@@ -373,12 +373,12 @@ export default function NorthWestPage() {
               Which North West practices have you worked with?
             </h2>
             <p className="text-[#565c6b] text-lg mb-12 max-w-3xl leading-relaxed">
-              Three, all live and all yours to click through. For one of them we can also show
+              Four, all live and all yours to click through. For one of them we can also show
               what happened in search afterwards.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
             {builtWebsites.map((site, i) => (
               <FadeIn key={site.slug} delay={i * 0.08} className="h-full">
                 <div className="h-full flex flex-col bg-[#f6f7fc] border border-[#e6e8f2] rounded-xl p-7">
@@ -420,7 +420,7 @@ export default function NorthWestPage() {
                   <Arrow />
                 </Link>
                 <Link href="/websites" className="inline-flex items-center gap-2 text-[#3d4cf5] font-semibold text-sm hover:gap-3 transition-all">
-                  See all three websites
+                  See all four websites
                   <Arrow />
                 </Link>
               </div>
