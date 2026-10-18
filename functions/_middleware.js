@@ -26,14 +26,41 @@
 
 const APEX = "tradegrowthseo.com";
 
+// The *.pages.dev preview alias (tradegrowth-marketing.pages.dev) showed up in
+// GA4's cross-domain suggestions on 18 Oct 2026, so it is being visited and is
+// fetchable. It must never be indexed: robots.txt there becomes a blanket
+// Disallow and every response carries X-Robots-Tag noindex. The header matters
+// because Disallow only stops crawling; a preview URL already in the index
+// needs a noindex it is allowed to fetch in order to drop out.
+const PREVIEW_ROBOTS = "User-agent: *\nDisallow: /\n";
+const NOINDEX = "noindex, nofollow";
+
 export const onRequest = async (context) => {
   const { request, next } = context;
 
   try {
     const url = new URL(request.url);
-    if (url.hostname.toLowerCase() === `www.${APEX}`) {
+    const host = url.hostname.toLowerCase();
+
+    if (host === `www.${APEX}`) {
       url.hostname = APEX;
       return Response.redirect(url.toString(), 301);
+    }
+
+    if (host.endsWith(".pages.dev")) {
+      if (url.pathname === "/robots.txt") {
+        return new Response(PREVIEW_ROBOTS, {
+          headers: {
+            "content-type": "text/plain; charset=utf-8",
+            "x-robots-tag": NOINDEX,
+            "cache-control": "no-store",
+          },
+        });
+      }
+      const response = await next();
+      const tagged = new Response(response.body, response);
+      tagged.headers.set("x-robots-tag", NOINDEX);
+      return tagged;
     }
   } catch {
     // Fall through to the normal response.
