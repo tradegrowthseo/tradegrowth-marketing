@@ -119,7 +119,8 @@ export default async function SectorPage({ params }: Params) {
         eyebrow={sector.group}
         title={
           <>
-            Marketing for <span className="text-gradient">{lc}</span>
+            {sector.heroTitle ? sector.heroTitle.lead : "Marketing for"}{" "}
+            <span className="text-gradient">{sector.heroTitle ? sector.heroTitle.accent : lc}</span>
           </>
         }
         sub={sector.heroSub}

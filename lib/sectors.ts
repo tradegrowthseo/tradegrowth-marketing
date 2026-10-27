@@ -32,6 +32,8 @@ export interface Sector {
   group: SectorGroup;
   /** One line, for the index page and cards. */
   summary: string;
+  /** Optional H1 override where the page is built to own a specific search term. Default is "Marketing for {name}". */
+  heroTitle?: { lead: string; accent: string };
   metaTitle: string;
   metaDescription: string;
   heroSub: string;
@@ -63,13 +65,14 @@ export const sectors: Sector[] = [
     singular: "an architect",
     group: "Design",
     summary: "Practices working on residential, commercial or mixed-use schemes",
-    metaTitle: "Marketing for Architects: Websites & SEO",
+    heroTitle: { lead: "SEO agency for", accent: "architects" },
+    metaTitle: "SEO Agency for Architects: Websites & AI Search",
     metaDescription:
-      "Websites, SEO and AI-search visibility for architecture practices: project-led sites, local search for residential work, credibility for commercial clients.",
+      "SEO agency for architects: project-led websites, local search for residential work and credibility on lookup for commercial clients. Free Referral Check.",
     heroSub:
       "For an architecture practice the website is the portfolio a prospective client studies before the first call. We build it around the projects, then make it findable for the work and the places you want.",
     answer: [
-      "Marketing for architects means showing the right projects to the right client at the moment they are choosing who to approach. We build architecture practices a fast, project-led website, make it visible in search and in AI-assisted search for the kind of work the practice wants, and keep it current each month.",
+      "We are an SEO agency for architects. We build a practice a fast, project-led website, make it visible in Google and in AI assistants for the kind of work the practice wants, and keep it current each month, so the right projects are in front of the right client at the moment they choose who to approach.",
       "For a practice taking homeowner work that is mostly local: extensions, new builds and conversions in the towns you serve. For a practice working for developers, schools or healthcare clients it is about credibility on lookup, because that work arrives by referral, framework or competition and the site has to confirm the recommendation.",
     ],
     takeaways: [
@@ -115,6 +118,10 @@ export const sectors: Sector[] = [
       {
         q: "Does SEO work for architects?",
         a: "For residential work, yes: people search for an architect in their town and for specific project types, and a well-structured site with real project pages can be found for them. For commercial work, search volume is low and the site's job is to confirm a referral. In both cases results take months, and nobody can promise a position.",
+      },
+      {
+        q: "What does an SEO agency for architects actually do?",
+        a: "It checks how the practice is found and described today, in Google and in AI assistants, then fixes what a client or a crawler would hit: a site built around finished projects, a page for each type of work, registration and credentials in words, structured data and a sitemap, a Google Business Profile that is claimed and accurate. After that it keeps the site current each month and reports Search Console totals, not estimates. It does not promise a position or a number of enquiries.",
       },
       {
         q: "How do architects get more of the projects they want?",

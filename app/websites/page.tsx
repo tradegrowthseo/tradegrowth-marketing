@@ -19,7 +19,7 @@ const sectorFor: Record<string, { label: string; slug: string }> = {
   "nutter-design-group": { label: "Marketing for architects", slug: "architects" },
   "ev-design": { label: "Marketing for electrical and EV design consultants", slug: "ev-electrical-design-consultants" },
   "jbse-consulting-engineers": { label: "Marketing for MEP and building services engineers", slug: "mep-engineers" },
-  "lnd-architecture-design": { label: "Marketing for architects", slug: "architects" },
+  "lnd-architecture-design": { label: "SEO agency for architects", slug: "architects" },
 };
 
 export const metadata: Metadata = {
